@@ -13,6 +13,16 @@
 * After that do not forgot to include newly created story in `.storybook/stories.js`
     *  Keep order and place your story under the relevant category (or create new)
 
+### Publish to Demo page
+
+Firstly build storybook by running
+```
+npm run build
+```
+Then upload it to github pages by running
+```
+npm run gh-pages
+```
 
 ### User semantic git commits
 For more information view [here](https://seesparkbox.com/foundry/semantic_commit_messages)
