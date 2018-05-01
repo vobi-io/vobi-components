@@ -1,6 +1,8 @@
 # Button component
 
-> Button Component
+<h2>`<Button />`</h2>
+
+
 
 ## Properties
 

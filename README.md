@@ -1,10 +1,10 @@
 <h1 style="text-align: center;">
     <a href="https://github.com/btomashvili/vobi-components">
-        <img src="https://avatars0.githubusercontent.com/u/25040473?s=200&v=4" alt="Vobi.io Components" width="200">
+        <img src="https://avatars0.githubusercontent.com/u/25040473?s=200&v=4" alt="Vobi.io Components" width="200px">
     </a>
 </h1>
 
-`vobi-components` is a collection of [React](https://facebook.github.io/react/) components that conform to Wix Style created by Wix UX guild.
+`vobi-components` is a collection of [React](https://facebook.github.io/react/) components developed by Vobi.io team.
 
 #### [Demo](https://btomashvili.github.io/vobi-components) | [Source](https://github.com/btomashvili/vobi-components)
 
@@ -30,11 +30,28 @@ const MyComponent = () =>
 ```
 
 ## Requirements
+* Install dependencies with `npm` or `yarn`:
+```sh
+npm i
+# OR
+yarn install
+```
 
-## Tips
+* Install `nvm` globally:
+```sh
+npm i -g nvm
+```
 
-## Contributing
+* Run storybook:
+```sh
+npm run storybook
+```
 
-## Tests
+
+## Contribution
+
+Please refer contribution guide.
 
 ## License
+
+This project is offered under MIT License.
