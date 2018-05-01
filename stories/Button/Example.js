@@ -7,15 +7,15 @@ import { CodeBlock } from '../../utils'
 import { Button } from '../../src'
 
 const snippets = {
-  import: 'import Button from \'wix-style-react/Button\'',
+  import: 'import Button from \'vobi-components/Button\'',
 }
 
 export default () =>
   (<div>
-      <CodeBlock source={snippets.import} type="jsx" />
-      <div>
-      <div className="ltr">
-              <Button onClick={action('button-click')}>{text('Label', 'Hello Button')}</Button>
-          </div>
-    </div>
-   </div>)
+    <CodeBlock source={snippets.import} type="jsx" />
+    <div>
+          <div className="ltr">
+        <Button onClick={action('button-click')}>{text('Label', 'Hello Button')}</Button>
+      </div>
+      </div>
+  </div>)
