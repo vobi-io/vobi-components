@@ -12,6 +12,22 @@ module.exports = (storybookBaseConfig, configType) => {
     loaders: ["style-loader", "css-loader", "sass-loader"],
     // include: path.resolve(__dirname, "../")
   });
+  
+  storybookBaseConfig.module.rules.push({
+        test: /\.stories\.jsx?$/,
+        loaders: [
+          {
+            loader: require.resolve('@storybook/addon-storysource/loader'),
+            options: {
+              prettierConfig: {
+                printWidth: 80,
+                singleQuote: false,
+              }
+            }
+          }
+        ],
+        enforce: 'pre',
+      },);
 
   // Return the altered config
   return storybookBaseConfig;
