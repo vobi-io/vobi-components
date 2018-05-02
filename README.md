@@ -30,11 +30,9 @@ const MyComponent = () =>
 ```
 
 ## Requirements
-* Install dependencies with `npm` or `yarn`:
+* Install dependencies with `npm`:
 ```sh
 npm i
-# OR
-yarn install
 ```
 
 * Install `nvm` globally:
