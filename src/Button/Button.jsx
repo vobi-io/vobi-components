@@ -4,15 +4,15 @@ import React, { PropTypes } from 'react'
 import './Button.scss'
 
 const Button = props => (
-    <button className="button" onClick={props.onClick}>
-      {props.children}
+  <button className="button" onClick={props.onClick}>
+    {props.children}
   </button>
 )
 
 Button.defaultProps = {
 }
 
-Button.PropTypes = {
+Button.propTypes = {
 
 }
 

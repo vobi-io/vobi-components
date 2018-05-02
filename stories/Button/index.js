@@ -17,13 +17,13 @@ storiesOf('Buttons', module)
   .addDecorator(withKnobs)
   .addWithJSX('Buttons', () => (
     <div>
-          <Markdown source={Readme} />
+      <Markdown source={Readme} />
 
       <h1 className="sb-header">Usage examples</h1>
 
       <CodeExample title="Standard" code={ExampleRaw}>
         <Example />
-        </CodeExample>
+      </CodeExample>
 
-      </div>
+    </div>
   ))

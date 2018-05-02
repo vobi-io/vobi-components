@@ -10,12 +10,13 @@ const snippets = {
   import: 'import Button from \'vobi-components/Button\'',
 }
 
-export default () =>
-  (<div>
+export default () => (
+  <div>
     <CodeBlock source={snippets.import} type="jsx" />
     <div>
-          <div className="ltr">
+      <div className="ltr">
         <Button onClick={action('button-click')}>{text('Label', 'Hello Button')}</Button>
       </div>
-      </div>
-  </div>)
+    </div>
+  </div>
+)

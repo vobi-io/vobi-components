@@ -1,5 +1,6 @@
 {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
@@ -9,8 +10,10 @@
   "rules": {
     "max-len": ["warn", 120],
     "indent": ["warn", 2],
-    "react/jsx-indent": ["warn", 4],
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": 0,
     "react/forbid-prop-types": 0,
+    "import/no-webpack-loader-syntax": 0,
     "semi": [2, "never"],
     "no-underscore-dangle": 0,
     "no-console": 0,
