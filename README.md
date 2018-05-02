@@ -4,9 +4,11 @@
     </a>
 </h1>
 
-`vobi-components` is a collection of [React](https://facebook.github.io/react/) components developed by Vobi.io team.
+<p style="text-align: center;">`vobi-components` is a collection of [React](https://facebook.github.io/react/) components developed by Vobi.io team.</p> 
 
-#### [Demo](https://btomashvili.github.io/vobi-components) | [Source](https://github.com/btomashvili/vobi-components)
+<p style="text-align: center;">
+[Demo](https://btomashvili.github.io/vobi-components) | [Source](https://github.com/btomashvili/vobi-components)
+</p>
 
 ## Setup
 
