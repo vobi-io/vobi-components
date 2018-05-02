@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 50px 0px 25px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.27);
+  background-color: white;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  &-nav {
+    list-style: none;
+    margin-right: 20px;
+    display: block;
+    .nav-item {
+      float: left;
+      padding: 22px 15px;
+      .nav-link {
+        font-size: 18px;
+        text-decoration: none;
+        color: gray;
+        transition: 0.2s;
+        &:hover {
+          color: green;
+        }
+      }
+    }
+  }
+}
