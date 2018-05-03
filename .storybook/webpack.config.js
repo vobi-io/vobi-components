@@ -14,6 +14,12 @@ module.exports = (storybookBaseConfig, configType) => {
   });
   
   storybookBaseConfig.module.rules.push({
+    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+    exclude: /(node_modules|bower_components)/,
+    loader: 'url-loader?limit=50000&mimetype=image/svg+xml',
+  });
+  
+  storybookBaseConfig.module.rules.push({
         test: /\.stories\.jsx?$/,
         loaders: [
           {
