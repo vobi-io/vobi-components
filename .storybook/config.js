@@ -18,9 +18,12 @@ addDecorator(backgrounds([
   { name: 'Emerald', value: '#2ecc71' },
 ]))
 
+const req = require.context('../src', true, /.stories.js$/);
+
 function loadStories() {
     require('../stories/stories.scss');
     require('./stories');
+    req.keys().forEach(filename => req(filename));
 }
 
 configure(loadStories, module);
