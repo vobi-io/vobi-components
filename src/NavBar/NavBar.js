@@ -4,6 +4,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import '../styles/main.scss'
+
 import ChatIcon from '../../assets/svg/navbar/Chat.svg'
 import NotificationIcon from '../../assets/svg/navbar/Notification.svg'
 
@@ -18,6 +20,7 @@ const Navbar = styled.span`
 const BrandName = styled.span`
   font-size: 28px;
   font-weight: bold;
+  font-family: 'Raleway', sans-serif;
   color: #2f3033;
 `
 const NavLink = styled.a`
@@ -62,8 +65,9 @@ const RegisterMenu = styled(Nav)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 0px;
   margin-right: 0;
+  padding: 0;
 `
 
 const UserMenu = styled.div`
