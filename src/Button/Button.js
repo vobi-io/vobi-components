@@ -33,6 +33,7 @@ Button.propTypes = {
   primary: PropTypes.bool,
   solid: PropTypes.bool,
   block: PropTypes.bool,
+  disabled: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }
 
@@ -41,6 +42,7 @@ Button.defaultProps = {
   primary: false,
   solid: false,
   block: false,
+  disabled: false,
 }
 
 export default Button
