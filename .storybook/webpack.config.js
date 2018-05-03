@@ -20,20 +20,20 @@ module.exports = (storybookBaseConfig, configType) => {
   });
   
   storybookBaseConfig.module.rules.push({
-        test: /\.stories\.jsx?$/,
-        loaders: [
-          {
-            loader: require.resolve('@storybook/addon-storysource/loader'),
-            options: {
-              prettierConfig: {
-                printWidth: 80,
-                singleQuote: false,
-              }
-            }
+    test: /\.stories\.jsx?$/,
+    loaders: [
+      {
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          prettierConfig: {
+            printWidth: 80,
+            singleQuote: false,
           }
-        ],
-        enforce: 'pre',
-      },);
+        }
+      }
+    ],
+    enforce: 'pre',
+  });
 
   // Return the altered config
   return storybookBaseConfig;
