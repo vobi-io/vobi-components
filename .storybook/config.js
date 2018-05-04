@@ -1,4 +1,4 @@
-import { configure, addDecorator } from '@storybook/react';
+import { configure, setAddon, addDecorator } from '@storybook/react';
 
 import { withNotes } from '@storybook/addon-notes';
 import { configureViewport } from '@storybook/addon-viewport';
@@ -6,6 +6,9 @@ import { setOptions } from '@storybook/addon-options';
 import backgrounds from '@storybook/addon-backgrounds'
 import '@storybook/addon-notes/register'
 import '@storybook/addon-console';
+import infoAddon from '@storybook/addon-info';
+
+setAddon(infoAddon);
 
 addDecorator(backgrounds([
   { name: 'White', value: '#ffffff', default: true },

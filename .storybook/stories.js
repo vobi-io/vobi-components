@@ -14,3 +14,6 @@
  
  // 3. Navigation
  import '../stories/Navigation/index'
+
+ // 4. Info Addon Sample
+ import '../stories/InfoAddonSample/index'
