@@ -16,6 +16,7 @@
     "@storybook/addon-backgrounds": "^3.4.3",
     "@storybook/addon-console": "^1.0.0",
     "@storybook/addon-events": "^3.4.3",
+    "@storybook/addon-info": "^3.4.3",
     "@storybook/addon-knobs": "^3.4.3",
     "@storybook/addon-links": "^3.4.3",
     "@storybook/addon-notes": "^3.4.3",
