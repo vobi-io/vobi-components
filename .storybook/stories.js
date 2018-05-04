@@ -17,3 +17,6 @@
 
  // 4. Extras
  import '../stories/Extras/index'
+
+ // 5. Booking Genius
+ import '../stories/BookingGenius/index'
