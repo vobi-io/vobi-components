@@ -2,9 +2,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
-import { withKnobs, text, boolean, number, array } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-knobs'
 
-import { ArtistCard } from '../../src/BookingGenius'
+import { ArtistCard, Reviews } from '../../src/BookingGenius'
 
 storiesOf('BookingGenius', module)
   .addDecorator(withKnobs)
@@ -44,6 +44,37 @@ storiesOf('BookingGenius', module)
             },
           }}
         />
+      </div>
+    )),
+  )
+  .add(
+    'Reviews',
+    withInfo(`
+      Reviews
+    `)(() => (
+      <div>
+        <div style={{ width: '838px', margin: 'auto' }}>
+          <Reviews
+            rating={number('Rating', 2)}
+            reviews={[{
+              title: 'Team Office for 35, 77 Bleecker Street, New York, NY, United States',
+              description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+              createdAt: new Date(),
+            }, {
+              title: 'Team Office for 35, 77 Bleecker Street, New York, Ge, United States',
+              description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+              createdAt: '2018-04-09T11:38:42.967Z',
+            }, {
+              title: 'Team Office for 35, 77 Bleecker Street, New York, AE, United States',
+              description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+              createdAt: new Date(),
+            }, {
+              title: text('Title', 'Team Office for 35, 77 Bleecker Street, New York, DE, United States'),
+              description: text('Description', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+              createdAt: date('Created at', new Date('Jan 20 2017')),
+            }]}
+          />
+        </div>
       </div>
     )),
   )

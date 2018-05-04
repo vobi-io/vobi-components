@@ -46,6 +46,7 @@
     "storybook-addon-jsx": "^5.3.0"
   },
   "dependencies": {
+    "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-stars": "^2.2.5",
