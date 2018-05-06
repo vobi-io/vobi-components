@@ -4,20 +4,16 @@ import styled from 'styled-components'
 
 import FieldLabel from '../FieldLabel'
 
-const commonStyles = props => (`
+const Input = styled.input`
   min-height: 28px;
   padding: 5px 10px;
   border: solid 1px #cfcfcf;
-  ${!props.flat && 'border-radius: 6px;'};
-  ${props.fullWidth && 'width: 100%'};
-`)
-
-const Textarea = styled.textarea`
-  ${props => commonStyles(props)}
-  ${props => props.disableResize && 'resize: none'};
+  ${props => !props.flat && 'border-radius: 6px;'};
+  ${props => props.fullWidth && 'width: 100%'};
 `
-const Input = styled.input`
-  ${props => commonStyles(props)}
+
+const Textarea = Input.withComponent('textarea').extend`
+  ${props => props.disableResize && 'resize: none'};
 `
 
 const StyledAsterisk = styled.span`
@@ -25,13 +21,23 @@ const StyledAsterisk = styled.span`
   margin-left: 2px;
 `
 
-const TextField = props => (
-  <div>
-    {props.labelText
-      && <FieldLabel>{props.labelText}{props.required && <StyledAsterisk>*</StyledAsterisk>}</FieldLabel>}
-    {props.multiLine ? <Textarea {...props} /> : <Input {...props} />}
-  </div>
-)
+const TextField = (props) => {
+  let childComponent
+
+  if (props.multiLine) {
+    childComponent = <Textarea {...props} />
+  } else {
+    childComponent = <Input {...props} />
+  }
+
+  return (
+    <div>
+      {props.labelText
+        && <FieldLabel>{props.labelText}{props.required && <StyledAsterisk>*</StyledAsterisk>}</FieldLabel>}
+      {childComponent}
+    </div>
+  )
+}
 
 TextField.propTypes = {
   id: PropTypes.string,
@@ -62,11 +68,11 @@ TextField.defaultProps = {
   flat: false,
   disabled: false,
   labelText: null,
-  placeholder: null,
+  placeholder: undefined,
   required: false,
-  value: '',
-  defaultValue: undefined,
-  onChange: () => {},
+  value: undefined,
+  defaultValue: '',
+  onChange: undefined,
 }
 
 export default TextField
