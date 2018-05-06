@@ -42,7 +42,6 @@ storiesOf('Form', module)
           flat={boolean('Flat', false)}
           labelText={text('Label', 'Label')}
           value={select('Value', ['', '1', '2', '3'])}
-          multiple
         >
           <SelectOption value="">Choose</SelectOption>
           <SelectOption value="1">Some Option</SelectOption>
