@@ -1,12 +1,44 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
 
 import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-knobs'
 
-import { ArtistCard, Reviews } from '../../src/BookingGenius'
+import { ArtistCard, Reviews, MessageBox } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
+
+const messages = [
+  {
+    user: {
+      avatar: 'https://akm-img-a-in.tosshub.com/indiatoday/angelina-full-story_647_010418010625.jpg?2dnc3YIX.EMkO9n2JWJbYQJqT1Yro7Dc',
+    },
+    messages: [
+      'Hi',
+      'How are you',
+    ],
+    lastMessageDate: new Date(),
+  }, {
+    user: {
+      avatar: 'https://www.hellomagazine.com/imagenes/celebrities/2017101143124/angelina-jolie-womens-rights-harpers-bazaar/0-220-355/angelina-jolie-womens-rights-t.jpg',
+    },
+    messages: [
+      'Thanks, fine',
+      'And you?',
+    ],
+    lastMessageDate: new Date(),
+  }, {
+    user: {
+      avatar: 'https://akm-img-a-in.tosshub.com/indiatoday/angelina-full-story_647_010418010625.jpg?2dnc3YIX.EMkO9n2JWJbYQJqT1Yro7Dc',
+    },
+    messages: [
+      'Thanks',
+      'Me too',
+    ],
+    lastMessageDate: new Date(),
+  },
+]
 
 storiesOf('BookingGenius', module)
   .addDecorator(withKnobs)
@@ -81,3 +113,18 @@ storiesOf('BookingGenius', module)
     )),
   )
   .add('Feedback Modal', () => <FeedbackModalExample />)
+  .add(
+    'Message Box',
+    withInfo(`
+      Message Box
+    `)(() => (
+      <div>
+        <div style={{ width: '838px', margin: 'auto' }}>
+          <MessageBox
+            messages={messages}
+            onSend={action('On new message send')}
+          />
+        </div>
+      </div>
+    )),
+  )
