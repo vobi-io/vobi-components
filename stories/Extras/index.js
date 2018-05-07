@@ -5,6 +5,7 @@ import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Rating } from '../../src'
+import ModalExample from './ModalExample'
 
 storiesOf('Extras', module)
   .addDecorator(withKnobs)
@@ -18,3 +19,4 @@ storiesOf('Extras', module)
       />
     )),
   )
+  .add('Modal', () => <ModalExample />)

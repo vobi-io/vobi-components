@@ -6,6 +6,8 @@ import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-
 
 import { ArtistCard, Reviews } from '../../src/BookingGenius'
 
+import FeedbackModalExample from './FeedbackModalExample'
+
 storiesOf('BookingGenius', module)
   .addDecorator(withKnobs)
   .add(
@@ -78,3 +80,4 @@ storiesOf('BookingGenius', module)
       </div>
     )),
   )
+  .add('Feedback Modal', () => <FeedbackModalExample />)
