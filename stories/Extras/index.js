@@ -6,6 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import { Rating } from '../../src'
 import ModalExample from './ModalExample'
+import DropdownMenuExample from './DropdownMenuExample'
 
 storiesOf('Extras', module)
   .addDecorator(withKnobs)
@@ -20,3 +21,4 @@ storiesOf('Extras', module)
     )),
   )
   .add('Modal', () => <ModalExample />)
+  .add('Dropdown Menu', () => <DropdownMenuExample />)
