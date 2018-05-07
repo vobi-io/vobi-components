@@ -7,7 +7,7 @@ import { CodeBlock } from '../../utils'
 
 import { Grid } from '../../src'
 
-const data = fromJS([{
+const sampleData = fromJS([{
   firstName: 'John',
   lastName: 'Doe',
   createdAt: new Date(),
@@ -41,7 +41,7 @@ export default class GridExample extends React.Component {
         hideHeader: false,
         dark: false,
       },
-      data,
+      data: sampleData,
     }
 
     this.columnConfig = [
@@ -74,7 +74,7 @@ export default class GridExample extends React.Component {
   toggleData(value) {
     this.setState(prevState => ({
       ...prevState,
-      data: value ? data : fromJS([]),
+      data: value ? sampleData : fromJS([]),
     }))
   }
 
