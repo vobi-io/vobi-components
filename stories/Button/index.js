@@ -1,29 +1,41 @@
 import React from 'react'
-import { storiesOf, setAddon } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs'
+import { ThemeProvider } from 'styled-components'
 
-import { withKnobs } from '@storybook/addon-knobs'
-import JSXAddon from 'storybook-addon-jsx'
+import { Button } from '../../src'
 
-import { Markdown, CodeExample } from '../../utils'
-
-import Readme from '../../src/Button/README.md'
-import Example from './Example'
-import ExampleRaw from '!raw-loader!./Example'
-
-setAddon(JSXAddon)
+import themes from '../themes'
 
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)
-  .addWithJSX('Buttons', () => (
-    <div>
-      <Markdown source={Readme} />
-
-      <h1 className="sb-header">Usage examples</h1>
-
-      <CodeExample title="Standard" code={ExampleRaw}>
-        <Example />
-      </CodeExample>
-
-    </div>
-  ))
+  .add(
+    'Button',
+    withInfo(`
+      Button component info
+    `)(() => (
+      <div>
+        <ThemeProvider
+          theme={themes[select(
+            'Theme', {
+              defaultTheme: 'Default Theme',
+              bookingGeniusTheme: 'Booking Genius Theme',
+            },
+            'defaultTheme',
+          )]}
+        >
+          <Button
+            onClick={action('button-click')}
+            primary={boolean('Primary', false)}
+            solid={boolean('Solid', false)}
+            flat={boolean('Flat', false)}
+            block={boolean('Block', false)}
+          >
+            {text('Default', 'Button Label')}
+          </Button>
+        </ThemeProvider>
+      </div>
+    )),
+  )

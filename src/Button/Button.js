@@ -7,8 +7,9 @@ const StyledButton = styled.button`
   ${props => props.block && 'width: 100%; display: block'};
   padding: 14px 20px;
   background: ${props => (
-    (props.solid && props.primary && '#06c953') ||
-    (props.solid && '#b7b7b7') || 'white')};
+    (props.solid && props.primary && props.theme.button.primary.borderColor) ||
+    (props.solid && props.theme.button.default.borderColor)
+  )};
   font-family: Montserrat;
   font-size: 15px;
   font-weight: bold;
@@ -18,7 +19,15 @@ const StyledButton = styled.button`
   letter-spacing: normal;
   text-align: center;
   cursor: pointer;
-  border: 1px solid ${props => (props.primary ? '#06c953' : '#b7b7b7')};
+  border: ${props => props.theme.button.borderWidth} solid ${(props) => {
+  if (props.primary) return props.theme.button.primary.borderColor
+  return props.theme.button.default.borderColor
+}};
+  color: ${(props) => {
+    if (props.primary && !props.solid) return props.theme.button.primary.color
+    if (props.primary && props.solid) return props.theme.button.solid.color
+    return props.theme.button.color
+  }};
   ${props => !props.flat && 'border-radius: 6px;'}
 `
 
