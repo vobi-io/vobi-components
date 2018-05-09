@@ -10,6 +10,7 @@ import {
   SelectOption,
   RadioField,
   CheckboxField,
+  DateSelector,
 } from '../../src'
 
 storiesOf('Form', module)
@@ -81,6 +82,16 @@ storiesOf('Form', module)
         onChange={action('field-changed')}
         disabled={boolean('Disabled', false)}
         flat={boolean('Flat', false)}
+      />
+    )),
+  )
+  .add(
+    'DateSelector',
+    withInfo(`
+      DateSelector component info
+    `)(() => (
+      <DateSelector
+        labelText={text('DateSelector Label', 'Birth Day')}
       />
     )),
   )

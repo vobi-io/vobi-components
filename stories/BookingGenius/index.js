@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-knobs'
 
-import { ArtistCard, Reviews, MessageBox } from '../../src/BookingGenius'
+import { ArtistCard, Reviews, MessageBox, NumberedCard } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
 
@@ -125,6 +125,19 @@ storiesOf('BookingGenius', module)
             onSend={action('On new message send')}
           />
         </div>
+      </div>
+    )),
+  )
+  .add(
+    'NumberedCard',
+    withInfo(`
+      NumberedCard component info
+    `)(() => (
+      <div style={{ padding: '20px' }}>
+        <NumberedCard
+          text={text('Text', 'Balance')}
+          amount={text('Amount', '$1250')}
+        />
       </div>
     )),
   )

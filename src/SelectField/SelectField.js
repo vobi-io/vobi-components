@@ -5,8 +5,7 @@ import styled from 'styled-components'
 import FieldLabel from '../FieldLabel'
 
 const Select = styled.select`
-  padding: 5px 10px;
-  min-width: 160px;
+  padding: 5px 30px 5px 10px;
   border: solid 1px #cfcfcf;
   height: 40px;
   color: #a3a3a1;
@@ -30,13 +29,13 @@ const StyledAsterisk = styled.span`
 `
 
 const SelectField = props => (
-  <div>
+  <span>
     {props.labelText
       && <FieldLabel>{props.labelText}{props.required && <StyledAsterisk>*</StyledAsterisk>}</FieldLabel>}
     <Select {...props}>
       {props.children}
     </Select>
-  </div>
+  </span>
 )
 
 SelectField.propTypes = {
