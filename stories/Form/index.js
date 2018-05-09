@@ -4,7 +4,13 @@ import { withInfo } from '@storybook/addon-info'
 import { withKnobs, text, boolean, select, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { TextField, SelectField, SelectOption } from '../../src'
+import {
+  TextField,
+  SelectField,
+  SelectOption,
+  RadioField,
+  CheckboxField,
+} from '../../src'
 
 storiesOf('Form', module)
   .addDecorator(withKnobs)
@@ -41,7 +47,9 @@ storiesOf('Form', module)
           required={boolean('Required', false)}
           flat={boolean('Flat', false)}
           labelText={text('Label', 'Label')}
-          value={select('Value', ['', '1', '2', '3'])}
+          value={select('Value', {
+            '': 'Choose', 1: 'Some Option', 2: 'Second Option', 3: 'Disabled Option',
+          })}
         >
           <SelectOption value="">Choose</SelectOption>
           <SelectOption value="1">Some Option</SelectOption>
@@ -49,5 +57,30 @@ storiesOf('Form', module)
           <SelectOption value="3" disabled>Disabled Option</SelectOption>
         </SelectField>
       </div>
+    )),
+  )
+  .add(
+    'RadioField',
+    withInfo(`
+      RadioField component info
+    `)(() => (
+      <RadioField
+        labelText={text('Radio Label', 'Radio label')}
+        onChange={action('field-changed')}
+        disabled={boolean('Disabled', false)}
+      />
+    )),
+  )
+  .add(
+    'CheckboxField',
+    withInfo(`
+      CheckboxField component info
+    `)(() => (
+      <CheckboxField
+        labelText={text('Checkbox Label', 'Checkbox label')}
+        onChange={action('field-changed')}
+        disabled={boolean('Disabled', false)}
+        flat={boolean('Flat', false)}
+      />
     )),
   )

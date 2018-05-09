@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const StyledLabel = styled.label`
+const FieldLabel = styled.label`
   color: #333333;
   font-size: 16px;
   font-weight: normal;
@@ -11,10 +11,6 @@ const StyledLabel = styled.label`
   margin-bottom: 5px;
   margin-left: 2px;
 `
-
-const FieldLabel = props => (
-  <StyledLabel>{props.children}</StyledLabel>
-)
 
 FieldLabel.propTypes = {
   children: PropTypes.node.isRequired,
