@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-knobs'
 
-import { ArtistCard, Reviews, MessageBox, NumberedCard, LogInModal, SocialLogInModal } from '../../src/BookingGenius'
+import { ArtistCard, Reviews, MessageBox, NumberedCard, LogInModal, SocialLogInModal, Favorite } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
 
@@ -143,3 +143,15 @@ storiesOf('BookingGenius', module)
   )
   .add('Log In Modal', () => <LogInModal />)
   .add('Social Log In Modal', () => <SocialLogInModal />)
+  .add(
+    'Favorite',
+    withInfo(`
+      Favorite On/Off
+    `)(() => (
+      <div style={{ display: 'flex', height: '100vh', background: '#F44336', justifyContent: 'center', alignItems: 'center'}}>
+        <Favorite
+          favorited={boolean('favorited', false)}
+        />
+      </div>
+    )),
+  )
