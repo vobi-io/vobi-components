@@ -5,9 +5,40 @@ import { action } from '@storybook/addon-actions'
 
 import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-knobs'
 
-import { ArtistCard, Reviews, MessageBox, NumberedCard, LogInModal, SocialLogInModal } from '../../src/BookingGenius'
+import { ArtistCard, Reviews, MessageBox, NumberedCard, LogInModal, SocialLogInModal, VideoList } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
+
+const videoListDummyData = [
+  {
+    url: 'https://www.youtube.com/watch?v=Qf9w5kBFJKI',
+    title: ''
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=3CsD-JJ0mWE',
+    title: ''
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=P2x3-b6JEj8',
+    title: ''
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=7BG88HMRVUc',
+    title: ''
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=7pFbrxs5FJY',
+    title: ''
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=y6ClrLmdT2A',
+    title: ''
+  },
+  {
+    url: 'https://www.youtube.com/watch?v=byZO3dMLtpA',
+    title: ''
+  }
+]
 
 const messages = [
   {
@@ -143,3 +174,16 @@ storiesOf('BookingGenius', module)
   )
   .add('Log In Modal', () => <LogInModal />)
   .add('Social Log In Modal', () => <SocialLogInModal />)
+  .add(
+    'VideoList',
+    withInfo(`
+      VideoList
+    `)(() => (
+      <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
+        <VideoList 
+          videoData={videoListDummyData} 
+          title={'VideoList'} 
+          numberOfItemsInLine={number('numberOfItemsInLine', 7)} />
+      </div>
+    )),
+  )
