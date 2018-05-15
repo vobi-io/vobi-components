@@ -9,7 +9,7 @@
     "build": "build-storybook -c .storybook -o build",
     "gh-pages": "gulp deploy"
   },
-  "author": "",
+  "author": "vobi.io",
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.3",
