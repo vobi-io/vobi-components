@@ -14,6 +14,7 @@ import {
   SocialLogInModal,
   VideoList,
   Favorite,
+  VideoArea
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -352,3 +353,12 @@ storiesOf('BookingGenius', module)
       </div>
     )),
   )
+  .add('Video Area Component', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '650px', alignItems: 'center' }}>
+      <div>
+        <h1 style={{textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
+        <VideoArea 
+          imageUrl={text('imageUrl', 'https://img.youtube.com/vi/fKopy74weus/maxresdefault.jpg')} />
+      </div>
+    </div>
+))
