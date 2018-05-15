@@ -6,8 +6,9 @@ import FieldLabel from '../FieldLabel'
 
 const Input = styled.input`
   min-height: 28px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border: solid 1px #cfcfcf;
+  box-sizing: border-box;
   ${props => !props.flat && 'border-radius: 6px;'};
   ${props => props.fullWidth && 'width: 100%'};
 `
