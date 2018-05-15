@@ -15,5 +15,8 @@
  // 3. Navigation
  import '../stories/Navigation/index'
 
- // 4. Info Addon Sample
- import '../stories/InfoAddonSample/index'
+ // 4. Extras
+ import '../stories/Extras/index'
+
+ // 5. Booking Genius
+ import '../stories/BookingGenius/index'

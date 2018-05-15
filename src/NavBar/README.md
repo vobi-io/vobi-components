@@ -8,4 +8,7 @@
 
 | propName | propType | defaultValue | isRequired | description |
 |----------|----------|--------------|------------|-------------|
-| disabled | bool | false | - |  when set to true this component is disabled |
+| brandName | string |  | - |  Brand name |
+| leftPages | array |  | - |  Left pages list |
+| rightPages | array |  | - |  Right pages list |
+| user | object |  | - |  User object to determine Usermenu or Register menu |
