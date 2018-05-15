@@ -9,7 +9,7 @@
     "build": "build-storybook -c .storybook -o build",
     "gh-pages": "gulp deploy"
   },
-  "author": "",
+  "author": "vobi.io",
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.3",
@@ -32,6 +32,7 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "gift": "^0.10.2",
     "github-markdown-css": "^2.10.0",
     "gulp": "^3.9.1",
     "gulp-gh-pages": "^0.5.4",
@@ -48,6 +49,7 @@
   "dependencies": {
     "moment": "^2.22.1",
     "react": "^16.3.2",
+    "react-big-calendar": "^0.19.1",
     "react-dom": "^16.3.2",
     "react-modal": "^3.4.4",
     "react-stars": "^2.2.5",
