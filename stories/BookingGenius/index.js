@@ -6,12 +6,14 @@ import { withKnobs, text, boolean, number, array, date } from '@storybook/addon-
 
 import {
   ArtistCard,
-  Reviews, MessageBox,
+  Reviews,
+  MessageBox,
   NumberedCard,
   LogInModal,
   EventCalendar,
   SocialLogInModal,
   VideoList,
+  Favorite,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -325,6 +327,18 @@ storiesOf('BookingGenius', module)
   .add('Log In Modal', () => <LogInModal />)
   .add('Social Log In Modal', () => <SocialLogInModal />)
   .add(
+    'Favorite',
+    withInfo(`
+      Favorite On/Off
+    `)(() => (
+      <div style={{ display: 'flex', height: '100vh', background: '#F44336', justifyContent: 'center', alignItems: 'center' }}>
+        <Favorite
+          favorited={boolean('favorited', false)}
+        />
+      </div>
+    )),
+  )
+  .add(
     'VideoList',
     withInfo(`
       VideoList
@@ -333,7 +347,7 @@ storiesOf('BookingGenius', module)
         <VideoList
           videoData={videoListDummyData}
           title="VideoList"
-          numberOfItemsInLine={number('numberOfItemsInLine', 7)}
+          numberOfItemsInLine={number('numberOfItemsInLine', 5)}
         />
       </div>
     )),
