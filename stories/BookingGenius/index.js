@@ -15,10 +15,22 @@ import {
   VideoList,
   Favorite,
   VideoArea,
+  MessageList,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
 import VideoPreviewModalExample from './VideoPreviewModalExample'
+
+const messagesListItemData = {
+  inboxMessageDate: 1526470210473,
+  replyMessageDate: 1526170210473,
+  inboxAvatar: 'https://upload.wikimedia.org/wikipedia/en/7/70/Shawn_Tok_Profile.jpg',
+  replyAvatar:  'https://i0.wp.com/www.allinsonsphotography.co.uk/wp-content/uploads/2013/04/untitled-20.jpg?w=300',
+  inboxFrom: 'Nick Jonson',
+  replyFrom: 'Nick V',
+  inbox: ['Okay:)'],
+  reply: ['Hi Nick', 'thanks you for the nice talk', 'Waiting your question', 'Cheers', 'Nick']
+}
 
 const videoListDummyData = [
   {
@@ -357,11 +369,15 @@ storiesOf('BookingGenius', module)
   .add('Video Area Component', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '650px', alignItems: 'center' }}>
       <div>
-        <h1 style={{textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
+        <h1 style={{ textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
         <VideoArea 
           imageUrl={text('imageUrl', 'https://img.youtube.com/vi/fKopy74weus/maxresdefault.jpg')} />
       </div>
     </div>
-))
-.add('Video Preview Modal', () => <VideoPreviewModalExample />)
-
+  ))
+  .add('Message List', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
+      <MessageList messages={messagesListItemData} />
+    </div>
+  ))
+  .add('Video Preview Modal', () => <VideoPreviewModalExample />)

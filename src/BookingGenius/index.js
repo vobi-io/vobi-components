@@ -9,5 +9,5 @@ export { default as SocialLogInModal } from './SocialLogInModal'
 export { default as Favorite } from './Favorite'
 export { default as VideoList } from './VideoList'
 export { default as VideoArea } from './VideoArea'
+export { default as MessageList } from './MessageList'
 export { default as VideoPreviewModal } from './VideoPreviewModal'
-
