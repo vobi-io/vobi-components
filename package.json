@@ -8,8 +8,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "build-storybook -c .storybook -o build",
     "publish": "NODE_ENV=production ./node_modules/.bin/webpack --mode production --config webpack.publish.config.js --progress --profile --colors",
-    "gh-pages": "gulp deploy",
-    "postinstall": "webpack --mode production --config webpack.publish.config.js --progress --profile --colors"
+    "gh-pages": "gulp deploy"
   },
   "author": "vobi.io",
   "license": "ISC",
