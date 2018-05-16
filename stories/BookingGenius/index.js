@@ -14,10 +14,11 @@ import {
   SocialLogInModal,
   VideoList,
   Favorite,
-  VideoArea
+  VideoArea,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
+import VideoPreviewModalExample from './VideoPreviewModalExample'
 
 const videoListDummyData = [
   {
@@ -362,3 +363,5 @@ storiesOf('BookingGenius', module)
       </div>
     </div>
 ))
+.add('Video Preview Modal', () => <VideoPreviewModalExample />)
+
