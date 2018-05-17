@@ -9,9 +9,7 @@ import {
   Reviews,
   MessageBox,
   NumberedCard,
-  LogInModal,
   EventCalendar,
-  SocialLogInModal,
   VideoList,
   Favorite,
   VideoArea,
@@ -20,6 +18,8 @@ import {
 
 import FeedbackModalExample from './FeedbackModalExample'
 import VideoPreviewModalExample from './VideoPreviewModalExample'
+import SignupModalExample from './SignupModalExample'
+import SocialSignupModalExample from './SocialSignupModalExample'
 
 const messagesListItemData = {
   inboxMessageDate: 1526470210473,
@@ -338,8 +338,8 @@ storiesOf('BookingGenius', module)
       </div>
     )),
   )
-  .add('Log In Modal', () => <LogInModal />)
-  .add('Social Log In Modal', () => <SocialLogInModal />)
+  .add('Sign Up Modal', () => <SignupModalExample />)
+  .add('Social Sign Up Modal', () => <SocialSignupModalExample />)
   .add(
     'Favorite',
     withInfo(`
