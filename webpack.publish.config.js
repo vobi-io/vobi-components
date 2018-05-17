@@ -20,6 +20,7 @@ module.exports = {
     path: path.join(__dirname, 'lib'),
     filename: 'index.js',
     chunkFilename: '[name].js',
+    libraryTarget: 'commonjs2',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
