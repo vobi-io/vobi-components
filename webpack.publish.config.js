@@ -17,12 +17,14 @@ module.exports = {
     index: './src/index.js',
     BookingGenius: './src/BookingGenius/index.js',
   },
+  devtool: 'source-map',
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'lib'),
     filename: '[name].js',
-    chunkFilename: '[name].js',
-    libraryTarget: 'commonjs2',
+    // chunkFilename: '[name].js',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -72,4 +74,9 @@ module.exports = {
     //   chunkFilename: '[id].css',
     // }),
   ],
+  externals: {
+    react: true,
+    'react-dom': true,
+    'styled-components': true,
+  },
 }
