@@ -13,13 +13,14 @@ loaders.push({
 })
 
 module.exports = {
-  entry: [
-    './src/index.js',
-  ],
+  entry: {
+    'index': './src/index.js',
+    'BookingGenius/index': './src/BookingGenius/index.js',
+  },
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'lib'),
-    filename: 'index.js',
+    filename: '[name].js',
     chunkFilename: '[name].js',
     libraryTarget: 'commonjs2',
   },
@@ -51,14 +52,14 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
       },
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        drop_console: true,
-        drop_debugger: true,
-      },
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false,
+    //     screw_ie8: true,
+    //     drop_console: true,
+    //     drop_debugger: true,
+    //   },
+    // }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin({
       filename: 'style.css',
