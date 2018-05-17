@@ -15,7 +15,7 @@ loaders.push({
 module.exports = {
   entry: {
     'index': './src/index.js',
-    'BookingGenius/index': './src/BookingGenius/index.js',
+    'BookingGenius': './src/BookingGenius/index.js',
   },
   output: {
     publicPath: '/',
