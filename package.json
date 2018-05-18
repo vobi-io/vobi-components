@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "start": "start-storybook -p 9001 -c .storybook",
     "build": "build-storybook -c .storybook -o build",
     "publish": "webpack --config webpack.publish.config.js --progress --profile --colors",
     "gh-pages": "gulp deploy"
