@@ -15,10 +15,30 @@ import {
   VideoList,
   Favorite,
   VideoArea,
-  MessageList
+  MessageList,
+  LatestNews
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
+
+const newsArray = [
+  {
+    id: 0,
+    fullName: 'Nick Johnson',
+    userName: 'raymonfix',
+    date: 1526749828299,
+    text: 'They say you can choose your friends but not your family. I just want you to know that if we…',
+    url: 'https://www.instagram.com/p/BOavR7tDMWt/'
+  },
+  {
+    id: 1,
+    fullName: 'Ray Smith Johnson',
+    userName: 'raymonfixhogwart',
+    date: 1416749828299,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    url: 'https://www.instagram.com/p/BOavR7tDMWt/'
+  }
+]
 
 const messagesListItemData = {
   inboxMessageDate : 1526470210473,
@@ -377,5 +397,10 @@ storiesOf('BookingGenius', module)
 .add('Message List', () => (
   <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
     <MessageList messages={messagesListItemData}/>
+  </div>
+))
+.add('Latest News', () => (
+  <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
+    <LatestNews news={newsArray} />
   </div>
 ))
