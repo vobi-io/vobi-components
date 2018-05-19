@@ -15,7 +15,8 @@ import {
   VideoList,
   Favorite,
   VideoArea,
-  MessageList
+  MessageList,
+  TalentCard
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -379,3 +380,23 @@ storiesOf('BookingGenius', module)
     <MessageList messages={messagesListItemData}/>
   </div>
 ))
+.add(
+  'TalentCard',
+  withInfo(`
+    TalentCard
+  `)(() => (
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <TalentCard
+        artist={{
+          avatar: text('Avatar', 'https://akm-img-a-in.tosshub.com/indiatoday/angelina-full-story_647_010418010625.jpg?2dnc3YIX.EMkO9n2JWJbYQJqT1Yro7Dc'),
+          fullName: text('Full Name', 'Raymond Fix'),
+          address: text('Adress','USA, Florida'),
+          favorited: boolean('favorited', true),
+          rating: number('Rating', 4),
+          genre: text('Genre', 'R&B'),
+          price: number('Price', 130),
+        }}
+      />
+    </div>
+  )),
+)
