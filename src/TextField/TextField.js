@@ -72,7 +72,7 @@ TextField.defaultProps = {
   placeholder: undefined,
   required: false,
   value: undefined,
-  defaultValue: '',
+  defaultValue: undefined,
   onChange: undefined,
 }
 
