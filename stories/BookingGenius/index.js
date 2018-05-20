@@ -14,6 +14,7 @@ import {
   Favorite,
   VideoArea,
   MessageList,
+  TalentCard,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -370,14 +371,34 @@ storiesOf('BookingGenius', module)
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '650px', alignItems: 'center' }}>
       <div>
         <h1 style={{ textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
-        <VideoArea 
+        <VideoArea
           imageUrl={text('imageUrl', 'https://img.youtube.com/vi/fKopy74weus/maxresdefault.jpg')} />
       </div>
     </div>
-  ))
+    ))
   .add('Message List', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
-      <MessageList messages={messagesListItemData} />
+      <MessageList messages={messagesListItemData}/>
     </div>
   ))
+  .add(
+    'TalentCard',
+    withInfo(`
+      TalentCard
+    `)(() => (
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <TalentCard
+          artist={{
+            avatar: text('Avatar', 'https://akm-img-a-in.tosshub.com/indiatoday/angelina-full-story_647_010418010625.jpg?2dnc3YIX.EMkO9n2JWJbYQJqT1Yro7Dc'),
+            fullName: text('Full Name', 'Raymond Fix'),
+            address: text('Adress','USA, Florida'),
+            favorited: boolean('favorited', true),
+            rating: number('Rating', 4),
+            genre: text('Genre', 'R&B'),
+            price: number('Price', 130),
+          }}
+        />
+      </div>
+    )),
+  )
   .add('Video Preview Modal', () => <VideoPreviewModalExample />)
