@@ -45,6 +45,11 @@ npm i -g nvm
 npm run storybook
 ```
 
+* Run storybook with docker:
+```sh
+docker-compose up -d --build
+```
+
 
 ## Contribution
 
