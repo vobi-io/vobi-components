@@ -9,17 +9,19 @@ import {
   Reviews,
   MessageBox,
   NumberedCard,
-  LogInModal,
   EventCalendar,
-  SocialLogInModal,
   VideoList,
   Favorite,
   VideoArea,
   MessageList,
-  LatestNews
+  LatestNews,
+  TalentCard,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
+import VideoPreviewModalExample from './VideoPreviewModalExample'
+import SignupModalExample from './SignupModalExample'
+import SocialSignupModalExample from './SocialSignupModalExample'
 
 const newsArray = [
   {
@@ -41,14 +43,14 @@ const newsArray = [
 ]
 
 const messagesListItemData = {
-  inboxMessageDate : 1526470210473,
+  inboxMessageDate: 1526470210473,
   replyMessageDate: 1526170210473,
   inboxAvatar: 'https://upload.wikimedia.org/wikipedia/en/7/70/Shawn_Tok_Profile.jpg',
   replyAvatar:  'https://i0.wp.com/www.allinsonsphotography.co.uk/wp-content/uploads/2013/04/untitled-20.jpg?w=300',
-  inboxFrom : 'Nick Jonson',
-  replyFrom : 'Nick V',
-  inbox : ['Okay:)'],
-  reply : ['Hi Nick', 'thanks you for the nice talk', 'Waiting your question', 'Cheers', 'Nick']
+  inboxFrom: 'Nick Jonson',
+  replyFrom: 'Nick V',
+  inbox: ['Okay:)'],
+  reply: ['Hi Nick', 'thanks you for the nice talk', 'Waiting your question', 'Cheers', 'Nick']
 }
 
 const videoListDummyData = [
@@ -357,8 +359,8 @@ storiesOf('BookingGenius', module)
       </div>
     )),
   )
-  .add('Log In Modal', () => <LogInModal />)
-  .add('Social Log In Modal', () => <SocialLogInModal />)
+  .add('Sign Up Modal', () => <SignupModalExample />)
+  .add('Social Sign Up Modal', () => <SocialSignupModalExample />)
   .add(
     'Favorite',
     withInfo(`
@@ -388,19 +390,40 @@ storiesOf('BookingGenius', module)
   .add('Video Area Component', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '650px', alignItems: 'center' }}>
       <div>
-        <h1 style={{textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
-        <VideoArea 
+        <h1 style={{ textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
+        <VideoArea
           imageUrl={text('imageUrl', 'https://img.youtube.com/vi/fKopy74weus/maxresdefault.jpg')} />
       </div>
     </div>
-))
-.add('Message List', () => (
-  <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
-    <MessageList messages={messagesListItemData}/>
-  </div>
-))
-.add('Latest News', () => (
-  <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
-    <LatestNews news={newsArray} />
-  </div>
-))
+  ))
+  .add('Video Preview Modal', () => <VideoPreviewModalExample />)
+  .add('Message List', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
+      <MessageList messages={messagesListItemData}/>
+    </div>
+  ))
+  .add(
+    'TalentCard',
+    withInfo(`
+      TalentCard
+    `)(() => (
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <TalentCard
+          artist={{
+            avatar: text('Avatar', 'https://akm-img-a-in.tosshub.com/indiatoday/angelina-full-story_647_010418010625.jpg?2dnc3YIX.EMkO9n2JWJbYQJqT1Yro7Dc'),
+            fullName: text('Full Name', 'Raymond Fix'),
+            address: text('Adress','USA, Florida'),
+            favorited: boolean('favorited', true),
+            rating: number('Rating', 4),
+            genre: text('Genre', 'R&B'),
+            price: number('Price', 130),
+          }}
+        />
+      </div>
+    )),
+  )
+  .add('Latest News', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
+      <LatestNews news={newsArray} />
+    </div>
+  ))
