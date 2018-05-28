@@ -15,7 +15,8 @@ import {
   VideoList,
   Favorite,
   VideoArea,
-  MessageList
+  MessageList,
+  Pagination
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -377,5 +378,10 @@ storiesOf('BookingGenius', module)
 .add('Message List', () => (
   <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
     <MessageList messages={messagesListItemData}/>
+  </div>
+))
+.add('Pagination', () => (
+  <div style={{ display: 'flex', paddingLeft: '50px', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
+    <Pagination pageCount={5}/>
   </div>
 ))
