@@ -14,6 +14,7 @@ import {
   Favorite,
   VideoArea,
   MessageList,
+  Pagination,
   LatestNews,
   TalentCard,
 } from '../../src/BookingGenius'
@@ -396,12 +397,12 @@ storiesOf('BookingGenius', module)
       </div>
     </div>
   ))
-  .add('Video Preview Modal', () => <VideoPreviewModalExample />)
   .add('Message List', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
       <MessageList messages={messagesListItemData}/>
     </div>
   ))
+  .add('Video Preview Modal', () => <VideoPreviewModalExample />)
   .add(
     'TalentCard',
     withInfo(`
@@ -425,5 +426,10 @@ storiesOf('BookingGenius', module)
   .add('Latest News', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
       <LatestNews news={newsArray} />
+    </div>
+  ))
+  .add('Pagination', () => (
+    <div style={{ display: 'flex', paddingLeft: '50px', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
+      <Pagination pageCount={5}/>
     </div>
   ))

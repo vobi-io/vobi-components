@@ -50,6 +50,10 @@ npm run storybook
 docker-compose up -d --build
 ```
 
+* Format code with prettier-eslint:
+```sh
+npm run format
+```
 
 ## Contribution
 

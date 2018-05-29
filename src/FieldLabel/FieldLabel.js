@@ -16,7 +16,6 @@ FieldLabel.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-FieldLabel.defaultProps = {
-}
+FieldLabel.defaultProps = {}
 
 export default FieldLabel

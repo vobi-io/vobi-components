@@ -10,8 +10,7 @@ const Container = FieldLabel.extend`
   padding-left: 25px;
   cursor: pointer;
   font-size: 17px;
-  ${props => props.disabled && 'color: #999999;'}
-  -webkit-user-select: none;
+  ${props => props.disabled && 'color: #999999;'} -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -40,7 +39,7 @@ const Checkmark = styled.span`
   border: 1px solid #c1c1c1;
   border-radius: 50%;
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
   }
@@ -61,7 +60,7 @@ const Radio = styled.input`
 
 const RadioField = props => (
   <Container>
-    { props.labelText && props.labelText }
+    {props.labelText && props.labelText}
     <Radio type="radio" {...props} />
     <Checkmark {...props} />
   </Container>
