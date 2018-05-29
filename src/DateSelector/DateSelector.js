@@ -15,9 +15,9 @@ const range = (s, n) => {
   }
   return days
 }
-const days = range(1, 31);
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const year = range(1900, currentYear).reverse();
+const days = range(1, 31)
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const year = range(1900, currentYear).reverse()
 
 const Wrapper = styled.span`
   margin-right: 5px;
@@ -29,7 +29,7 @@ class DateSelector extends React.Component {
     this.state = {
       day: '',
       month: '',
-      year: ''
+      year: '',
     }
 
     this.handleDayChange = this.handleDayChange.bind(this)
@@ -51,40 +51,45 @@ class DateSelector extends React.Component {
 
   render() {
     return (
-        <div>
-          {this.props.labelText
-            && <FieldLabel>{this.props.labelText}</FieldLabel>}
-          <Wrapper>
-            <SelectField value={this.state.day} onChange={this.handleDayChange} >
-              <SelectOption key="DD" value="">DD</SelectOption>
-              {days.map(i => (
-                <SelectOption key={i} value={i}>
-                  {i}
-                </SelectOption>
-              ))}
-            </SelectField>
-          </Wrapper>
-          <Wrapper>
-            <SelectField value={this.state.month} onChange={this.handleMonthChange} >
-              <SelectOption key="MM" value="">MM</SelectOption>
-              {months.map(i => (
-                <SelectOption key={i} value={i}>
-                  {i}
-                </SelectOption>
-              ))}
-            </SelectField>
-          </Wrapper>
-          <Wrapper>
-            <SelectField value={this.state.year} onChange={this.handleYearChange} >
-              <SelectOption key="YYYY" value="">YYYY</SelectOption>
-              {year.map(i => (
-                <SelectOption key={i} value={i}>
-                  {i}
-                </SelectOption>
-              ))}
-            </SelectField>
-          </Wrapper>
-        </div>
+      <div>
+        {this.props.labelText && <FieldLabel>{this.props.labelText}</FieldLabel>}
+        <Wrapper>
+          <SelectField value={this.state.day} onChange={this.handleDayChange}>
+            <SelectOption key="DD" value="">
+              DD
+            </SelectOption>
+            {days.map(i => (
+              <SelectOption key={i} value={i}>
+                {i}
+              </SelectOption>
+            ))}
+          </SelectField>
+        </Wrapper>
+        <Wrapper>
+          <SelectField value={this.state.month} onChange={this.handleMonthChange}>
+            <SelectOption key="MM" value="">
+              MM
+            </SelectOption>
+            {months.map(i => (
+              <SelectOption key={i} value={i}>
+                {i}
+              </SelectOption>
+            ))}
+          </SelectField>
+        </Wrapper>
+        <Wrapper>
+          <SelectField value={this.state.year} onChange={this.handleYearChange}>
+            <SelectOption key="YYYY" value="">
+              YYYY
+            </SelectOption>
+            {year.map(i => (
+              <SelectOption key={i} value={i}>
+                {i}
+              </SelectOption>
+            ))}
+          </SelectField>
+        </Wrapper>
+      </div>
     )
   }
 }

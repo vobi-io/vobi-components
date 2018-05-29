@@ -33,8 +33,12 @@ const TextField = (props) => {
 
   return (
     <div>
-      {props.labelText
-        && <FieldLabel>{props.labelText}{props.required && <StyledAsterisk>*</StyledAsterisk>}</FieldLabel>}
+      {props.labelText && (
+        <FieldLabel>
+          {props.labelText}
+          {props.required && <StyledAsterisk>*</StyledAsterisk>}
+        </FieldLabel>
+      )}
       {childComponent}
     </div>
   )

@@ -1,1 +1,1 @@
-export { default } from './VideoPreviewModal';
+export { default } from './VideoPreviewModal'

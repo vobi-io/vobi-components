@@ -54,11 +54,11 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
   .rbc-calendar *,
   .rbc-calendar *:before,
@@ -95,8 +95,8 @@ const StyledBigCalendar = styled(BigCalendar)`
   .rbc-header {
     overflow: hidden;
     -webkit-flex: 1 0 0%;
-        -ms-flex: 1 0 0%;
-            flex: 1 0 0%;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 0 3px;
@@ -110,11 +110,11 @@ const StyledBigCalendar = styled(BigCalendar)`
     /* border-bottom: 1px solid #DDD; */
   }
   .rbc-header + .rbc-header {
-    ${props => props.mode === 'minimal' || 'border-left: 1px solid #DDD;'}
+    ${props => props.mode === 'minimal' || 'border-left: 1px solid #DDD;'};
   }
   .rbc-rtl .rbc-header + .rbc-header {
     border-left-width: 0;
-    ${props => props.mode === 'minimal' || 'border-left: 1px solid #DDD;'}
+    ${props => props.mode === 'minimal' || 'border-left: 1px solid #DDD;'};
   }
   .rbc-header > a,
   .rbc-header > a:active,
@@ -125,8 +125,8 @@ const StyledBigCalendar = styled(BigCalendar)`
   .rbc-row-content {
     position: relative;
     -moz-user-select: none;
-     -ms-user-select: none;
-         user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-user-select: none;
     z-index: 4;
   }
@@ -138,15 +138,15 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-bottom: 10px;
     font-size: 16px;
   }
   .rbc-toolbar .rbc-toolbar-label {
     -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     padding: 0 10px;
     text-align: center;
   }
@@ -159,7 +159,7 @@ const StyledBigCalendar = styled(BigCalendar)`
     background: none;
     background-image: none;
     border: 1px solid #ccc;
-    padding: .375rem 1rem;
+    padding: 0.375rem 1rem;
     border-radius: 4px;
     line-height: normal;
     white-space: nowrap;
@@ -274,8 +274,8 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   .rbc-row-segment {
     padding: 0 1px 1px 1px;
@@ -295,34 +295,34 @@ const StyledBigCalendar = styled(BigCalendar)`
   }
   .rbc-month-view {
     position: relative;
-    border: 1px solid #DDD;
+    border: 1px solid #ddd;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
     width: ${(props) => {
     if (props.mode === 'minimal') return '265px'
     return '100%'
   }};
     -moz-user-select: none;
-     -ms-user-select: none;
-         user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-user-select: none;
     height: 100%;
-    ${props => props.mode === 'minimal' && 'padding: 28px'}
+    ${props => props.mode === 'minimal' && 'padding: 28px'};
   }
   .rbc-month-header {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   .rbc-month-row {
     display: -webkit-flex;
@@ -330,24 +330,24 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: flex;
     position: relative;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
     -webkit-flex-basis: 0px;
-        -ms-flex-preferred-size: 0px;
-            flex-basis: 0px;
+    -ms-flex-preferred-size: 0px;
+    flex-basis: 0px;
     overflow: hidden;
     height: 100%;
   }
   .rbc-month-row + .rbc-month-row {
-    ${props => props.mode === 'minimal' || 'border-top: 1px solid #DDD;'}
+    ${props => props.mode === 'minimal' || 'border-top: 1px solid #DDD;'};
   }
   .rbc-date-cell {
     -webkit-flex: 1 1 0;
-        -ms-flex: 1 1 0px;
-            flex: 1 1 0;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
     min-width: 0;
     padding-right: 5px;
     padding-left: 6px;
@@ -372,26 +372,26 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
     overflow: hidden;
   }
   .rbc-day-bg {
     -webkit-flex: 1 0 0%;
-        -ms-flex: 1 0 0%;
-            flex: 1 0 0%;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
   }
   .rbc-day-bg + .rbc-day-bg {
     /* border-left: 1px solid #DDD; */
-    ${props => props.mode === 'minimal' || 'border-left: 1px solid #cccccc;'}
+    ${props => props.mode === 'minimal' || 'border-left: 1px solid #cccccc;'};
   }
   .rbc-rtl .rbc-day-bg + .rbc-day-bg {
     border-left-width: 0;
     /* border-right: 1px solid #DDD; */
-    ${props => !props.minimal && 'border-left: 1px solid #cccccc;'}
+    ${props => !props.minimal && 'border-left: 1px solid #cccccc;'};
   }
   .rbc-overlay {
     position: absolute;
@@ -414,16 +414,16 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
     overflow: auto;
   }
   .rbc-agenda-view table.rbc-agenda-table {
     width: 100%;
-    border: 1px solid #DDD;
+    border: 1px solid #ddd;
     border-spacing: 0;
     border-collapse: collapse;
   }
@@ -437,19 +437,19 @@ const StyledBigCalendar = styled(BigCalendar)`
     text-transform: lowercase;
   }
   .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
-    border-left: 1px solid #DDD;
+    border-left: 1px solid #ddd;
   }
   .rbc-rtl .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
     border-left-width: 0;
-    border-right: 1px solid #DDD;
+    border-right: 1px solid #ddd;
   }
   .rbc-agenda-view table.rbc-agenda-table tbody > tr + tr {
-    border-top: 1px solid #DDD;
+    border-top: 1px solid #ddd;
   }
   .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
     padding: 3px 5px;
     text-align: left;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #ddd;
   }
   .rbc-rtl .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
     text-align: right;
@@ -475,30 +475,30 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     min-height: 100%;
   }
   .rbc-time-column .rbc-timeslot-group {
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
   }
   .rbc-timeslot-group {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #ddd;
     min-height: 40px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-flow: column nowrap;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
   }
   .rbc-time-gutter,
   .rbc-header-gutter {
     -webkit-flex: none;
-        -ms-flex: none;
-            flex: none;
+    -ms-flex: none;
+    flex: none;
   }
   .rbc-label {
     padding: 0 5px;
@@ -525,26 +525,26 @@ const StyledBigCalendar = styled(BigCalendar)`
     max-height: 100%;
     min-height: 20px;
     -webkit-flex-flow: column wrap;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
     -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     overflow: hidden;
     position: absolute;
   }
   .rbc-day-slot .rbc-event-label {
     -webkit-flex: none;
-        -ms-flex: none;
-            flex: none;
+    -ms-flex: none;
+    flex: none;
     padding-right: 5px;
     width: auto;
   }
   .rbc-day-slot .rbc-event-content {
     width: 100%;
     -webkit-flex: 1 1 0;
-        -ms-flex: 1 1 0px;
-            flex: 1 1 0;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
     word-wrap: break-word;
     line-height: 1;
     height: 100%;
@@ -555,8 +555,8 @@ const StyledBigCalendar = styled(BigCalendar)`
   }
   .rbc-time-slot {
     -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
   }
   .rbc-time-slot.rbc-now {
     font-weight: bold;
@@ -581,13 +581,13 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     width: 100%;
-    border: 1px solid #DDD;
+    border: 1px solid #ddd;
     min-height: 0;
   }
   .rbc-time-view .rbc-time-gutter {
@@ -611,71 +611,71 @@ const StyledBigCalendar = styled(BigCalendar)`
     display: -ms-flexbox;
     display: flex;
     -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
     -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   .rbc-time-header.rbc-overflowing {
-    border-right: 1px solid #DDD;
+    border-right: 1px solid #ddd;
   }
   .rbc-rtl .rbc-time-header.rbc-overflowing {
     border-right-width: 0;
-    border-left: 1px solid #DDD;
+    border-left: 1px solid #ddd;
   }
   .rbc-time-header > .rbc-row:first-child {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #ddd;
   }
   .rbc-time-header > .rbc-row.rbc-row-resource {
-    border-bottom: 1px solid #DDD;
+    border-bottom: 1px solid #ddd;
   }
   .rbc-time-header-content {
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     min-width: 0;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    border-left: 1px solid #DDD;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-left: 1px solid #ddd;
   }
   .rbc-rtl .rbc-time-header-content {
     border-left-width: 0;
-    border-right: 1px solid #DDD;
+    border-right: 1px solid #ddd;
   }
   .rbc-time-content {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex: 1 0 0%;
-        -ms-flex: 1 0 0%;
-            flex: 1 0 0%;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
     -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     width: 100%;
-    border-top: 2px solid #DDD;
+    border-top: 2px solid #ddd;
     overflow-y: auto;
     position: relative;
   }
   .rbc-time-content > .rbc-time-gutter {
     -webkit-flex: none;
-        -ms-flex: none;
-            flex: none;
+    -ms-flex: none;
+    flex: none;
   }
   .rbc-time-content > * + * > * {
-    border-left: 1px solid #DDD;
+    border-left: 1px solid #ddd;
   }
   .rbc-rtl .rbc-time-content > * + * > * {
     border-left-width: 0;
-    border-right: 1px solid #DDD;
+    border-right: 1px solid #ddd;
   }
   .rbc-time-content > .rbc-day-slot {
     width: 100%;
     -moz-user-select: none;
-     -ms-user-select: none;
-         user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-user-select: none;
   }
   .rbc-current-time-indicator {

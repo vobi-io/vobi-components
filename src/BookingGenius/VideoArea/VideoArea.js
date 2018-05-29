@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import PlayIcon from '../../../assets/svg/BookingGenius/Play.svg';
+import PlayIcon from '../../../assets/svg/BookingGenius/Play.svg'
 
 const ParentDiv = styled.div`
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
 `
 
 const Thumbnail = styled.img`
-    display: block;
-    width: 840px;
-    height: 472.5px;
+  display: block;
+  width: 840px;
+  height: 472.5px;
 `
 
 const PlayButton = styled.div`
@@ -29,20 +29,20 @@ const PlayButton = styled.div`
 `
 
 const Icon = styled.img`
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 34px;
-    transform: translateY(-50%);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 34px;
+  transform: translateY(-50%);
 `
 
 const VideoArea = props => (
-    <ParentDiv>
-        <Thumbnail src={props.imageUrl} />
-        <PlayButton>
-            <Icon src={PlayIcon} alt="play-icon" />
-        </PlayButton>
-    </ParentDiv>
+  <ParentDiv>
+    <Thumbnail src={props.imageUrl} />
+    <PlayButton>
+      <Icon src={PlayIcon} alt="play-icon" />
+    </PlayButton>
+  </ParentDiv>
 )
 
 VideoArea.propTypes = {

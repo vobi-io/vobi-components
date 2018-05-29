@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Option = styled.option`
-`
+const Option = styled.option``
 
 const SelectOption = ({ disabled, value, children }) => (
   <Option disabled={disabled} value={value}>

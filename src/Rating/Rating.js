@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import ReactStars from 'react-stars'
 import styled from 'styled-components'
 
-const Container = styled.div`
-`
+const Container = styled.div``
 
 const Rating = props => (
   <Container>
