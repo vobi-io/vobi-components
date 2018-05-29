@@ -27,18 +27,18 @@ const Content = styled.div`
   text-align: left;
   color: #2f3033;
   ::-webkit-scrollbar {
-      width: 10px;
+    width: 10px;
   }
   ::-webkit-scrollbar-track {
     background-color: #eeeeee;
-      width: 15px;
+    width: 15px;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 6.5px;
     background-color: #d1d1d1;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
   }
 `
 const Footer = styled.div`
@@ -49,7 +49,6 @@ const Form = styled.form`
   display: flex;
   padding-top: 25px;
   flex-grow: 1;
-
 `
 const Input = styled.input`
   background-color: #ffffff;
@@ -116,30 +115,20 @@ const MessageBox = props => (
       {props.messages.map(item => (
         <ListItem>
           <Avatar src={item.user.avatar} />
-          <MessageList>
-            {item.messages.map(message => (
-              <Message>{message}</Message>
-            ))}
-          </MessageList>
-          <Date>
-            {moment(item.lastMessageDate).format('h:mm a')}
-          </Date>
+          <MessageList>{item.messages.map(message => <Message>{message}</Message>)}</MessageList>
+          <Date>{moment(item.lastMessageDate).format('h:mm a')}</Date>
         </ListItem>
       ))}
     </Content>
     <Footer>
-      <Form onSubmit={(e) => {
-        e.preventDefault()
-        props.onSend(e)
-      }}
+      <Form
+        onSubmit={(e) => {
+          e.preventDefault()
+          props.onSend(e)
+        }}
       >
-        <Input
-          placeholder="Type your message"
-          required
-        />
-        <Button type="submit">
-          Send
-        </Button>
+        <Input placeholder="Type your message" required />
+        <Button type="submit">Send</Button>
       </Form>
     </Footer>
   </Container>

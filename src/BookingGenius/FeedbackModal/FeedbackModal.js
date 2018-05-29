@@ -48,7 +48,7 @@ const Footer = styled.div`
   display: flex;
 `
 const Icon = styled.img`
-  cursor: pointer;  
+  cursor: pointer;
 `
 const Title = styled.span`
   font-size: 36px;
@@ -107,23 +107,23 @@ const FeedbackModal = props => (
         <SubTitle>Privte Talent feedback</SubTitle>
         <Small>This review will be published on the talent’s profile</Small>
         <TextFieldWrapper>
-          <TextField
-            multiLine
-          />
+          <TextField multiLine />
         </TextFieldWrapper>
         <SubTitle>Prive Talent feedback</SubTitle>
         <Small>We will show it to the talent only</Small>
         <TextFieldWrapper>
-          <TextField
-            multiLine
-          />
+          <TextField multiLine />
         </TextFieldWrapper>
       </Content>
       <Footer>
         <SubmitWrapper>
-          <Button flat primary solid onClick={props.onRequestClose}>Provide</Button>
+          <Button flat primary solid onClick={props.onRequestClose}>
+            Provide
+          </Button>
         </SubmitWrapper>
-        <Button flat onClick={props.onRequestClose}>Cancel</Button>
+        <Button flat onClick={props.onRequestClose}>
+          Cancel
+        </Button>
       </Footer>
     </Container>
   </Modal>

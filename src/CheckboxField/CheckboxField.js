@@ -40,9 +40,8 @@ const Checkmark = styled.span`
   width: 18px;
   background-color: white;
   border: 1px solid #c1c1c1;
-  ${props => !props.flat && 'border-radius: 2px;'}
-  &:after {
-    content: "";
+  ${props => !props.flat && 'border-radius: 2px;'} &:after {
+    content: '';
     position: absolute;
     display: none;
   }
@@ -63,7 +62,7 @@ const Checkbox = styled.input`
 
 const CheckboxField = props => (
   <Container>
-    { props.labelText && props.labelText }
+    {props.labelText && props.labelText}
     <Checkbox type="checkbox" {...props} />
     <Checkmark {...props} />
   </Container>
