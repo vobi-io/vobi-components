@@ -1,1 +1,1 @@
-export { default } from './SocialSignupModal';
+export { default } from './SocialSignupModal'

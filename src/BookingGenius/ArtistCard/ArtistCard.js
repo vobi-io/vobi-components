@@ -41,9 +41,7 @@ const Name = styled.span`
   color: #303030;
 `
 
-const Verified = styled.img`
-  
-`
+const Verified = styled.img``
 
 const Address = styled.span`
   margin-top: 5px;
@@ -108,28 +106,18 @@ const PriceRange = styled.span`
   align-items: center;
 `
 
-
 const ArtistCard = props => (
   <Container>
     <Avatar src={props.artist.avatar} />
     <Info>
       <NameContainer>
-        <Name>
-          {props.artist.fullName}
-        </Name>
+        <Name>{props.artist.fullName}</Name>
         {props.artist.verified && <Verified src={VerifiedIcon} />}
       </NameContainer>
-      <Address>
-        {props.artist.address}
-      </Address>
-      <Tags>
-        {props.artist.tags.join(', ')}
-      </Tags>
+      <Address>{props.artist.address}</Address>
+      <Tags>{props.artist.tags.join(', ')}</Tags>
       <RatingContainer>
-        <Rating
-          value={props.artist.rating}
-          disabled
-        />
+        <Rating value={props.artist.rating} disabled />
         <Reviews>({props.artist.reviews.length})</Reviews>
       </RatingContainer>
       <PriceRange>
@@ -144,7 +132,6 @@ ArtistCard.propTypes = {
   artist: PropTypes.object.isRequired,
 }
 
-ArtistCard.defaultProps = {
-}
+ArtistCard.defaultProps = {}
 
 export default ArtistCard
