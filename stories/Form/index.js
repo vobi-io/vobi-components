@@ -11,6 +11,7 @@ import {
   RadioField,
   CheckboxField,
   DateSelector,
+  DatePicker
 } from '../../src'
 
 storiesOf('Form', module)
@@ -93,5 +94,15 @@ storiesOf('Form', module)
       <DateSelector
         labelText={text('DateSelector Label', 'Birth Day')}
       />
+    )),
+  )
+  .add(
+    'Date Picker',
+    withInfo(`
+      Date Picker component info
+    `)(() => (
+      <div style={{ padding: '30px' }}>
+        <DatePicker />
+      </div>
     )),
   )
