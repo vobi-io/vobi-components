@@ -8,7 +8,7 @@ module.exports = (storybookBaseConfig, configType) => {
 
   // Make whatever fine-grained changes you need
   storybookBaseConfig.module.rules.push({
-    test: /\.scss$/,
+    test: /\.s?css$/,
     loaders: ["style-loader", "css-loader", "sass-loader"],
     // include: path.resolve(__dirname, "../")
   });

@@ -11,6 +11,7 @@ import {
   RadioField,
   CheckboxField,
   DateSelector,
+  ReactTimePicker
 } from '../../src'
 
 storiesOf('Form', module)
@@ -93,5 +94,15 @@ storiesOf('Form', module)
       <DateSelector
         labelText={text('DateSelector Label', 'Birth Day')}
       />
+    )),
+  )
+  .add(
+    'React Time Picker',
+    withInfo(`
+      React Time Picker component info
+    `)(() => (
+      <div style={{ padding: '99px' }}>
+        <ReactTimePicker/>
+      </div>
     )),
   )

@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "moment": "^2.22.1",
+    "rc-time-picker": "^3.3.1",
     "react-big-calendar": "^0.19.1",
     "react-modal": "^3.4.4",
     "react-stars": "^2.2.5"
