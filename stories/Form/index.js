@@ -11,7 +11,8 @@ import {
   RadioField,
   CheckboxField,
   DateSelector,
-  DatePicker
+  ReactTimePicker,
+  DatePicker,
 } from '../../src'
 
 storiesOf('Form', module)
@@ -50,13 +51,18 @@ storiesOf('Form', module)
           flat={boolean('Flat', false)}
           labelText={text('Label', 'Label')}
           value={select('Value', {
-            '': 'Choose', 1: 'Some Option', 2: 'Second Option', 3: 'Disabled Option',
+            '': 'Choose',
+            1: 'Some Option',
+            2: 'Second Option',
+            3: 'Disabled Option',
           })}
         >
           <SelectOption value="">Choose</SelectOption>
           <SelectOption value="1">Some Option</SelectOption>
           <SelectOption value="2">Second Option</SelectOption>
-          <SelectOption value="3" disabled>Disabled Option</SelectOption>
+          <SelectOption value="3" disabled>
+            Disabled Option
+          </SelectOption>
         </SelectField>
       </div>
     )),
@@ -90,11 +96,7 @@ storiesOf('Form', module)
     'DateSelector',
     withInfo(`
       DateSelector component info
-    `)(() => (
-      <DateSelector
-        labelText={text('DateSelector Label', 'Birth Day')}
-      />
-    )),
+    `)(() => <DateSelector labelText={text('DateSelector Label', 'Birth Day')} />),
   )
   .add(
     'Date Picker',
@@ -103,6 +105,16 @@ storiesOf('Form', module)
     `)(() => (
       <div style={{ padding: '30px' }}>
         <DatePicker />
+      </div>
+    )),
+  )
+  .add(
+    'React Time Picker',
+    withInfo(`
+      React Time Picker component info
+    `)(() => (
+      <div style={{ padding: '99px' }}>
+        <ReactTimePicker />
       </div>
     )),
   )
