@@ -15,4 +15,5 @@ export { default as RadioField } from './RadioField'
 export { default as CheckboxField } from './CheckboxField'
 export { default as DateSelector } from './DateSelector'
 export { default as ReactTimePicker } from './ReactTimePicker'
+export { default as DatePicker } from './DatePicker'
 export { BookingGenius }
