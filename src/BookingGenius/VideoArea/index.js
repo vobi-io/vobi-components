@@ -1,1 +1,1 @@
-export { default } from './VideoArea';
+export { default } from './VideoArea'

@@ -6,8 +6,8 @@ import styled from 'styled-components'
 
 import '../styles/main.scss'
 
-import BellIcon from './BellIcon';
-import ChatIcon from './ChatIcon';
+import BellIcon from './BellIcon'
+import ChatIcon from './ChatIcon'
 
 const Navbar = styled.span`
   display: flex;
@@ -81,7 +81,7 @@ const AvatarContainer = styled.div`
   margin-right: 16px;
   position: relative;
   :before {
-    content:" ";
+    content: ' ';
     width: 0;
     height: 0;
     border-style: solid;
@@ -104,12 +104,12 @@ const Avatar = styled.img`
 const Icon = styled.div`
   margin-right: 15px;
   svg {
-      fill: ${props => {
-        if (props.primary) return '#007bff';
-        else if(props.green) return '#06C953';
-        else if(props.red) return '#dc3545';
-        else return '#2F3033';
-      }}
+    fill: ${(props) => {
+    if (props.primary) return '#007bff'
+    else if (props.green) return '#06C953'
+    else if (props.red) return '#dc3545'
+    return '#2F3033'
+  }};
   }
 `
 
@@ -117,7 +117,7 @@ const NavBar = props => (
   <Navbar>
     <Wrapper>
       <BrandName>{props.brandName}</BrandName>
-      {props.leftPages &&
+      {props.leftPages && (
         <Nav>
           {props.leftPages.map(item => (
             <NavItem key={item.title}>
@@ -125,10 +125,10 @@ const NavBar = props => (
             </NavItem>
           ))}
         </Nav>
-      }
+      )}
     </Wrapper>
     <Wrapper>
-      {props.rightPages &&
+      {props.rightPages && (
         <Nav>
           {props.rightPages.map(item => (
             <NavItem key={item.title}>
@@ -136,7 +136,7 @@ const NavBar = props => (
             </NavItem>
           ))}
         </Nav>
-      }
+      )}
       {!props.user ? (
         <RegisterMenu>
           <NavItem>

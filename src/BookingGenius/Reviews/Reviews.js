@@ -28,8 +28,7 @@ const Title = styled.span`
   margin-right: 10px;
 `
 
-const List = styled.div`
-`
+const List = styled.div``
 const ListItem = styled.div`
   padding-bottom: 12px;
   margin-bottom: 12px;
@@ -89,14 +88,10 @@ const Reviews = props => (
       {props.reviews.map(item => (
         <ListItem key={item.title}>
           <ListHeader>
-            <ListTitle>
-              {item.title}
-            </ListTitle>
+            <ListTitle>{item.title}</ListTitle>
             <ListDate>{moment(item.createdAt).format('DD.MM.YYYY')}</ListDate>
           </ListHeader>
-          <ListContent>
-            {item.description}
-          </ListContent>
+          <ListContent>{item.description}</ListContent>
         </ListItem>
       ))}
     </List>

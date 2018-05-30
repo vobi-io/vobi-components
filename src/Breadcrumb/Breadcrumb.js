@@ -8,9 +8,7 @@ const StyledWrapper = styled.div`
   display: flex;
 `
 
-const Step = styled.div`
-  
-`
+const Step = styled.div``
 
 const StepTitle = styled.span`
   font-size: 20px;
@@ -19,7 +17,7 @@ const StepTitle = styled.span`
 `
 
 const Icon = styled.img`
- margin: 0 20px;
+  margin: 0 20px;
 `
 
 const Breadcrumb = props => (
@@ -33,7 +31,8 @@ const Breadcrumb = props => (
             }
           }}
           disabled={item.disabled}
-        >{item.title}
+        >
+          {item.title}
         </StepTitle>
         {props.steps.length - 1 !== key && <Icon src={ArrowIcon} />}
       </Step>
@@ -45,7 +44,6 @@ Breadcrumb.propTypes = {
   steps: PropTypes.array.isRequired,
 }
 
-Breadcrumb.defaultProps = {
-}
+Breadcrumb.defaultProps = {}
 
 export default Breadcrumb
