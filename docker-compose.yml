@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  vobi-components-storybook:
+    container_name: vobi-components-storybook
+    build:
+      context: .
+      dockerfile: Dockerfile-storybook
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '9001:9001'
+    environment:
+      - NODE_ENV=development

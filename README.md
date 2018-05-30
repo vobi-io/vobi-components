@@ -45,6 +45,15 @@ npm i -g nvm
 npm run storybook
 ```
 
+* Run storybook with docker:
+```sh
+docker-compose up -d --build
+```
+
+* Format code with prettier-eslint:
+```sh
+npm run format
+```
 
 ## Contribution
 

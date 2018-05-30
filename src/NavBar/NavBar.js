@@ -6,8 +6,8 @@ import styled from 'styled-components'
 
 import '../styles/main.scss'
 
-import ChatIcon from '../../assets/svg/navbar/Chat.svg'
-import NotificationIcon from '../../assets/svg/navbar/Notification.svg'
+import BellIcon from './BellIcon'
+import ChatIcon from './ChatIcon'
 
 const Navbar = styled.span`
   display: flex;
@@ -77,14 +77,11 @@ const UserMenu = styled.div`
   margin-left: 60px;
 `
 
-const Icon = styled.img`
-  margin-right: 15px;
-`
 const AvatarContainer = styled.div`
   margin-right: 16px;
   position: relative;
   :before {
-    content:" ";
+    content: ' ';
     width: 0;
     height: 0;
     border-style: solid;
@@ -104,11 +101,23 @@ const Avatar = styled.img`
   border-radius: 50%;
 `
 
+const Icon = styled.div`
+  margin-right: 15px;
+  svg {
+    fill: ${(props) => {
+    if (props.primary) return '#007bff'
+    else if (props.green) return '#06C953'
+    else if (props.red) return '#dc3545'
+    return '#2F3033'
+  }};
+  }
+`
+
 const NavBar = props => (
   <Navbar>
     <Wrapper>
       <BrandName>{props.brandName}</BrandName>
-      {props.leftPages &&
+      {props.leftPages && (
         <Nav>
           {props.leftPages.map(item => (
             <NavItem key={item.title}>
@@ -116,10 +125,10 @@ const NavBar = props => (
             </NavItem>
           ))}
         </Nav>
-      }
+      )}
     </Wrapper>
     <Wrapper>
-      {props.rightPages &&
+      {props.rightPages && (
         <Nav>
           {props.rightPages.map(item => (
             <NavItem key={item.title}>
@@ -127,7 +136,7 @@ const NavBar = props => (
             </NavItem>
           ))}
         </Nav>
-      }
+      )}
       {!props.user ? (
         <RegisterMenu>
           <NavItem>
@@ -139,8 +148,18 @@ const NavBar = props => (
         </RegisterMenu>
       ) : (
         <UserMenu>
-          <Icon src={ChatIcon} alt="" />
-          <Icon src={NotificationIcon} alt="" />
+          <Icon primary>
+            <ChatIcon />
+          </Icon>
+          <Icon>
+            <ChatIcon />
+          </Icon>
+          <Icon green>
+            <BellIcon />
+          </Icon>
+          <Icon red>
+            <BellIcon />
+          </Icon>
           <AvatarContainer>
             <Avatar src={props.user.avatar} alt="" />
           </AvatarContainer>
