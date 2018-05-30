@@ -14,9 +14,12 @@
  
  // 3. Navigation
  import '../stories/Navigation/index'
+ 
+ // 4. Grid
+ import '../stories/Grid/index'
 
- // 4. Extras
+ // 5. Extras
  import '../stories/Extras/index'
 
- // 5. Booking Genius
+ // 6. Booking Genius
  import '../stories/BookingGenius/index'
