@@ -23,12 +23,21 @@ const Heading = styled.h1`
     color: #303030;
     padding: 18px 0;
     margin: 0;
+
+    @media (max-width: 750px) {
+        text-align: center;
+    }
 `
 
 const Row = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const BookingDetails = styled.div`
@@ -38,6 +47,12 @@ const BookingDetails = styled.div`
     padding: 25px 20px;
     flex-grow: 1;
     margin-right: 25px;
+
+    @media (max-width: 750px) {
+        order: 1;
+        margin-top: 20px;
+        margin-right: 0;
+    }
 `
 const Text = styled.span`
     display: inline-block;
@@ -61,6 +76,35 @@ const Label = styled.span`
 const DateRow = styled.div`
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+
+    @media (max-width: 1090px) {
+        flex-direction: column;
+        align-items: flex-start
+    }
+`
+const DateGroup = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const Space = styled.div`
+    background: transparent;
+    width: 4px;
+`
+
+const Span = styled.span`
+    font-family: ProximaNova;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1f1e1e;
+    opacity: 0.64;
+    margin: 0 10px;
+
+    @media (max-width: 1090px) {
+        margin: 7px 0;
+        margin-left: 145px;
+    }
 `
 
 const ButtonRow = styled.div`
@@ -91,13 +135,23 @@ const RequestLayout = props => (
                     <BookingDetails>
                         <Text>Details</Text>
                         <Label>Type of Event</Label>
-                        <SelectField style={{ width: '320px'}}>
+                        <SelectField style={{ width: '320px', marginBottom: '8px'}}>
                             <SelectOption>Party</SelectOption>
                             <SelectOption>Festival</SelectOption>
                         </SelectField>
                         <Label>Start / End</Label>
                         <DateRow>
-
+                            <DateGroup>
+                                <DatePicker placeholder={'Start Date'} />
+                                <Space />
+                                <ReactTimePicker />
+                            </DateGroup>
+                            <Span>to</Span>
+                            <DateGroup>
+                                <DatePicker placeholder={'End Date'} />
+                                <Space />
+                                <ReactTimePicker />
+                            </DateGroup>
                         </DateRow>
                         <Label>Venue Location</Label>
                         <TextField
@@ -106,8 +160,9 @@ const RequestLayout = props => (
                             labelText=""
                             placeholder="Enter venue location"
                             rows={null}
+                            style={{ marginBottom: '10px' }}
                         />
-                        <Label>Venue Location</Label>
+                        <Label>Your message to the talent</Label>
                         <TextField
                             fullWidth
                             flat
@@ -116,6 +171,7 @@ const RequestLayout = props => (
                             multiLine
                             rows={6}
                             disableResize
+                            style={{ marginBottom: '10px' }}
                         />
                         <Label>Fee</Label>
                         <TextField
