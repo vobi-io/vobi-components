@@ -6,6 +6,7 @@ import VerifiedIcon from '../../../assets/svg/BookingGenius/Verified.svg'
 import DollarIcon from '../../../assets/svg/BookingGenius/Dollar.svg'
 
 import { Rating } from '../..'
+import Button from '../TalentPage/Button'
 
 const Container = styled.div`
   display: flex;
@@ -107,41 +108,85 @@ const PriceRange = styled.span`
   display: flex;
   align-items: center;
 `
+const ButtonContainer = styled.div`
+  padding-bottom: 23px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
 
-
-const ArtistCard = props => (
-  <Container>
-    <Avatar src={props.artist.avatar} />
-    <Info>
-      <NameContainer>
-        <Name>
-          {props.artist.fullName}
-        </Name>
-        {props.artist.verified && <Verified src={VerifiedIcon} />}
-      </NameContainer>
-      <Address>
-        {props.artist.address}
-      </Address>
-      <Tags>
-        {props.artist.tags.join(', ')}
-      </Tags>
-      <RatingContainer>
-        <Rating
-          value={props.artist.rating}
-          disabled
-        />
-        <Reviews>({props.artist.reviews.length})</Reviews>
-      </RatingContainer>
-      <PriceRange>
-        <Dollar src={DollarIcon} alt="" />
-        {props.artist.price.min} - {props.artist.price.max} for event
-      </PriceRange>
-    </Info>
-  </Container>
-)
+const ArtistCard = props => {
+  if(props.view){
+    return(
+      <Container>
+        <Avatar src={props.artist.avatar} />
+        <Info>
+          <NameContainer>
+            <Name>
+              {props.artist.fullName}
+            </Name>
+            {props.artist.verified && <Verified src={VerifiedIcon} />}
+          </NameContainer>
+          <Address>
+            {props.artist.address}
+          </Address>
+          <Tags>
+            {props.artist.tags.join(', ')}
+          </Tags>
+          <RatingContainer>
+            <Rating
+              value={props.artist.rating}
+              disabled
+            />
+            <Reviews>({props.artist.reviews.length})</Reviews>
+          </RatingContainer>
+          <PriceRange>
+            <Dollar src={DollarIcon} alt="" />
+            {props.artist.price.min} - {props.artist.price.max} for event
+          </PriceRange>
+        </Info>
+        <ButtonContainer>
+          <Button display = {"View Profile"} />
+        </ButtonContainer>
+      </Container>
+    )
+  }else{
+    return(
+      <Container>
+        <Avatar src={props.artist.avatar} />
+        <Info>
+          <NameContainer>
+            <Name>
+              {props.artist.fullName}
+            </Name>
+            {props.artist.verified && <Verified src={VerifiedIcon} />}
+          </NameContainer>
+          <Address>
+            {props.artist.address}
+          </Address>
+          <Tags>
+            {props.artist.tags.join(', ')}
+          </Tags>
+          <RatingContainer>
+            <Rating
+              value={props.artist.rating}
+              disabled
+            />
+            <Reviews>({props.artist.reviews.length})</Reviews>
+          </RatingContainer>
+          <PriceRange>
+            <Dollar src={DollarIcon} alt="" />
+            {props.artist.price.min} - {props.artist.price.max} for event
+          </PriceRange>
+        </Info>
+      </Container>
+    )
+  }
+}
 
 ArtistCard.propTypes = {
   artist: PropTypes.object.isRequired,
+  view: PropTypes.bool.isRequired,
 }
 
 ArtistCard.defaultProps = {

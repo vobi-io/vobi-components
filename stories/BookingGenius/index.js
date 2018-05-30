@@ -16,6 +16,9 @@ import {
   MessageList,
   LatestNews,
   TalentCard,
+  TalentPage,
+  HomePage,
+  ActiveBookingList,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -240,6 +243,7 @@ storiesOf('BookingGenius', module)
               max: 1500,
             },
           }}
+          view = {false}
         />
         <ArtistCard
           artist={{
@@ -255,6 +259,7 @@ storiesOf('BookingGenius', module)
               max: number('Price max', 1500),
             },
           }}
+          view = {false}
         />
       </div>
     )),
@@ -425,5 +430,20 @@ storiesOf('BookingGenius', module)
   .add('Latest News', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
       <LatestNews news={newsArray} />
+    </div>
+  ))
+  .add('Talent Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '1196px', alignItems: 'center' }}>
+      <TalentPage />
+    </div>
+  ))
+  .add('Home Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <HomePage />
+    </div>
+  ))
+  .add('Active Booking List Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <ActiveBookingList />
     </div>
   ))
