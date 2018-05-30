@@ -12,12 +12,13 @@ const Wrapper = styled.div`
   position: relative;
 
   .rc-time-picker-input {
-    padding: 11px 11px 9px 36px !important;
+    padding: 8px 8px 7px 36px !important;
     font-size: 19px !important;
     line-height: 24px !important;
     height: auto;
     border-radius: 0;
-    width: 120px;
+    width: 132px;
+    font-weight: 200;
   }
 
 `
@@ -26,7 +27,7 @@ const Icon = styled.img`
   position: absolute;
   top: 50%;
   left: 10px;
-  width: 20px;
+  width: 17px;
   height: auto;
   transform: translateY(-50%);
 `
