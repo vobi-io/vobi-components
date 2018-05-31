@@ -6,8 +6,8 @@ import styled from 'styled-components'
 
 import '../styles/main.scss'
 
-import BellIcon from './BellIcon';
-import ChatIcon from './ChatIcon';
+import BellIcon from './BellIcon'
+import ChatIcon from './ChatIcon'
 
 const Navbar = styled.span`
   display: flex;
@@ -104,12 +104,12 @@ const Avatar = styled.img`
 const Icon = styled.div`
   margin-right: 15px;
   svg {
-      fill: ${props => {
-        if (props.primary) return '#007bff';
-        else if(props.green) return '#06C953';
-        else if(props.red) return '#dc3545';
-        else return '#2F3033';
-      }}
+      fill: ${(props) => {
+    if (props.primary) return '#007bff'
+    else if (props.green) return '#06C953'
+    else if (props.red) return '#dc3545'
+    return '#2F3033'
+  }}
   }
 `
 

@@ -4,13 +4,14 @@ import styled from 'styled-components'
 
 import VerifiedIcon from '../../../assets/svg/BookingGenius/Verified.svg'
 import DollarIcon from '../../../assets/svg/BookingGenius/Dollar.svg'
-
+import AirplaneIcon from '../../../assets/svg/BookingGenius/Airplane.svg'
+import PinIcon from '../../../assets/svg/BookingGenius/Pin.svg'
 import { Rating } from '../..'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 307px;
+  width: ${props => (props.containerWidth ? props.containerWidth : '371px')}; 
   background-color: #ffffff;
   border: solid 1px #dbdbdb;
 `
@@ -23,11 +24,19 @@ const Info = styled.div`
 `
 
 const Avatar = styled.div`
-  width: 307px;
+  width: ${props => (props.avatarWidth ? props.avatarWidth : 0)};
   height: 204px;
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: center;
+`
+const AvatarTop = styled.div`
+  width: ${props => (props.avatarWidth ? props.avatarWidth : '307px')}
+  height: 204px;
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
+  margin: ${props => (props.avatarOnTop ? 'auto' : 0)}
 `
 const NameContainer = styled.div`
   display: flex;
@@ -42,17 +51,18 @@ const Name = styled.span`
 `
 
 const Verified = styled.img`
-  
+    
 `
 
 const Address = styled.span`
   margin-top: 5px;
+  opacity: 0.6;
   font-family: Raleway;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.11;
+  line-height: 1.25;
   letter-spacing: normal;
   text-align: left;
   color: #9396a0;
@@ -108,10 +118,25 @@ const PriceRange = styled.span`
   align-items: center;
 `
 
+const Airplane = styled.img`
+  margin-right:5px;
+`
+const EligibleTravelText = styled.text`
+  margin-top:2px;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #bec0c6;
+`
 
 const ArtistCard = props => (
-  <Container>
-    <Avatar src={props.artist.avatar} />
+  <Container {...props}>
+    {props.avatarOnTop ? <AvatarTop {...props} src={props.artist.avatar} /> : <Avatar {...props} src={props.artist.avatar} />}
     <Info>
       <NameContainer>
         <Name>
@@ -120,8 +145,15 @@ const ArtistCard = props => (
         {props.artist.verified && <Verified src={VerifiedIcon} />}
       </NameContainer>
       <Address>
+        <Airplane src={PinIcon} alt="pin-icon" />
         {props.artist.address}
       </Address>
+      {props.eligibleToTravel &&
+        <EligibleTravelText >
+          <Airplane src={AirplaneIcon} alt="airplane-icon" />
+          <text>Eligible to Travel</text>
+        </EligibleTravelText>
+      }
       <Tags>
         {props.artist.tags.join(', ')}
       </Tags>
@@ -142,9 +174,13 @@ const ArtistCard = props => (
 
 ArtistCard.propTypes = {
   artist: PropTypes.object.isRequired,
+  eligibleToTravel: PropTypes.bool,
+  avatarOnTop: PropTypes.bool,
 }
 
 ArtistCard.defaultProps = {
+  eligibleToTravel: false,
+  avatarOnTop: false,
 }
 
 export default ArtistCard

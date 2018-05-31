@@ -16,6 +16,7 @@ import {
   MessageList,
   LatestNews,
   TalentCard,
+  ProfilePage,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -30,7 +31,7 @@ const newsArray = [
     userName: 'raymonfix',
     date: 1526749828299,
     text: 'They say you can choose your friends but not your family. I just want you to know that if we…',
-    url: 'https://www.instagram.com/p/BOavR7tDMWt/'
+    url: 'https://www.instagram.com/p/BOavR7tDMWt/',
   },
   {
     id: 1,
@@ -38,19 +39,19 @@ const newsArray = [
     userName: 'raymonfixhogwart',
     date: 1416749828299,
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    url: 'https://www.instagram.com/p/BOavR7tDMWt/'
-  }
+    url: 'https://www.instagram.com/p/BOavR7tDMWt/',
+  },
 ]
 
 const messagesListItemData = {
   inboxMessageDate: 1526470210473,
   replyMessageDate: 1526170210473,
   inboxAvatar: 'https://upload.wikimedia.org/wikipedia/en/7/70/Shawn_Tok_Profile.jpg',
-  replyAvatar:  'https://i0.wp.com/www.allinsonsphotography.co.uk/wp-content/uploads/2013/04/untitled-20.jpg?w=300',
+  replyAvatar: 'https://i0.wp.com/www.allinsonsphotography.co.uk/wp-content/uploads/2013/04/untitled-20.jpg?w=300',
   inboxFrom: 'Nick Jonson',
   replyFrom: 'Nick V',
   inbox: ['Okay:)'],
-  reply: ['Hi Nick', 'thanks you for the nice talk', 'Waiting your question', 'Cheers', 'Nick']
+  reply: ['Hi Nick', 'thanks you for the nice talk', 'Waiting your question', 'Cheers', 'Nick'],
 }
 
 const videoListDummyData = [
@@ -366,7 +367,10 @@ storiesOf('BookingGenius', module)
     withInfo(`
       Favorite On/Off
     `)(() => (
-      <div style={{ display: 'flex', height: '100vh', background: '#F44336', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{
+        display: 'flex', height: '100vh', background: '#F44336', justifyContent: 'center', alignItems: 'center',
+      }}
+      >
         <Favorite
           favorited={boolean('favorited', false)}
         />
@@ -378,7 +382,10 @@ storiesOf('BookingGenius', module)
     withInfo(`
       VideoList
     `)(() => (
-      <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
+      <div style={{
+        display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '100vh', alignItems: 'center',
+      }}
+      >
         <VideoList
           videoData={videoListDummyData}
           title="VideoList"
@@ -388,18 +395,25 @@ storiesOf('BookingGenius', module)
     )),
   )
   .add('Video Area Component', () => (
-    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '650px', alignItems: 'center' }}>
+    <div style={{
+      display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '650px', alignItems: 'center',
+    }}
+    >
       <div>
-        <h1 style={{ textAlign: 'center', marginBottom: '55px'}}>Note: Image Aspect Ratio 16 : 9</h1>
+        <h1 style={{ textAlign: 'center', marginBottom: '55px' }}>Note: Image Aspect Ratio 16 : 9</h1>
         <VideoArea
-          imageUrl={text('imageUrl', 'https://img.youtube.com/vi/fKopy74weus/maxresdefault.jpg')} />
+          imageUrl={text('imageUrl', 'https://img.youtube.com/vi/fKopy74weus/maxresdefault.jpg')}
+        />
       </div>
     </div>
   ))
   .add('Video Preview Modal', () => <VideoPreviewModalExample />)
   .add('Message List', () => (
-    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
-      <MessageList messages={messagesListItemData}/>
+    <div style={{
+      display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center',
+    }}
+    >
+      <MessageList messages={messagesListItemData} />
     </div>
   ))
   .add(
@@ -412,7 +426,7 @@ storiesOf('BookingGenius', module)
           artist={{
             avatar: text('Avatar', 'https://akm-img-a-in.tosshub.com/indiatoday/angelina-full-story_647_010418010625.jpg?2dnc3YIX.EMkO9n2JWJbYQJqT1Yro7Dc'),
             fullName: text('Full Name', 'Raymond Fix'),
-            address: text('Adress','USA, Florida'),
+            address: text('Adress', 'USA, Florida'),
             favorited: boolean('favorited', true),
             rating: number('Rating', 4),
             genre: text('Genre', 'R&B'),
@@ -423,7 +437,13 @@ storiesOf('BookingGenius', module)
     )),
   )
   .add('Latest News', () => (
-    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center' }}>
+    <div style={{
+      display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '750px', alignItems: 'center',
+    }}
+    >
       <LatestNews news={newsArray} />
     </div>
+  ))
+  .add('Profile Page', () => (
+    <ProfilePage />
   ))
