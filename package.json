@@ -43,6 +43,7 @@
     "babel-preset-stage-1": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "copy-to-clipboard": "^3.0.8",
+    "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
@@ -79,8 +80,11 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "immutable": "^3.8.2",
     "moment": "^2.22.1",
+    "rc-time-picker": "^3.3.1",
     "react-big-calendar": "^0.19.1",
+    "react-dates": "^16.7.0",
     "react-modal": "^3.4.4",
     "react-stars": "^2.2.5"
   }
