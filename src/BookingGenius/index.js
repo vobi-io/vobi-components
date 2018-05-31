@@ -14,5 +14,11 @@ export { default as MessageList } from './MessageList'
 export { default as Pagination } from './Pagination'
 export { default as LatestNews } from './LatestNews'
 export { default as TalentCard } from './TalentCard'
+<<<<<<< HEAD
 export { default as RequestLayout } from './RequestLayout'
 
+=======
+export { default as TalentPage } from './TalentPage'
+export { default as HomePage } from './HomePage'
+export { default as ActiveBookingList } from './ActiveBookingList/ActiveBookingList'
+>>>>>>> giorgi
