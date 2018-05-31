@@ -41,6 +41,7 @@ const Avatar = styled.img`
     height: 44.3px;
     border-radius: 50%;
 `
+
 const NameDate = styled.div`
     display: flex;
     flex-direction: column;
