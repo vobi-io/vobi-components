@@ -17,6 +17,7 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
+  TalentSlider
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -432,4 +433,7 @@ storiesOf('BookingGenius', module)
     <div style={{ display: 'flex', paddingLeft: '50px', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
       <Pagination pageCount={5}/>
     </div>
+  ))
+  .add('Talent Slider', () => (
+    <TalentSlider />
   ))

@@ -14,3 +14,5 @@ export { default as MessageList } from './MessageList'
 export { default as Pagination } from './Pagination'
 export { default as LatestNews } from './LatestNews'
 export { default as TalentCard } from './TalentCard'
+export { default as TalentSlider } from './TalentSlider'
+
