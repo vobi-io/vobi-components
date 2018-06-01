@@ -17,7 +17,8 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
-  ActiveBookingPage
+  ActiveBookingPage,
+  RequestLayout
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -452,3 +453,7 @@ storiesOf('BookingGenius', module)
     messages={messagesListItemData}
     />
   ))
+  .add('Request Layout', () => (
+    <RequestLayout />
+  ))
+

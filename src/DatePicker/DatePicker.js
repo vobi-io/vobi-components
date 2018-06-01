@@ -80,10 +80,16 @@ const Wrapper = styled.div`
 
     .DateInput_input {
         box-sizing: border-box;
+        padding: 7px 7px 6px;
     }
 
     .CalendarDay {
         font-weight: 600;
+    }
+
+    .SingleDatePickerInput_calendarIcon {
+        padding: 0;
+        margin: 0 5px 0 10px;
     }
 `
 
