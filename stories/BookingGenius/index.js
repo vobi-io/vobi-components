@@ -243,6 +243,7 @@ storiesOf('BookingGenius', module)
               max: 1500,
             },
           }}
+          view = {false}
         />
         <ArtistCard
           artist={{
@@ -258,6 +259,7 @@ storiesOf('BookingGenius', module)
               max: number('Price max', 1500),
             },
           }}
+          view = {false}
         />
       </div>
     )),
