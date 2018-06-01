@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import "~../../../assets/svg/BookingGenius/slick/slick.css"; 
+import "~../../../assets/svg/BookingGenius/slick/slick-theme.css";
 
 import { Rating } from '../..'
 import DollarIcon from '../../../assets/svg/BookingGenius/Dollar.svg'
@@ -15,13 +15,17 @@ const Heading = styled.h2`
     font-weight: bold;
     line-height: 66px;
     color: #2F3033;
-    margin: 0;
+    margin: 0 0 2px;
     padding: 0;
 `
 
 const Column = styled.div`
     display: flex;
     flex-direction: column;
+
+`
+const Main = Column.extend`
+    width: 350px !important;
 `
 
 const Desc = styled.div`
@@ -45,6 +49,7 @@ const Name = styled.span`
     font-size: 15px;
     font-weight: 600;
     color: #2f3033;
+    text-transform: capitalize;
 `
 
 const Prof = styled.span`
@@ -53,7 +58,8 @@ const Prof = styled.span`
     font-size: 11px;
     font-weight: 800;
     color: #6b6e75;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
 `
 
 const Review = styled.span`
@@ -61,7 +67,6 @@ const Review = styled.span`
     display: inline-block;
     font-size: 14px;
     color: #9396a0;
-    margin-top: 1px;
 `
 
 class TalentSlider extends React.Component {
@@ -69,95 +74,32 @@ class TalentSlider extends React.Component {
       const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        //autoplay: true,
+        //autoplaySpeed: 3500,
         //nextArrow: <NextArrow />,
         //prevArrow: <PrevArrow />
       };
       return (
         <div>
-          <h2>Custom Arrows</h2>
+          <Heading>{this.props.heading}</Heading>
           <Slider {...settings}>
-            <Column>
-                <Image src={'https://timedotcom.files.wordpress.com/2017/10/paris-hilton-djs.jpg'} />
-                <Desc>
-                    <Column>
-                        <Prof>DANCER</Prof>
-                        <Name>David Lakovsky</Name>
-                    </Column>
-                    <Column>
-                        <Rating value={5} disabled={false} size={13} />
-                        <Review>93 reviews</Review>
-                    </Column>
-                </Desc>
-            </Column>
-            <Column>
-                <Image src={'https://timedotcom.files.wordpress.com/2017/10/paris-hilton-djs.jpg'} />
-                <Desc>
-                    <Column>
-                        <Prof>DANCER</Prof>
-                        <Name>David Lakovsky</Name>
-                    </Column>
-                    <Column>
-                        <Rating value={5} disabled={false} size={13} />
-                        <Review>93 reviews</Review>
-                    </Column>
-                </Desc>
-            </Column>
-            <Column>
-                <Image src={'https://timedotcom.files.wordpress.com/2017/10/paris-hilton-djs.jpg'} />
-                <Desc>
-                    <Column>
-                        <Prof>DANCER</Prof>
-                        <Name>David Lakovsky</Name>
-                    </Column>
-                    <Column>
-                        <Rating value={5} disabled={false} size={13} />
-                        <Review>93 reviews</Review>
-                    </Column>
-                </Desc>
-            </Column>
-            <Column>
-                <Image src={'https://timedotcom.files.wordpress.com/2017/10/paris-hilton-djs.jpg'} />
-                <Desc>
-                    <Column>
-                        <Prof>DANCER</Prof>
-                        <Name>David Lakovsky</Name>
-                    </Column>
-                    <Column>
-                        <Rating value={5} disabled={false} size={13} />
-                        <Review>93 reviews</Review>
-                    </Column>
-                </Desc>
-            </Column>
-            <Column>
-                <Image src={'https://timedotcom.files.wordpress.com/2017/10/paris-hilton-djs.jpg'} />
-                <Desc>
-                    <Column>
-                        <Prof>DANCER</Prof>
-                        <Name>David Lakovsky</Name>
-                    </Column>
-                    <Column>
-                        <Rating value={5} disabled={false} size={13} />
-                        <Review>93 reviews</Review>
-                    </Column>
-                </Desc>
-            </Column>
-            <Column>
-                <Image src={'https://timedotcom.files.wordpress.com/2017/10/paris-hilton-djs.jpg'} />
-                <Desc>
-                    <Column>
-                        <Prof>DANCER</Prof>
-                        <Name>David Lakovsky</Name>
-                    </Column>
-                    <Column>
-                        <Rating value={5} disabled={false} size={13} />
-                        <Review>93 reviews</Review>
-                    </Column>
-                </Desc>
-            </Column>
+            {this.props.artistList.map((artist, index) => (
+                <Main key={index}>
+                    <Image src={artist.img} />
+                    <Desc>
+                        <Column>
+                            <Prof>{artist.profession}</Prof>
+                            <Name>{artist.fullName}</Name>
+                        </Column>
+                        <Column>
+                            <Rating value={artist.rating} disabled={false} size={18} style={{ alignSelf: 'flex-end'}}/>
+                            <Review>{`${artist.reviewCount} reviews`}</Review>
+                        </Column>
+                    </Desc>
+                </Main>
+            ))}
           </Slider>
         </div>
       );
@@ -165,7 +107,56 @@ class TalentSlider extends React.Component {
   }
 
 TalentSlider.propTypes = {
+    artistList: PropTypes.array.isRequired,
+    heading: PropTypes.string.isRequired
+}
 
+TalentSlider.defaultProps = {
+    artistList: [
+        {
+            img: 'https://i.imgur.com/yl34Ayi.png',
+            profession: 'dancer',
+            fullName: 'David Lakovsky',
+            rating: 5,
+            reviewCount: 93
+        },
+        {
+            img: 'https://i.imgur.com/19HpIUV.png',
+            profession: 'singer',
+            fullName: 'Hue Montorello',
+            rating: 1,
+            reviewCount: 98
+        },
+        {
+            img: 'https://i.imgur.com/pb0Zb3S.png',
+            profession: 'dj',
+            fullName: 'Lui Nesh',
+            rating: 4,
+            reviewCount: 134
+        },
+        {
+            img: 'https://i.imgur.com/5IXinO1.png',
+            profession: 'singer',
+            fullName: 'Elisabeth Vekkel',
+            rating: 3,
+            reviewCount: 255
+        },
+        {
+            img: 'https://i.imgur.com/Sx75sVi.png',
+            profession: 'magician',
+            fullName: 'Henry Celigber',
+            rating: 5,
+            reviewCount: 23
+        },
+        {
+            img: 'https://i.imgur.com/eF9yQFF.png',
+            profession: 'dj',
+            fullName: 'Pola Makkensy',
+            rating: 2,
+            reviewCount: 55
+        }
+    ],
+    heading: 'All Talents'
 }
 
 export default TalentSlider

@@ -32,6 +32,12 @@ module.exports = (storybookBaseConfig, configType) => {
   });
 
   storybookBaseConfig.module.rules.push({
+    test: /\.(png|jpg|gif)$/,
+    exclude: /(node_modules|bower_components)/,
+    loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+  });
+
+  storybookBaseConfig.module.rules.push({
     test: /\.(woff|woff2)$/,
     exclude: /(node_modules|bower_components)/,
     loader: 'url-loader?prefix=font/&limit=5000',
