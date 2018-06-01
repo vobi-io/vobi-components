@@ -6,15 +6,18 @@ import moment from 'moment'
 
 const Container = styled.div`
   background: #fff;
-  padding: 25px;
+  padding: 25px 25px 12px 30px;
   box-sizing: border-box;
-  width: 700px;
+  width: 100%;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.17)
 `
 
 const Header = styled.h1`
-  font-size: 24px;
-  font-weight: 400;
-  color: #303030;
+  color: #303030;	
+  font-family: "Proxima Nova";	
+  font-size: 24px;	
+  font-weight: 600;	
+  line-height: 29px;
   text-align: left;
   margin: 0 0 15px;
   padding: 0;
@@ -38,8 +41,13 @@ const Paragraph = styled.p`
 const Span = styled.span`
   display: inline-block;
   cursor: pointer;
-  color: #06c953;
   user-select: none;
+  color: #07730D;
+  font-family: "Proxima Nova";	
+  font-size: 18px;	
+  font-weight: 600;	
+  line-height: 22px;
+
   &:hover {
     text-decoration: underline;
   }
@@ -141,6 +149,49 @@ const Arrow = styled.div`
   border-top: 5px solid rgba(0, 0, 0, 0.75);
 `
 
+const Footer = styled.div`
+  display: flex;
+  background-color: #ffffff;
+  padding-bottom: 25px;
+`
+const Form = styled.form`
+  display: flex;
+  padding-top: 13px;
+  flex-grow: 1;
+`
+const Input = styled.input`
+  background-color: #ffffff;
+  border: solid 1px #cfcfcf;
+  margin-right: 7px;
+  font-size: 16px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 0 20px;
+  flex-grow: 1;
+  ::placeholder {
+    opacity: 0.65;
+    text-align: left;
+    color: #2f3033;
+  }
+`
+const SendButton = styled.button`
+  color: #332F2F;	
+  font-family: "Proxima Nova";	
+  font-size: 18px;	
+  font-weight: bold;	
+  line-height: 22px;
+  background-color: #ffffff;
+  border: solid 1px #c1c1c1;
+  text-align: center;
+  color: #332f2f;
+  padding: 10px 35px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+`
+
 const MessageList = props => (
   <Container>
     <Header>Messages</Header>
@@ -182,11 +233,29 @@ const MessageList = props => (
         </MessageLine>
       </MessageColumn>
     </ChatBox>
+    {props.showInput && (
+      <Footer>
+      <Form
+        onSubmit={(e) => {
+          e.preventDefault()
+          props.onSend(e)
+        }}
+      >
+        <Input placeholder="Type your message" required />
+        <SendButton type="submit">Send</SendButton>
+      </Form>
+    </Footer>
+    )}
   </Container>
 )
 
 MessageList.propTypes = {
   messages: PropTypes.object.isRequired,
+  onSend: PropTypes.func,
+}
+
+MessageList.defaultProps = {
+  onSend: () => false
 }
 
 export default MessageList

@@ -17,6 +17,7 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
+  ActiveBookingPage
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -432,4 +433,22 @@ storiesOf('BookingGenius', module)
     <div style={{ display: 'flex', paddingLeft: '50px', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
       <Pagination pageCount={5}/>
     </div>
+  ))
+  .add('Active Booking Page', () => (
+    <ActiveBookingPage 
+      artist={{
+        avatar: 'https://d2a2cq7hbv4jvj.cloudfront.net/wp-content/uploads/2018/05/DJ-Remake-blog.jpg',
+        fullName: 'Bugle Shaggy',
+        verified: true,
+        address: 'New York, NY, United States',
+        tags: ['Reggae', 'ska', 'rocksteady'],
+        rating: 4,
+        reviews: ['', '', '', '', ''],
+        price: {
+          min: 300,
+          max: 1500,
+        },
+      }}
+    messages={messagesListItemData}
+    />
   ))
