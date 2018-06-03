@@ -17,13 +17,11 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
-<<<<<<< HEAD
-  RequestLayout
-=======
+  RequestLayout,
   TalentPage,
   HomePage,
   ActiveBookingList,
->>>>>>> giorgi
+  TransactionPage,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -437,7 +435,6 @@ storiesOf('BookingGenius', module)
       <LatestNews news={newsArray} />
     </div>
   ))
-<<<<<<< HEAD
   .add('Pagination', () => (
     <div style={{ display: 'flex', paddingLeft: '50px', background: '#f4f4f5', height: '100vh', alignItems: 'center' }}>
       <Pagination pageCount={5}/>
@@ -446,7 +443,6 @@ storiesOf('BookingGenius', module)
   .add('Request Layout', () => (
     <RequestLayout />
   ))
-=======
   .add('Talent Page', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '1196px', alignItems: 'center' }}>
       <TalentPage />
@@ -462,4 +458,8 @@ storiesOf('BookingGenius', module)
       <ActiveBookingList />
     </div>
   ))
->>>>>>> giorgi
+  .add('Transaction Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <TransactionPage />
+    </div>
+  ))

@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+
 const Card = styled.div`
-  width: 283px;
+  width: 254px;
   height: 90px;
   padding-top: 23px;
   border-radius: 3px;
@@ -12,19 +13,17 @@ const Card = styled.div`
 `
 
 const CardText = styled.div`
-  width: 59px;
   height: 20px;
   font-family: ProximaNova;
   font-size: 16px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  line-height: 20px;
   letter-spacing: normal;
   text-align: center;
-  margin: 0 auto;
   margin-bottom: 11px;
-  color: #303030;
+  color: #A6A7B1;
 `
 
 const CardNumber = styled.div`
@@ -41,10 +40,22 @@ const CardNumber = styled.div`
   margin: 0 auto;
   color: #303030;
 `
+const FlexDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`
+const Img = styled.img`
+  height: ${props => props.src ? '16px' : '0px'}
+  width: ${props => props.src ? '16px' : '0px'}
+`
+
 
 const NumberedCard = props => (
   <Card {...props}>
-    <CardText>{props.text}</CardText>
+    <FlexDiv>
+      <CardText>{props.text}</CardText>
+      <Img src={props.img} />
+    </FlexDiv>
     <CardNumber>{props.amount}</CardNumber>
   </Card>
 )
@@ -52,6 +63,7 @@ const NumberedCard = props => (
 NumberedCard.propTypes = {
   text: PropTypes.string.isRequired,
   amount: PropTypes.string.isRequired,
+  img: PropTypes.string
 }
 
 export default NumberedCard
