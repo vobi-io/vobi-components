@@ -63,7 +63,6 @@ const NumberedCard = props => (
 NumberedCard.propTypes = {
   text: PropTypes.string.isRequired,
   amount: PropTypes.string.isRequired,
-  img: PropTypes.string
 }
 
 export default NumberedCard

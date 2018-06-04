@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
+import ArrowDown from '../../../assets/svg/BookingGenius/ArrowDown.svg'
+import ArrowUp from '../../../assets/svg/BookingGenius/ArrowUp.svg'
+import Calendar from '../../../assets/svg/BookingGenius/Calendar.svg'
+import DropDown from '../../../assets/svg/BookingGenius/DropDown.svg'
 
 import { NavBar } from '../..'
 import { NumberedCard } from '../'
@@ -160,33 +163,33 @@ const TransactionPage = () => (
                     <NumberedCard
                         text={ 'Earnings due'}
                         amount={ '$1250' }
-                        img={'https://i.imgur.com/DysjXIY.png'}
+                        img={ArrowUp}
                     />
                 </div>
                 <div className="numberCard">
                     <NumberedCard
                         text={ 'Earnings paid'}
                         amount={ '$1250' }
-                        img={'https://i.imgur.com/mdaEpeI.png'}
+                        img={ArrowDown}
                     />
                 </div>
             </BalanceRow>
             <FilterRow>
                 <FlexDiv>
                     <Date>
-                        <Icon src="https://i.imgur.com/upypmpu.png"/>
+                        <Icon src={Calendar}/>
                         <Span>Feb 10, 2018 - Mar 10, 2018</Span>
                     </Date>
                     <Filter>
                         <Span>All Transaction</Span>
                         <IconBtn>
-                            <Icon src="https://i.imgur.com/ZPVJDss.png"/>
+                            <Icon src={DropDown}/>
                         </IconBtn>
                     </Filter>
                     <Filter>
                         <Span>All Talents</Span>
                         <IconBtn>
-                            <Icon src="https://i.imgur.com/ZPVJDss.png"/>
+                            <Icon src={DropDown}/>
                         </IconBtn>
                     </Filter>
                 </FlexDiv>
