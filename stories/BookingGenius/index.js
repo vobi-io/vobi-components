@@ -17,9 +17,11 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
+  RequestLayout,
+  TalentPage,
+  TransactionPage,
   TalentSlider,
   ActiveBookingPage,
-  RequestLayout
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -489,6 +491,11 @@ storiesOf('BookingGenius', module)
         artistList={artistData}
       />
   ))
+  .add('Talent Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '1196px', alignItems: 'center' }}>
+      <TalentPage />
+    </div>
+  ))
   .add('Active Booking Page', () => (
     <ActiveBookingPage 
       artist={{
@@ -509,4 +516,9 @@ storiesOf('BookingGenius', module)
   ))
   .add('Request Layout', () => (
     <RequestLayout />
+  ))
+  .add('Transaction Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <TransactionPage />
+    </div>
   ))
