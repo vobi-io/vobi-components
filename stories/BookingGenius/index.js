@@ -17,6 +17,7 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
+  TalentSlider,
   ActiveBookingPage,
   RequestLayout
 } from '../../src/BookingGenius'
@@ -25,6 +26,51 @@ import FeedbackModalExample from './FeedbackModalExample'
 import VideoPreviewModalExample from './VideoPreviewModalExample'
 import SignupModalExample from './SignupModalExample'
 import SocialSignupModalExample from './SocialSignupModalExample'
+
+const artistData = [
+  {
+      img: 'https://i.imgur.com/yl34Ayi.png',
+      profession: 'dancer',
+      fullName: 'David Lakovsky',
+      rating: 5,
+      reviewCount: 93
+  },
+  {
+      img: 'https://i.imgur.com/19HpIUV.png',
+      profession: 'singer',
+      fullName: 'Hue Montorello',
+      rating: 1,
+      reviewCount: 98
+  },
+  {
+      img: 'https://i.imgur.com/pb0Zb3S.png',
+      profession: 'dj',
+      fullName: 'Lui Nesh',
+      rating: 4,
+      reviewCount: 134
+  },
+  {
+      img: 'https://i.imgur.com/5IXinO1.png',
+      profession: 'singer',
+      fullName: 'Elisabeth Vekkel',
+      rating: 3,
+      reviewCount: 255
+  },
+  {
+      img: 'https://i.imgur.com/Sx75sVi.png',
+      profession: 'magician',
+      fullName: 'Henry Celigber',
+      rating: 5,
+      reviewCount: 23
+  },
+  {
+      img: 'https://i.imgur.com/eF9yQFF.png',
+      profession: 'dj',
+      fullName: 'Pola Makkensy',
+      rating: 2,
+      reviewCount: 55
+  }
+]
 
 const newsArray = [
   {
@@ -437,6 +483,12 @@ storiesOf('BookingGenius', module)
       <Pagination pageCount={5}/>
     </div>
   ))
+  .add('Talent Slider', () => (
+      <TalentSlider 
+        heading={'hot talents'}
+        artistList={artistData}
+      />
+  ))
   .add('Active Booking Page', () => (
     <ActiveBookingPage 
       artist={{
@@ -458,4 +510,3 @@ storiesOf('BookingGenius', module)
   .add('Request Layout', () => (
     <RequestLayout />
   ))
-

@@ -32,7 +32,7 @@ const Info = styled.div`
 
 const Avatar = styled.img`
   display: block;
-  width: 267;
+  width: 267px;
   height: 200px;
   object-fit: cover;
 `
