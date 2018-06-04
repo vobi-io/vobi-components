@@ -22,7 +22,6 @@ import {
   TransactionPage,
   TalentSlider,
   ActiveBookingPage,
-  RequestLayout,
   RequestListPage,
 } from '../../src/BookingGenius'
 
