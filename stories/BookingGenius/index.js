@@ -17,7 +17,9 @@ import {
   Pagination,
   LatestNews,
   TalentCard,
-  TalentSlider
+  TalentSlider,
+  ActiveBookingPage,
+  RequestLayout
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -287,6 +289,7 @@ storiesOf('BookingGenius', module)
               max: 1500,
             },
           }}
+          view = {false}
         />
         <ArtistCard
           artist={{
@@ -302,6 +305,7 @@ storiesOf('BookingGenius', module)
               max: number('Price max', 1500),
             },
           }}
+          view = {false}
         />
       </div>
     )),
@@ -484,4 +488,25 @@ storiesOf('BookingGenius', module)
         heading={'hot talents'}
         artistList={artistData}
       />
+  ))
+  .add('Active Booking Page', () => (
+    <ActiveBookingPage 
+      artist={{
+        avatar: 'https://d2a2cq7hbv4jvj.cloudfront.net/wp-content/uploads/2018/05/DJ-Remake-blog.jpg',
+        fullName: 'Bugle Shaggy',
+        verified: true,
+        address: 'New York, NY, United States',
+        tags: ['Reggae', 'ska', 'rocksteady'],
+        rating: 4,
+        reviews: ['', '', '', '', ''],
+        price: {
+          min: 300,
+          max: 1500,
+        },
+      }}
+    messages={messagesListItemData}
+    />
+  ))
+  .add('Request Layout', () => (
+    <RequestLayout />
   ))

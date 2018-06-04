@@ -15,4 +15,5 @@ export { default as Pagination } from './Pagination'
 export { default as LatestNews } from './LatestNews'
 export { default as TalentCard } from './TalentCard'
 export { default as TalentSlider } from './TalentSlider'
-
+export { default as ActiveBookingPage } from './ActiveBookingPage'
+export { default as RequestLayout } from './RequestLayout'
