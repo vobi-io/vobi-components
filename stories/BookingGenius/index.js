@@ -19,15 +19,60 @@ import {
   TalentCard,
   RequestLayout,
   TalentPage,
-  HomePage,
-  ActiveBookingList,
   TransactionPage,
+  TalentSlider,
+  ActiveBookingPage,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
 import VideoPreviewModalExample from './VideoPreviewModalExample'
 import SignupModalExample from './SignupModalExample'
 import SocialSignupModalExample from './SocialSignupModalExample'
+
+const artistData = [
+  {
+      img: 'https://i.imgur.com/yl34Ayi.png',
+      profession: 'dancer',
+      fullName: 'David Lakovsky',
+      rating: 5,
+      reviewCount: 93
+  },
+  {
+      img: 'https://i.imgur.com/19HpIUV.png',
+      profession: 'singer',
+      fullName: 'Hue Montorello',
+      rating: 1,
+      reviewCount: 98
+  },
+  {
+      img: 'https://i.imgur.com/pb0Zb3S.png',
+      profession: 'dj',
+      fullName: 'Lui Nesh',
+      rating: 4,
+      reviewCount: 134
+  },
+  {
+      img: 'https://i.imgur.com/5IXinO1.png',
+      profession: 'singer',
+      fullName: 'Elisabeth Vekkel',
+      rating: 3,
+      reviewCount: 255
+  },
+  {
+      img: 'https://i.imgur.com/Sx75sVi.png',
+      profession: 'magician',
+      fullName: 'Henry Celigber',
+      rating: 5,
+      reviewCount: 23
+  },
+  {
+      img: 'https://i.imgur.com/eF9yQFF.png',
+      profession: 'dj',
+      fullName: 'Pola Makkensy',
+      rating: 2,
+      reviewCount: 55
+  }
+]
 
 const newsArray = [
   {
@@ -440,23 +485,37 @@ storiesOf('BookingGenius', module)
       <Pagination pageCount={5}/>
     </div>
   ))
-  .add('Request Layout', () => (
-    <RequestLayout />
+  .add('Talent Slider', () => (
+      <TalentSlider 
+        heading={'hot talents'}
+        artistList={artistData}
+      />
   ))
   .add('Talent Page', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', height: '1196px', alignItems: 'center' }}>
       <TalentPage />
     </div>
   ))
-  .add('Home Page', () => (
-    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
-      <HomePage />
-    </div>
+  .add('Active Booking Page', () => (
+    <ActiveBookingPage 
+      artist={{
+        avatar: 'https://d2a2cq7hbv4jvj.cloudfront.net/wp-content/uploads/2018/05/DJ-Remake-blog.jpg',
+        fullName: 'Bugle Shaggy',
+        verified: true,
+        address: 'New York, NY, United States',
+        tags: ['Reggae', 'ska', 'rocksteady'],
+        rating: 4,
+        reviews: ['', '', '', '', ''],
+        price: {
+          min: 300,
+          max: 1500,
+        },
+      }}
+    messages={messagesListItemData}
+    />
   ))
-  .add('Active Booking List Page', () => (
-    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
-      <ActiveBookingList />
-    </div>
+  .add('Request Layout', () => (
+    <RequestLayout />
   ))
   .add('Transaction Page', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>

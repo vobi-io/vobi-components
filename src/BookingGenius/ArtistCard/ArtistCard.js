@@ -113,29 +113,6 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `
 
-<<<<<<< HEAD
-const ArtistCard = props => (
-  <Container>
-    <Avatar src={props.artist.avatar} />
-    <Info>
-      <NameContainer>
-        <Name>{props.artist.fullName}</Name>
-        {props.artist.verified && <Verified src={VerifiedIcon} />}
-      </NameContainer>
-      <Address>{props.artist.address}</Address>
-      <Tags>{props.artist.tags.join(', ')}</Tags>
-      <RatingContainer>
-        <Rating value={props.artist.rating} disabled />
-        <Reviews>({props.artist.reviews.length})</Reviews>
-      </RatingContainer>
-      <PriceRange>
-        <Dollar src={DollarIcon} alt="" />
-        {props.artist.price.min} - {props.artist.price.max} for event
-      </PriceRange>
-    </Info>
-  </Container>
-)
-=======
 const ArtistCard = props => {
   if(props.view){
     return(
@@ -204,7 +181,6 @@ const ArtistCard = props => {
     )
   }
 }
->>>>>>> giorgi
 
 ArtistCard.propTypes = {
   artist: PropTypes.object.isRequired,

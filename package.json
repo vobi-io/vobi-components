@@ -86,6 +86,8 @@
     "react-big-calendar": "^0.19.1",
     "react-dates": "^16.7.0",
     "react-modal": "^3.4.4",
-    "react-stars": "^2.2.5"
+    "react-slick": "^0.23.1",
+    "react-stars": "^2.2.5",
+    "slick-carousel": "^1.8.1"
   }
 }
