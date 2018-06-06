@@ -22,6 +22,7 @@ import {
   TransactionPage,
   TalentSlider,
   ActiveBookingPage,
+  UserPage,
   RequestListPage,
 } from '../../src/BookingGenius'
 
@@ -526,5 +527,10 @@ storiesOf('BookingGenius', module)
   .add('Transaction Page', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
       <TransactionPage />
+    </div>
+  ))
+  .add('User Page Layout', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <UserPage />
     </div>
   ))

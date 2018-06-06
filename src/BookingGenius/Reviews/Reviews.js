@@ -44,6 +44,7 @@ const ListHeader = styled.div`
   justify-content: space-between;
 `
 const ListTitle = styled.span`
+  max-width: 617px;
   font-family: Raleway;
   font-size: 18px;
   font-weight: bold;
@@ -65,6 +66,9 @@ const ListDate = styled.span`
   letter-spacing: normal;
   text-align: left;
   color: #1f1e1e;
+`
+const Div =styled.div`
+  max-width: 694.8px;
 `
 const ListContent = styled.span`
   font-family: Raleway;
@@ -91,7 +95,9 @@ const Reviews = props => (
             <ListTitle>{item.title}</ListTitle>
             <ListDate>{moment(item.createdAt).format('DD.MM.YYYY')}</ListDate>
           </ListHeader>
-          <ListContent>{item.description}</ListContent>
+          <Div>
+            <ListContent>{item.description}</ListContent>
+          </Div>
         </ListItem>
       ))}
     </List>
