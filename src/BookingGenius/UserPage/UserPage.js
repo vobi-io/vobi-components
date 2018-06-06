@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { NavBar } from '../..'
-import { VideoArea, ArtistCard, LatestNews, VideoList, Reviews } from '../'
+import { VideoArea, LatestNews, VideoList, Reviews } from '../'
 import AboutMe from './AboutMe'
 import RecentEvents from './RecentEvents'
 import Card from './Card'
