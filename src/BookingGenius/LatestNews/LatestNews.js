@@ -11,6 +11,8 @@ const Container = styled.div`
   background-color: #ffffff;
   padding: 25px 16px 22px 28px;
   box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.11);
 `
 
 const Header = styled.h2`
@@ -67,13 +69,14 @@ const News = styled.p`
   margin-bottom: 3px;
 `
 
-const GreenLink = styled.p`
+const BlueLink = styled.p`
   font-family: Raleway;
   font-size: 16px;
   cursor: pointer;
-  color: #06c953;
+  color: #0482ff;
   padding: 0;
   margin: 0;
+  word-break: break-all;
   &:hover {
     text-decoration: underline;
   }
@@ -90,7 +93,7 @@ const LatestNews = props => (
           <Date>{moment(item.date).format('D MMM YYYY')}</Date>
         </Row>
         <News>{item.text} </News>
-        <GreenLink>{item.url}</GreenLink>
+        <BlueLink>{item.url}</BlueLink>
       </Column>
     ))}
   </Container>
