@@ -23,6 +23,7 @@ import {
   TalentSlider,
   ActiveBookingPage,
   UserPage,
+  RequestListPage,
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -517,6 +518,11 @@ storiesOf('BookingGenius', module)
   ))
   .add('Request Layout', () => (
     <RequestLayout />
+  ))
+  .add('RequestList Page', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <RequestListPage />
+    </div>
   ))
   .add('Transaction Page', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
