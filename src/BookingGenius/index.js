@@ -19,4 +19,5 @@ export { default as TalentPage } from './TalentPage'
 export { default as TransactionPage } from './TransactionPage'
 export { default as TalentSlider } from './TalentSlider'
 export { default as ActiveBookingPage } from './ActiveBookingPage'
+export { default as UserPage } from './UserPage'
 
