@@ -24,7 +24,7 @@ const Header = styled.h1`
 `
 
 const ChatBox = styled.div`
-  border: 2px solid #cfcfcf;
+  border: 1px solid #cfcfcf;
 `
 
 const Paragraph = styled.p`
@@ -35,7 +35,7 @@ const Paragraph = styled.p`
   padding: 10px 0;
   box-sizing: border-box;
   margin: 0;
-  border-bottom: 2px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
 `
 
 const Span = styled.span`
