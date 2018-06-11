@@ -24,6 +24,7 @@ import {
   ActiveBookingPage,
   UserPage,
   RequestListPage,
+  BetterSelector
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -532,5 +533,10 @@ storiesOf('BookingGenius', module)
   .add('User Page Layout', () => (
     <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
       <UserPage />
+    </div>
+  ))
+  .add('Better Selector', () => (
+    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
+      <BetterSelector />
     </div>
   ))
