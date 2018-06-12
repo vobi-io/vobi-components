@@ -18,10 +18,16 @@ const Title = styled.span`
 `
 
 class BetterSelector extends Component {
-    state = {
-      selectedOption: '',
+    constructor(props){
+        super(props)
+        this.state = {
+            selectedOption: '',
+        }
+
+        this.handleChange = this.handleChange.bind(this)
     }
-    handleChange = (selectedOption) => {
+    
+    handleChange(selectedOption) {
       this.setState({ selectedOption });
           
     }

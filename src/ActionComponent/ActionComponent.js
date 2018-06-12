@@ -53,6 +53,8 @@ class ActionComponent extends Component{
         this.state = {
             dropDownOpen: false,
         }
+
+        this.toggle = this.toggle.bind(this)
     }
 
     componentDidMount() {
@@ -74,7 +76,7 @@ class ActionComponent extends Component{
         }
     }
 
-    toggle = () => {
+    toggle() {
         this.setState({dropDownOpen: !this.state.dropDownOpen})
     }
 
