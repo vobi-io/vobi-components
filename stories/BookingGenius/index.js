@@ -535,8 +535,4 @@ storiesOf('BookingGenius', module)
       <UserPage />
     </div>
   ))
-  .add('Better Selector', () => (
-    <div style={{ display: 'flex', justifyContent: 'center', background: '#f4f4f5', alignItems: 'center' }}>
-      <BetterSelector />
-    </div>
-  ))
+
