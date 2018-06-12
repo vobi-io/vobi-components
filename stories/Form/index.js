@@ -13,7 +13,8 @@ import {
   DateSelector,
   ReactTimePicker,
   DatePicker,
-  RangePicker
+  RangePicker,
+  ActionComponent,
 } from '../../src'
 
 storiesOf('Form', module)
@@ -126,6 +127,16 @@ storiesOf('Form', module)
     `)(() => (
       <div style={{ padding: '30px' }}>
         <RangePicker />
+      </div>
+    )),
+  )
+  .add(
+    'Action Component',
+    withInfo(`
+      Action Component component info
+    `)(() => (
+      <div style={{ padding: '30px', margin: '100px' }}>
+        <ActionComponent />
       </div>
     )),
   )
