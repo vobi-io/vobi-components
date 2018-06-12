@@ -13,8 +13,17 @@ import {
   DateSelector,
   ReactTimePicker,
   DatePicker,
-  RangePicker
+  RangePicker,
+  BetterSelector,
 } from '../../src'
+
+const selectType={
+  multi: true,
+  placeholder: 'Choose Item(s)',
+  width: '618px',
+  title: 'Choose your category',
+}
+
 
 storiesOf('Form', module)
   .addDecorator(withKnobs)
@@ -126,6 +135,26 @@ storiesOf('Form', module)
     `)(() => (
       <div style={{ padding: '30px' }}>
         <RangePicker />
+      </div>
+    )),
+  )
+  .add(
+    'Better Selector',
+    withInfo(`
+      Better Selector Component Info
+    `)(() => (
+      <div style={{ padding: '30px' }}>
+        <BetterSelector />
+      </div>
+    )),
+  )
+  .add(
+    'Multi Better Selector',
+    withInfo(`
+      Multi Better Selector Component Info
+    `)(() => (
+      <div style={{ padding: '30px' }}>
+        <BetterSelector selectType = { selectType } />
       </div>
     )),
   )

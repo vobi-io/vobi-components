@@ -24,6 +24,7 @@ import {
   ActiveBookingPage,
   UserPage,
   RequestListPage,
+  BetterSelector
 } from '../../src/BookingGenius'
 
 import FeedbackModalExample from './FeedbackModalExample'
@@ -534,3 +535,4 @@ storiesOf('BookingGenius', module)
       <UserPage />
     </div>
   ))
+
