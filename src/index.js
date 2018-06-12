@@ -19,4 +19,5 @@ export { default as ReactTimePicker } from './ReactTimePicker'
 export { default as DatePicker } from './DatePicker'
 export { default as RangePicker } from './RangePicker'
 export { default as ActionComponent } from './ActionComponent'
+export { default as BetterSelector } from './BetterSelector'
 export { BookingGenius }
