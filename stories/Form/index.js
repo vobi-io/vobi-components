@@ -115,7 +115,9 @@ storiesOf('Form', module)
       Date Picker component info
     `)(() => (
       <div style={{ padding: '30px' }}>
-        <DatePicker />
+        <DatePicker
+          onDateChange={() => {}}
+        />
       </div>
     )),
   )
