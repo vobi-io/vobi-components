@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Select from 'react-select';
+import Select, {components} from 'react-select'
+
+import DropDown from '../../assets/svg/BookingGenius/DropDown.svg'
+
 
 
 const StyledSelect = styled(Select)`
@@ -16,6 +19,11 @@ const Title = styled.span`
     margin-bottom: 5px;
     margin-left: 2px;
 `
+const Img = styled.img`
+    width: 12px;
+    height: 12px;
+`
+
 
 class BetterSelector extends Component {
     constructor(props){
@@ -28,14 +36,22 @@ class BetterSelector extends Component {
     }
     
     handleChange(selectedOption) {
+
       this.setState({ selectedOption });
           
     }
     render() {
         const { selectedOption } = this.state;
+        const DropdownIndicator = (props) => {
+            return (
+              <components.DropdownIndicator {...props}>
+                <Img src={this.props.icon} />
+              </components.DropdownIndicator>
+            );
+        };
   
       return (
-          <div>
+        <div>
             <Title>{this.props.selectType.title}</Title>
             <StyledSelect
                 width={this.props.selectType.width}
@@ -45,19 +61,24 @@ class BetterSelector extends Component {
                 onChange={this.handleChange}
                 placeholder={this.props.selectType.placeholder}
                 clearable={false}
-                options = {this.props.options}
+                options={this.props.options}
+                components={{DropdownIndicator}}
             />
         </div>
       );
     }
 }
 
+
+
 BetterSelector.propTypes={
+    icon: PropTypes,
     selectType: PropTypes.object,
     options: PropTypes.array,
 }
 
 BetterSelector.defaultProps = {
+    icon: DropDown,
     selectType: {
         multi: false,
         placeholder: 'choose',
