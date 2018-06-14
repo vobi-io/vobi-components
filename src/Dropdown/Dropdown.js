@@ -62,11 +62,7 @@ const Wrapper = styled.div`
 class Dropdown extends React.Component {
     constructor() {
         super()
-        this.state = {
-            open: false
-        }
 
-        this.toggle = this.toggle.bind(this)
         this.handleClickOutside = this.handleClickOutside.bind(this)
     }
 
@@ -82,17 +78,10 @@ class Dropdown extends React.Component {
 
     handleClickOutside(e) {
         if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
-            this.setState(() => ({
-                open: false
-            }))
+            this.props.close()
         }
     }
 
-    toggle() {
-        this.setState((prevState) => ({
-             open: !prevState.open
-        }))
-    }
 
 
     render() {
@@ -100,8 +89,8 @@ class Dropdown extends React.Component {
         const Children = this.props.children.slice(1)
         return (
             <Parent innerRef={e => this.wrapperRef = e} >
-                <Inline onClick={this.toggle}>{Menu}</Inline>
-                {this.state.open && (
+                <Inline onClick={this.props.toggle}>{Menu}</Inline>
+                {this.props.open && (
                     <Wrapper  {...this.props}>
                         {Children}
                     </Wrapper>
@@ -113,7 +102,10 @@ class Dropdown extends React.Component {
 
 
 Dropdown.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    open: PropTypes.bool.isRequired,
+    close: PropTypes.func.isRequired,
+    toggle: PropTypes.func.isRequired
 }
 
 export default Dropdown
