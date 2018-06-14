@@ -26,22 +26,8 @@ const Img = styled.img`
 
 
 class BetterSelector extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            selectedOption: '',
-        }
 
-        this.handleChange = this.handleChange.bind(this)
-    }
-    
-    handleChange(selectedOption) {
-
-      this.setState({ selectedOption });
-          
-    }
     render() {
-        const { selectedOption } = this.state;
         const DropdownIndicator = (props) => {
             return (
               <components.DropdownIndicator {...props}>
@@ -57,8 +43,8 @@ class BetterSelector extends Component {
                 width={this.props.selectType.width}
                 name="form-field-name"
                 isMulti={this.props.selectType.multi}
-                value={selectedOption}
-                onChange={this.handleChange}
+                value={this.props.value}
+                onChange={this.props.onChange}
                 placeholder={this.props.selectType.placeholder}
                 clearable={false}
                 options={this.props.options}
@@ -75,10 +61,13 @@ BetterSelector.propTypes={
     icon: PropTypes,
     selectType: PropTypes.object,
     options: PropTypes.array,
+    onChange: PropTypes.func,
+    value: PropTypes.any,
 }
 
 BetterSelector.defaultProps = {
     icon: DropDown,
+    onChange: (e) => { return (console.log('Value has Changed')) },
     selectType: {
         multi: false,
         placeholder: 'choose',
