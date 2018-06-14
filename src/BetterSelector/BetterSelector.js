@@ -69,8 +69,8 @@ BetterSelector.defaultProps = {
     icon: DropDown,
     onChange: (e) => { return (console.log('Value has Changed')) },
     selectStyles: {
-        control: styles => ({ ...styles, backgroundColor: '#ffffff', border: '1px solid rgb(193, 193, 193)', }),
-        input: styles => ({...styles, padding: '9px'})
+        control: styles => Object.assign(styles, {backgroundColor: '#ffffff', border: '1px solid rgb(193, 193, 193)'}),
+        input: styles => Object.assign(styles, {padding: '9px'})
     },
     selectType: {
         multi: false,
