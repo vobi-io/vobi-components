@@ -21,5 +21,8 @@
  // 5. Extras
  import '../stories/Extras/index'
 
- // 6. Booking Genius
+ // 6. Dropdown
+ import '../stories/Dropdown/index'
+
+ // 7. Booking Genius
  import '../stories/BookingGenius/index'
