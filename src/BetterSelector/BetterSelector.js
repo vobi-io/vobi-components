@@ -37,29 +37,29 @@ class BetterSelector extends Component {
         };
   
       return (
-        <div>
-            <Title>{this.props.selectType.title}</Title>
-            <StyledSelect
-                width={this.props.selectType.width}
-                name="form-field-name"
-                isMulti={this.props.selectType.multi}
-                value={this.props.value}
-                onChange={this.props.onChange}
-                placeholder={this.props.selectType.placeholder}
-                clearable={false}
-                options={this.props.options}
-                components={{DropdownIndicator}}
-            />
-        </div>
+        <StyledSelect
+            width={this.props.selectType.width}
+            name="form-field-name"
+            isMulti={this.props.selectType.multi}
+            value={this.props.value}
+            onChange={this.props.onChange}
+            placeholder={this.props.selectType.placeholder}
+            clearable={false}
+            options={this.props.options}
+            components={{DropdownIndicator}}
+            styles = {this.props.selectStyles}
+        />
       );
     }
 }
 
 
 
+
 BetterSelector.propTypes={
     icon: PropTypes,
     selectType: PropTypes.object,
+    selectStyles: PropTypes.object,
     options: PropTypes.array,
     onChange: PropTypes.func,
     value: PropTypes.any,
@@ -68,6 +68,10 @@ BetterSelector.propTypes={
 BetterSelector.defaultProps = {
     icon: DropDown,
     onChange: (e) => { return (console.log('Value has Changed')) },
+    selectStyles: {
+        control: styles => ({ ...styles, backgroundColor: '#ffffff', border: '1px solid rgb(193, 193, 193)', }),
+        input: styles => ({...styles, padding: '9px'})
+    },
     selectType: {
         multi: false,
         placeholder: 'choose',
