@@ -9,6 +9,14 @@ const fadeDown = keyframes`
   }
 `;
 
+const Parent = styled.div`
+  position: relative;
+  display: inline-block;
+`
+
+const Inline = styled.div`
+  display: inline-block;
+`
 
 const Wrapper = styled.div`
     display: flex;
@@ -21,11 +29,10 @@ const Wrapper = styled.div`
     border: 1px solid #E1E1E1;
     z-index: 100;
     box-sizing: border-box;
-    display: none;
+    display: inline-block;
     animation: ${fadeDown} 0.3s ease-in;
     min-width: 100px;
     ${p => p.width && `min-width: ${p.width}px`};
-    ${p => p.open && 'display: block'};
     ${p => p.left && `left: ${p.left}px`};
     ${p => p.right && `right: ${p.right}px`};
     ${p => p.top && `top: ${p.top}px`};
@@ -55,45 +62,58 @@ const Wrapper = styled.div`
 class Dropdown extends React.Component {
     constructor() {
         super()
-        
+        this.state = {
+            open: false
+        }
+
+        this.toggle = this.toggle.bind(this)
         this.handleClickOutside = this.handleClickOutside.bind(this)
     }
 
     componentWillMount(){
-        document.addEventListener('mousedown', this.handleClickOutside, true)
-        document.addEventListener('touchend', this.handleClickOutside, true)
+        document.addEventListener('mousedown', this.handleClickOutside, false)
+        document.addEventListener('touchend', this.handleClickOutside, false)
     }
 
     componentWillUnmount(){
-        document.removeEventListener('mousedown',this.handleClickOutside,true)
-        document.removeEventListener('touchend', this.handleClickOutside, true)
+        document.removeEventListener('mousedown',this.handleClickOutside,false)
+        document.removeEventListener('touchend', this.handleClickOutside, false)
     }
 
     handleClickOutside(e) {
         if (this.wrapperRef && !this.wrapperRef.contains(e.target)) {
-            this.props.onClose()
+            this.setState(() => ({
+                open: false
+            }))
         }
     }
 
+    toggle() {
+        this.setState((prevState) => ({
+             open: !prevState.open
+        }))
+    }
+
+
     render() {
-        if(!this.props.open) return null
+        const Menu = this.props.children.slice(0,1)
+        const Children = this.props.children.slice(1)
         return (
-            <Wrapper innerRef={e => this.wrapperRef = e} {...this.props}>
-                {this.props.children}
-            </Wrapper>
+            <Parent innerRef={e => this.wrapperRef = e} >
+                <Inline onClick={this.toggle}>{Menu}</Inline>
+                {this.state.open && (
+                    <Wrapper  {...this.props}>
+                        {Children}
+                    </Wrapper>
+                )}
+            </Parent>
         )
     }
 }
 
 
 Dropdown.propTypes = {
-    open: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired
-}
-
-Dropdown.defaultProps = { 
-    open: false
 }
 
 export default Dropdown
