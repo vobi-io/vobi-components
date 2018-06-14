@@ -15,16 +15,39 @@ const Button = styled.button`
     border: 0;
 `
 
-const Example = () => (
-    <Dropdown top={40}>
-        <Button>Dropdown Menu</Button>
-            <p>first</p>
-            <p>secod</p>
-            <p>last</p>
+class Example extends React.Component  {
+    constructor() {
+        super()
+        this.state = {
+            open: false
+        }
 
-    </Dropdown>
-)
+        this.toggle = this.toggle.bind(this)
+        this.close = this.close.bind(this)
+    }
 
+    toggle() {
+        this.setState((prevState) => ({
+            open: !prevState.open
+        }))
+    }
 
+    close() {
+        this.setState(() => ({
+            open: false
+        }))
+    }
+
+    render() {
+        return (
+            <Dropdown top={40} close={this.close} toggle={this.toggle} open={this.state.open}>
+                <Button>Dropdown Menu</Button>
+                <p>first</p>
+                <p>secod</p>
+                <p onClick={this.close}>Click me to close</p>
+            </Dropdown>
+        )
+    }
+}
 
 export default Example
