@@ -14,6 +14,7 @@ import {
   ReactTimePicker,
   DatePicker,
   RangePicker,
+  ActionComponent,
   BetterSelector,
 } from '../../src'
 
@@ -114,7 +115,9 @@ storiesOf('Form', module)
       Date Picker component info
     `)(() => (
       <div style={{ padding: '30px' }}>
-        <DatePicker />
+        <DatePicker
+          onDateChange={() => {}}
+        />
       </div>
     )),
   )
@@ -157,6 +160,15 @@ storiesOf('Form', module)
         <BetterSelector selectType = { selectType } />
       </div>
     )),
+   )
+  .add(
+    'Action Component',
+    withInfo(`
+      Action Component component info
+    `)(() => (
+      <div style={{ padding: '30px', margin: '100px' }}>
+        <ActionComponent />
+      </div>
+    )),
   )
-
 
