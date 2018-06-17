@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 import { withKnobs, text, boolean, select, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
+
 import {
   TextField,
   SelectField,
@@ -16,13 +17,6 @@ import {
   RangePicker,
   BetterSelector,
 } from '../../src'
-
-const selectType={
-  multi: true,
-  placeholder: 'Choose Item(s)',
-  width: '618px',
-  title: 'Choose your category',
-}
 
 
 storiesOf('Form', module)
@@ -144,7 +138,18 @@ storiesOf('Form', module)
       Better Selector Component Info
     `)(() => (
       <div style={{ padding: '30px' }}>
-        <BetterSelector />
+        <BetterSelector
+          onChange={item => (console.log('Item Changed,', item.value))}
+          options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' },
+            { value: 'three', label: 'Three' },
+          ]}
+          searchable={false}
+          style={{ width: '200px', borderRadius: '0px' }}
+          menuContainerStyle={{ width: '200px' }}
+          value="one"
+        />
       </div>
     )),
   )
@@ -154,9 +159,19 @@ storiesOf('Form', module)
       Multi Better Selector Component Info
     `)(() => (
       <div style={{ padding: '30px' }}>
-        <BetterSelector selectType = { selectType } />
+        <BetterSelector
+          multi
+          onChange={items => (console.log('Item Added to the selected Array', items))}
+          options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' },
+            { value: 'three', label: 'Three' },
+          ]}
+          style={{ width: '300px' }}
+          menuContainerStyle={{ width: '300px' }}
+          searchable={false}
+          placeholder="Choose from here"
+        />
       </div>
     )),
   )
-
-
