@@ -10,13 +10,15 @@ class BetterSelector extends Component {
     this.state = {
       selectedOption: '',
     }
+
+    this.handleChange = this.handleChange.bind(this)
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.value !== this.state.selectedOption) {
       this.setState({ selectedOption: nextProps.value })
     }
   }
-  handleChange = (selectedOption) => {
+  handleChange(selectedOption) {
     this.setState({ selectedOption })
     if (this.props.onChange) {
       this.props.onChange(selectedOption)
