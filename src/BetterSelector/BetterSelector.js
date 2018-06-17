@@ -1,91 +1,66 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Select, {components} from 'react-select'
-
-import DropDown from '../../assets/svg/BookingGenius/DropDown.svg'
-
-
-
-const StyledSelect = styled(Select)`
-    width: ${props => props.width};
-    span{
-        background-color: transparent;
-    }
-`
-const Title = styled.span`
-    color: rgb(51, 51, 51);
-    font-size: 16px;
-    margin-bottom: 5px;
-    margin-left: 2px;
-`
-const Img = styled.img`
-    width: 12px;
-    height: 12px;
-`
+import Select from 'react-select'
+import 'react-select/dist/react-select.css'
 
 
 class BetterSelector extends Component {
-
-    render() {
-        const DropdownIndicator = (props) => {
-            return (
-              <components.DropdownIndicator {...props}>
-                <Img src={this.props.icon} />
-              </components.DropdownIndicator>
-            );
-        };
-  
-      return (
-        <StyledSelect
-            width={this.props.selectType.width}
-            name="form-field-name"
-            isMulti={this.props.selectType.multi}
-            value={this.props.value}
-            onChange={this.props.onChange}
-            placeholder={this.props.selectType.placeholder}
-            clearable={false}
-            options={this.props.options}
-            components={{DropdownIndicator}}
-            styles = {this.props.selectStyles}
-        />
-      );
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedOption: '',
     }
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.state.selectedOption) {
+      this.setState({ selectedOption: nextProps.value })
+    }
+  }
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption })
+    if (this.props.onChange) {
+      this.props.onChange(selectedOption)
+    }
+  }
+
+  render() {
+    const { selectedOption } = this.state
+
+    return (
+      <Select
+        name={this.props.name}
+        multi={this.props.multi}
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={this.props.options}
+        arrowRenderer={this.props.arrowRenderer}
+        searchable={this.props.searchable}
+        clearable={this.props.clearable}
+        menuContainerStyle={this.props.menuContainerStyle}
+        menuStyle={this.props.menuStyle}
+        style={this.props.style}
+        wrapperStyle={this.props.wrapperStyle}
+        placeholder={this.props.placeholder}
+      />
+    )
+  }
 }
 
 
-
-
-BetterSelector.propTypes={
-    icon: PropTypes,
-    selectType: PropTypes.object,
-    selectStyles: PropTypes.object,
-    options: PropTypes.array,
-    onChange: PropTypes.func,
-    value: PropTypes.any,
-}
-
-BetterSelector.defaultProps = {
-    icon: DropDown,
-    onChange: (e) => { return (console.log('Value has Changed')) },
-    selectStyles: {
-        control: styles => ({ ...styles, backgroundColor: '#ffffff', border: '1px solid rgb(193, 193, 193)', }),
-        input: styles => ({...styles, padding: '9px'})
-    },
-    selectType: {
-        multi: false,
-        placeholder: 'choose',
-        width: '618px',
-        title: 'Choose your category',
-    },
-    options: [
-        { value: 'artist', label: 'Artist' },
-        { value: 'musician', label: 'Musician' },
-        { value: 'comedians', label: 'Comedians' },
-        { value: 'dj', label: 'DJ' },
-        { value: 'actor', label: 'Actor' },
-    ]
+BetterSelector.propTypes = {
+  onChange: PropTypes.func,// eslint-disable-line
+  value: PropTypes.any,// eslint-disable-line
+  multi: PropTypes.bool,// eslint-disable-line
+  options: PropTypes.array,// eslint-disable-line
+  name: PropTypes.string,// eslint-disable-line
+  arrowRenderer: PropTypes.func,// eslint-disable-line
+  searchable: PropTypes.bool,// eslint-disable-line
+  clearable: PropTypes.bool,// eslint-disable-line
+  menuContainerStyle: PropTypes.object,// eslint-disable-line
+  menuStyle: PropTypes.object,// eslint-disable-line
+  style: PropTypes.object,// eslint-disable-line
+  wrapperStyle: PropTypes.object,// eslint-disable-line
+  placeholder: PropTypes.string,// eslint-disable-line
 }
 
 export default BetterSelector
-
