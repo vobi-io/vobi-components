@@ -28,6 +28,7 @@ class BetterSelector extends Component {
 
     return (
       <Select
+        className={this.props.className}
         name={this.props.name}
         multi={this.props.multi}
         value={selectedOption}
@@ -61,6 +62,7 @@ BetterSelector.propTypes = {
   style: PropTypes.object,// eslint-disable-line
   wrapperStyle: PropTypes.object,// eslint-disable-line
   placeholder: PropTypes.string,// eslint-disable-line
+  className: PropTypes.string,// eslint-disable-line
 }
 
 export default BetterSelector
