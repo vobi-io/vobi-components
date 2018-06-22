@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { NavBar } from '../..'
-import { text } from '@storybook/addon-knobs'
 import Active from './Active'
 import UpComing from './UpComing'
 import Past from './Past'
@@ -83,7 +82,7 @@ const ActiveBookingList = () => (
 
 
 const user = {
-    avatar: text('Avatar', 'https://avatars2.githubusercontent.com/u/2933601?s=460&v=4'),
+    avatar: 'https://avatars2.githubusercontent.com/u/2933601?s=460&v=4',
 }
 
 const activeBooking = {

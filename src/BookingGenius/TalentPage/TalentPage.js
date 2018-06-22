@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { text, boolean, number, array } from '@storybook/addon-knobs'
-
 
 import Header from './Header'
 import Notifications from './Notifications'
@@ -49,16 +47,16 @@ const TalentPage = () => (
             <Aside>
                 <ArtistCard
                     artist={{
-                        avatar: text('Avatar', 'https://www.hellomagazine.com/imagenes/celebrities/2017101143124/angelina-jolie-womens-rights-harpers-bazaar/0-220-355/angelina-jolie-womens-rights-t.jpg'),
-                        fullName: text('Full name', 'Bugle Shaggy'),
-                        verified: boolean('Verified', false),
-                        address: text('Address', 'New York, NY, United States'),
-                        tags: array('Tags', ['Reggae', 'ska', 'rocksteady']),
-                        rating: number('Rating', 4),
-                        reviews: array('Reviews', ['1', '2', '3', '4', '5']),
+                        avatar: 'https://www.hellomagazine.com/imagenes/celebrities/2017101143124/angelina-jolie-womens-rights-harpers-bazaar/0-220-355/angelina-jolie-womens-rights-t.jpg',
+                        fullName: 'Bugle Shaggy',
+                        verified: false,
+                        address: 'New York, NY, United States',
+                        tags: ['Reggae', 'ska', 'rocksteady'],
+                        rating: 4,
+                        reviews: ['1', '2', '3', '4', '5'],
                         price: {
-                        min: number('Price Min', 300),
-                        max: number('Price max', 1500),
+                        min: 300,
+                        max: 1500,
                         },
                     }} view={true}
                 />
