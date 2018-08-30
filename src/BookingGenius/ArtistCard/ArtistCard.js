@@ -114,8 +114,8 @@ const ButtonContainer = styled.div`
 `
 
 const ArtistCard = props => {
-  if(props.view){
-    return(
+  if (props.view) {
+    return (
       <Container>
         <Avatar src={props.artist.avatar} />
         <Info>
@@ -144,12 +144,12 @@ const ArtistCard = props => {
           </PriceRange>
         </Info>
         <ButtonContainer>
-          <Button display = {"View Profile"} />
+          <Button display={"View Profile"} />
         </ButtonContainer>
       </Container>
     )
-  }else{
-    return(
+  } else {
+    return (
       <Container>
         <Avatar src={props.artist.avatar} />
         <Info>
