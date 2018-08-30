@@ -7,6 +7,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import {
   Header,
   Footer,
+  Subscribe,
 } from '../../src/MixTape'
 
 storiesOf('MixTape', module)
@@ -28,6 +29,16 @@ storiesOf('MixTape', module)
     `)(() => (
       <div style={{ minHeight: 500 }}>
         <Footer />
+      </div>
+    )),
+  )
+  .add(
+    'Subscribe',
+    withInfo(`
+      Subscribe
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <Subscribe />
       </div>
     )),
   )
