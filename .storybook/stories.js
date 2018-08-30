@@ -26,3 +26,7 @@
 
  // 7. Booking Genius
  import '../stories/BookingGenius/index'
+
+ // 8. Mix Tape
+
+ import '../stories/MixTape/index'
