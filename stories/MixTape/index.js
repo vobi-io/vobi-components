@@ -8,6 +8,7 @@ import {
   Header,
   Footer,
   Subscribe,
+  MainSlider,
 } from '../../src/MixTape'
 
 storiesOf('MixTape', module)
@@ -39,6 +40,16 @@ storiesOf('MixTape', module)
     `)(() => (
       <div style={{ minHeight: 500 }}>
         <Subscribe />
+      </div>
+    )),
+  )
+  .add(
+    'Slider',
+    withInfo(`
+      Slider
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <MainSlider />
       </div>
     )),
   )
