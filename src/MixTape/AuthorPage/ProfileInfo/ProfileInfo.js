@@ -19,7 +19,7 @@ const ProfileImg = styled.div`
 `
 
 const Image = styled.div`
-        width: 180px;
+     width: 180px;
         height: 180px;
         border-radius: 100%;
         background-position: 66%;

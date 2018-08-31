@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Post from "./Post";
-import { array } from '@storybook/addon-knobs/dist/base';
+import Subscribe from "../../Subscribe";
 
 
 const ResentPostsContainer = styled.div`
@@ -30,11 +30,6 @@ const PostsContainer = styled.div`
     flex-wrap:wrap;
     justify-content:space-between;
 `
-const RandomComponent = styled.div`
-    width:100%;
-    height:100px;
-    background:tomato;
-`
 
 export default (props) => {
 
@@ -58,10 +53,10 @@ export default (props) => {
                 {
                     props.data.map((item, index, self) => {
                         if (index === 9) {
-                            render.push(<RandomComponent />)
+                            render.push(<Subscribe />)
                         }
                         else if (index === self.length) {
-                            render.push(<RandomComponent />)
+                            render.push(<Subscribe />)
                         }
                         render.push(<Post data={item} />)
                     })

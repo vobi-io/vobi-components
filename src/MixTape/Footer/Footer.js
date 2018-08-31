@@ -13,7 +13,9 @@ const FooterContainer = styled.footer`
   ${props => props.backgroundColor && `background-color: ${props.backgroundColor}`};
 `
 const ContentContainer = styled.div`
-  padding: 40px 60px;
+  padding: 40px 0px;
+  max-width: 1200px;
+  margin: auto;
 `
 const FlexDiv = styled.div`
   display: flex;
