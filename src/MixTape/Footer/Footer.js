@@ -7,7 +7,6 @@ import GooglePlayIcon from '../../../assets/svg/MixTape/googleplay.png'
 
 const FooterContainer = styled.footer`
   width: 100%;
-  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
