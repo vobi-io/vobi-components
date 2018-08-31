@@ -8,6 +8,7 @@ import MainSlider from '../MainSlider'
 import TrendingItem from '../TrendingItem'
 import Footer from '../Footer'
 import ToListenPlaylist from '../ToListenPlaylist'
+import Download from '../Download'
 
 const Span = styled.span`
   ${p => p.color && `color: ${p.color}`};
@@ -61,6 +62,7 @@ const HomePage = ({ trendingData, haveToListenData }) => (
         ))}
       </FlexDiv>
     </HaveToListenContainer>
+    <Download />
     <Footer />
   </div>
 )

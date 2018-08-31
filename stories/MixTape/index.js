@@ -17,6 +17,7 @@ import {
   TrendingItem,
   HomePage,
   ToListenPlaylist,
+  Download,
 } from '../../src/MixTape'
 
 const Trending = {
@@ -140,6 +141,16 @@ storiesOf('MixTape', module)
     `)(() => (
       <div style={{ minHeight: 500 }}>
         <ToListenPlaylist data={ToListenPlaylistData} />
+      </div>
+    )),
+  )
+  .add(
+    'Download',
+    withInfo(`
+      Download
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <Download />
       </div>
     )),
   )
