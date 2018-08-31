@@ -23,12 +23,13 @@ const GridTitle = styled.div`
 const GridItems = styled.div`
     width:100%;
     display:flex;
+    justify-content:space-between;
     margin-top:20px;
 `
 
 const GridItem = styled.div`
     height:200px;
-    flex:1 0 250px;
+    flex:1 0 150px;
     margin:10px;
     display:flex;
     flex-direction:column;
