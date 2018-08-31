@@ -16,6 +16,7 @@ import {
   MainSlider,
   TrendingItem,
   HomePage,
+  ToListenPlaylist,
 } from '../../src/MixTape'
 
 const Trending = {
@@ -53,6 +54,33 @@ const dummyDataForTrending = [
   },
 ]
 
+const ToListenPlaylistData = {
+  picture: Musician,
+  type: 'Playlists',
+  name: 'Grime Up North',
+  text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+  tracksCount: 15,
+  followersCount: 69000,
+}
+
+const ToListenPlaylistArray = [
+  {
+    picture: Musician,
+    type: 'Playlists',
+    name: 'Grime Up North',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    tracksCount: 15,
+    followersCount: 69000,
+  },
+  {
+    picture: Musician2,
+    type: 'Playlists',
+    name: 'Grime Essentials',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    tracksCount: 15,
+    followersCount: 69000,
+  },
+]
 storiesOf('MixTape', module)
   .addDecorator(withKnobs)
   .add(
@@ -105,6 +133,16 @@ storiesOf('MixTape', module)
       </div>
     )),
   )
+  .add(
+    'Have to listen Playlist',
+    withInfo(`
+      Have to listen Playlist
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <ToListenPlaylist data={ToListenPlaylistData} />
+      </div>
+    )),
+  )
 
   .add(
     'Home Page',
@@ -112,7 +150,7 @@ storiesOf('MixTape', module)
       Home Page
     `)(() => (
       <div style={{ minHeight: 500 }}>
-        <HomePage trendingData={dummyDataForTrending} />
+        <HomePage trendingData={dummyDataForTrending} haveToListenData={ToListenPlaylistArray} />
       </div>
     )),
   )
