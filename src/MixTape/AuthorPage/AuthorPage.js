@@ -18,11 +18,7 @@ const LineSeparator = styled.div`
     height:1px;
     background:#e0e0e0;
 `
-const RandomComponent = styled.div`
-    width:100%;
-    height:100px;
-    background:tomato;
-`
+
 
 export default (props) => {
     const { profile, posts } = props.data
@@ -32,7 +28,6 @@ export default (props) => {
             <ProfileInfo data={profile} />
             <LineSeparator></LineSeparator>
             <ResentPosts data={posts}>
-                <RandomComponent />
             </ResentPosts>
         </AuthorPageContainer>
     )

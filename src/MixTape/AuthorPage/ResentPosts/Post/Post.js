@@ -75,6 +75,11 @@ const PostInfoItem = styled.span`
     font-weight:600;
 `
 
+const RandomComponent = styled.div`
+    width:100%;
+    height:100px;
+    background:tomato;
+`
 
 
 
