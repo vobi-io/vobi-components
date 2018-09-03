@@ -93,12 +93,67 @@ const WhatsOnComponentData = {
   views: '10,000',
 }
 
+const WhatsOnComponentVideos = [
+  {
+    picture: Musician,
+    type: 'Video',
+    name: 'Grime Up North',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    views: '10,000',
+  },
+  {
+    picture: Musician1,
+    type: 'Video',
+    name: 'Grime Up North',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    views: '10,000',
+  },
+]
+const WhatsOnComponentDataArray = [
+  {
+    picture: Musician2,
+    type: 'News',
+    name: 'Grime Up North',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    views: '10,000',
+  },
+  {
+    picture: Musician1,
+    type: 'Playlist',
+    name: 'Grime Up North',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    views: '10,000',
+  },
+]
+
 const VideoData = {
   picture: Musician,
   songName: "I'm Upset",
   views: '10k',
   songAuthor: 'Drake',
 }
+
+const VideoDataArray = [
+  {
+    picture: Musician,
+    songName: "I'm Upset",
+    views: '10k',
+    songAuthor: 'Drake',
+  },
+  {
+    picture: Musician1,
+    songName: 'Praise The Lord',
+    songAuthor: 'A$AP Rocky Feat Skepta',
+    views: '10k',
+  },
+  {
+    picture: Musician2,
+    songName: 'What You Want',
+    songAuthor: 'Belly Feat. The Weeknd',
+    views: '10k',
+  },
+]
+
 storiesOf('MixTape', module)
   .addDecorator(withKnobs)
   .add(
@@ -198,7 +253,13 @@ storiesOf('MixTape', module)
       Home Page
     `)(() => (
       <div style={{ minHeight: 500 }}>
-        <HomePage trendingData={dummyDataForTrending} haveToListenData={ToListenPlaylistArray} />
+        <HomePage
+          trendingData={dummyDataForTrending}
+          haveToListenData={ToListenPlaylistArray}
+          whatsOnVideos={WhatsOnComponentVideos}
+          whatsOnData={WhatsOnComponentDataArray}
+          videoData={VideoDataArray}
+        />
       </div>
     )),
   )

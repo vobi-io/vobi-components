@@ -9,7 +9,7 @@ import DotsIcon from '../../../assets/svg/MixTape/dots.svg'
 
 
 const Container = styled.div`
-  width: 350px;
+  width: 375px;
 `
 
 const PhotoContainer = styled.div`

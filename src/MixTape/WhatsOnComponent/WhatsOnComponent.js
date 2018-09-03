@@ -9,7 +9,7 @@ import SignalBarsIcon from '../../../assets/svg/MixTape/signal-bars.svg'
 
 
 const Container = styled.div`
-  width: 500px;
+  width: 575px;
 `
 
 const PhotoContainer = styled.div`

@@ -15,7 +15,7 @@ const Icon = styled.img`
 `
 
 const Container = styled.div`
-  width: 500px;
+  width: 575px;
 `
 const PhotoContainer = styled.div`
   width: 100%
