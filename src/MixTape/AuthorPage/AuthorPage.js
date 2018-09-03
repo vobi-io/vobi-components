@@ -10,6 +10,9 @@ const AuthorPageContainer = styled.div`
     margin:auto;
     display:flex;
     flex-direction:column;
+    @media only screen and (max-width: 1024px){
+        width:80%;
+    }
 `
 
 const LineSeparator = styled.div`

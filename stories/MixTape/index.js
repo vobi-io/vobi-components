@@ -11,6 +11,7 @@ import {
   AuthorPage,
   Subscribe,
   MainSlider,
+  News
 } from '../../src/MixTape'
 
 
@@ -42,7 +43,6 @@ const girdData = [
     helperTxt: "Wherever, Whenever"
   },
 ]
-
 
 // mock data for AUthor Page Profile Info
 const AuthorData = {
@@ -192,7 +192,6 @@ const AuthorData = {
   ]
 }
 
-
 storiesOf('MixTape', module)
   .addDecorator(withKnobs)
   .add(
@@ -252,6 +251,16 @@ storiesOf('MixTape', module)
     `)(() => (
         <div style={{ minHeight: 500 }}>
           <MainSlider />
+        </div>
+      )),
+  )
+  .add(
+    'News',
+    withInfo(`
+    News
+    `)(() => (
+        <div style={{ minHeight: 500 }}>
+          <News />
         </div>
       )),
   )

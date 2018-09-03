@@ -8,6 +8,9 @@ const ProfileContainer = styled.div`
     width:100%;
     display:flex;
     margin-top:30px;
+    @media only screen and (max-width: 1024px){
+        flex-direction:column;        
+    }        
 `
 
 const ProfileImg = styled.div`
@@ -35,17 +38,37 @@ const EditProfile = styled.div`
     cursor:pointer;
 `
 
-
 const ProfileDesc = styled.div`
     flex:3;
     display:flex;
     flex-direction:column;
     justify-content: space-between;
+    @media only screen and (max-width: 1024px){
+        align-items: center;
+        text-align: center;
+    }        
+
 `
 
 const ProfileDescTitle = styled.div`
     display:flex;
     justify-content:space-between;
+    @media only screen and (max-width: 1024px){
+        display:none;
+    }
+`
+
+const MobileProfileDescTitle = styled.div`
+    display:none;
+    @media only screen and (max-width: 1024px){
+        display:flex;
+        flex-direction:column; 
+    }
+`
+
+const MobileProfileBottom = styled.div`
+    display:flex;
+    align-items:center;
 `
 
 const ProfileInfo = styled.div`
@@ -65,40 +88,42 @@ const ProfileDescOcupation = styled.h3`
 `
 
 const ProfileDescIcons = styled.div`
-    
+    @media only screen and (max-width: 1024px){
+        align-items: center;
+        text-align: center;
+        display:none
+    }        
 `
 
+
 const ProfileDescIcon = styled.img`
-    width:20px;
-    margin-left:10px;
+    width: 20px;
+    margin-left: 10px;
     ${ props => props.TwitterIcon && 'height: 17px;'}
 `
 
-
-
 const ProfileDescContent = styled.div`
-    margin-top:40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:space-between;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
 `
 
 const ProfileDescTxt = styled.span`
-    color:#949494;
-    font-size:18px;
-    font-weight:800;
+    color: #949494;
+    font-size: 18px;
+    font-weight: 800;
 `
 
 const ShowMore = styled.div`
-    font-size:18px;
-    color:#949494;
-    margin-top:10px;
+    font-ssize: 18px;
+    color: #949494;
+    margi-top: 10px;
     cursor:pointer;
 `
 
 export default (props) => {
-    console.log('props', props);
     const { img, name, ocupation, bio } = props.data
     return (
         <ProfileContainer>
@@ -113,18 +138,36 @@ export default (props) => {
                 <ProfileDescTitle>
                     <ProfileInfo>
                         <ProfileDescName>
-                            Bianca Grace
+                            {name}
                         </ProfileDescName>
                         <ProfileDescOcupation>
-                            Music Editor
-                    </ProfileDescOcupation>
+                            {ocupation}
+                        </ProfileDescOcupation>
                     </ProfileInfo>
                     <ProfileDescIcons>
                         <ProfileDescIcon src={TwitterIcon} />
                         <ProfileDescIcon src={InstagramIcon} />
-                        <ProfileDescIcon />
                     </ProfileDescIcons>
                 </ProfileDescTitle>
+
+
+                <MobileProfileDescTitle>
+
+                    <ProfileDescName>
+                        {name}
+                    </ProfileDescName>
+
+                    <MobileProfileBottom>
+                        <ProfileDescOcupation>
+                            {ocupation} |
+                        </ProfileDescOcupation>
+                        <ProfileDescIcon src={InstagramIcon} />
+                        <ProfileDescIcon src={TwitterIcon} />
+                    </MobileProfileBottom>
+
+                </MobileProfileDescTitle>
+
+
 
                 <ProfileDescContent>
                     <ProfileDescTxt>
@@ -135,7 +178,7 @@ export default (props) => {
                     </ShowMore>
                 </ProfileDescContent>
 
-            </ProfileDesc>
-        </ProfileContainer>
+            </ProfileDesc >
+        </ProfileContainer >
     )
 }
