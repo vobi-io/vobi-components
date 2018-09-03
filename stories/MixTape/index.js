@@ -23,6 +23,9 @@ import {
   WhatsOnComponent,
   Video,
   News,
+  BlogPost,
+  BlogPostPage,
+  YouTubeVideo,
 } from '../../src/MixTape'
 
 const Trending = {
@@ -335,6 +338,63 @@ const AuthorData = {
   ],
 }
 
+
+const blogPostData = {
+  views: '3000',
+  raiting: '5/5',
+  date: 'August 23rd 2018',
+  author: 'Mohammed Patel',
+  text: "Georgia (Georgian: საქართველო, translit.: sakartvelo, IPA: [sɑkʰɑrtʰvɛlɔ] (About this sound listen)) is a country in the Caucasus region of Eurasia. Located at the crossroads of Western Asia and Eastern Europe, it is bounded to the west by the Black Sea, to the north by Russia, to the south by Turkey and Armenia, and to the southeast by Azerbaijan. The capital and largest city is Tbilisi. Georgia covers a territory of 69,700 square kilometres (26,911 sq mi), and its 2017 population is about 3.718 million. Georgia is a unitary semi-presidential republic, with the government elected through a representative democracy.During the classical era, several independent kingdoms became established in what is now Georgia, such as Colchis, later known as Lazica and Iberia. The Georgians adopted Christianity in the early 4th century. The common belief had an enormous importance for spiritual and political unification of early Georgian states. A unified Kingdom of Georgia reached its Golden Age during the reign of King David IV and Queen Tamar in the 12th and early 13th centuries. Thereafter,the kingdom declined and eventually disintegrated under hegemony of various regional powers, including the Mongols, the Ottoman Empire, and successive dynasties of Iran. In the late 18th century, the eastern Georgian Kingdom of Kartli-Kakheti forged an alliance with the Russian Empire, which directly annexed the kingdom in 1801 and conquered the western Kingdom of Imereti in 1810. Russian rule over Georgia was eventually acknowledged in various peace treaties with Iran and the Ottomans and the remaining Georgian territories were absorbed by the Russian Empire in a piecemeal fashion in the course of the 19th century. During the Civil War following the Russian Revolution in 1917, Georgia briefly became part of the Transcaucasian Federation and then emerged as an independent republic before the Red Army invasion in 1921 which established a government of workers' and peasants' soviets. Soviet Georgia would be incorporated into a new Transcaucasian Federation which in 1922 would be a founding republic of the Soviet Union. In 1936, the Transcaucasian Federation was dissolved and Georgia emerged as a Union Republic. During the Great Patriotic War, almost 700,000 Georgians fought in the Red Army against the German invaders. After Soviet leader Joseph Stalin, a native Georgian, died in 1953, a wave of protest spread against Nikita Khrushchev and his de-Stalinization reforms, leading to the death of nearly one hundred students in 1956. From that time on, Georgia would become marred with blatant corruption and increased alienation of the government from the people.",
+}
+
+const blogPageData = {
+  blogPostData,
+  video: 'https://www.youtube.com/watch?v=lt-udg9zQSE',
+  tags: ['AJ Tracey', 'Music Video', 'Grime', 'UK Rap', 'London'],
+  mayLike: [
+    {
+      picture: Musician,
+      type: 'News',
+      header: 'C36 Drops "Guten Tag" Video exclusively on mixtape madness',
+      text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+      author: 'Mohhammed Patel',
+      views: '10,000',
+    },
+    {
+      picture: Musician1,
+      type: 'News',
+      header: 'Balistik releases the video for "who is next", on mixtape madness',
+      text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+      author: 'Mohhammed Patel',
+      views: '10,000',
+    },
+    {
+      picture: Musician2,
+      type: 'News',
+      header: 'WSTRN drops their new single "Sharna"',
+      text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+      author: 'Mohhammed Patel',
+      views: '10,000',
+    },
+    {
+      picture: Musician,
+      type: 'News',
+      header: 'Mo stack covers puma RS-O event in london',
+      text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+      author: 'Mohhammed Patel',
+      views: '10,000',
+    },
+    {
+      picture: Musician1,
+      type: 'News',
+      header: 'Lady Leshurr Drops Her New Freestyle',
+      text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+      author: 'Mohhammed Patel',
+      views: '10,000',
+    },
+  ],
+}
+
 storiesOf('MixTape', module)
   .addDecorator(withKnobs)
   .add(
@@ -471,6 +531,36 @@ storiesOf('MixTape', module)
           whatsOnData={WhatsOnComponentDataArray}
           videoData={VideoDataArray}
         />
+      </div>
+    )),
+  )
+  .add(
+    'Blog Post',
+    withInfo(`
+      Blog Post
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <BlogPost data={blogPostData} />
+      </div>
+    )),
+  )
+  .add(
+    'You Tube Video',
+    withInfo(`
+      You Tube Video
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <YouTubeVideo url="https://www.youtube.com/watch?v=lt-udg9zQSE" />
+      </div>
+    )),
+  )
+  .add(
+    'Blog Post Page',
+    withInfo(`
+      Blog Post Page
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <BlogPostPage blogPageData={blogPageData} />
       </div>
     )),
   )

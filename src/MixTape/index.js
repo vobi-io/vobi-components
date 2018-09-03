@@ -9,8 +9,10 @@ export { default as ToListenPlaylist } from './ToListenPlaylist'
 export { default as Download } from './Download'
 export { default as WhatsOnComponent } from './WhatsOnComponent'
 export { default as Video } from './Video'
-
+export { default as BlogPost } from './BlogPost'
+export { default as YouTubeVideo } from './YouTubeVideo'
 
 export { default as HomePage } from './HomePage'
 export { default as News } from './News'
+export { default as BlogPostPage } from './BlogPostPage'
 

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+
 
 import SearchIcon from '../../../assets/svg/MixTape/search.svg'
 import DotsIcon from '../../../assets/svg/MixTape/ellipsis.svg'
@@ -8,6 +10,7 @@ import FacebookIcon from '../../../assets/svg/MixTape/facebook-app-logo.svg'
 import InstagramIcon from '../../../assets/svg/MixTape/instagram-logo.svg'
 import YoutubeIcon from '../../../assets/svg/MixTape/youtube.svg'
 import BurgerIcon from '../../../assets/svg/MixTape/burger.svg'
+import { Head } from 'glamorous';
 
 
 const HeaderContainer = styled.div`
@@ -15,6 +18,7 @@ const HeaderContainer = styled.div`
   height: 120px;
   background-color: #ffffff;
   font-size: 16px;
+  ${p => p.bottomBorder === true && 'border-bottom: 1px solid #E7E7E7'};
 `
 const ContentContainer = styled.div`
   max-width: 1200px;
@@ -112,8 +116,8 @@ const Burger = styled.img`
   cursor: pointer;
 `
 
-const Header = () => (
-  <HeaderContainer>
+const Header = props => (
+  <HeaderContainer bottomBorder={props.bottomBorder}>
     <ContentContainer>
       <LeftSide>
         <Burger src={BurgerIcon} alt="burger" />
@@ -148,5 +152,13 @@ const Header = () => (
     </ContentContainer>
   </HeaderContainer>
 )
+
+Header.propTypes = {
+  bottomBorder: PropTypes.bool,
+}
+
+Header.defaultProps = {
+  bottomBorder: false,
+}
 
 export default Header
