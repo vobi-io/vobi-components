@@ -5,6 +5,8 @@ export { default as MainSlider } from './MainSlider'
 export { default as TrendingItem } from './TrendingItem'
 export { default as ToListenPlaylist } from './ToListenPlaylist'
 export { default as Download } from './Download'
+export { default as WhatsOnComponent } from './WhatsOnComponent'
+export { default as Video } from './Video'
 
 
 export { default as HomePage } from './HomePage'

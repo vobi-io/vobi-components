@@ -18,6 +18,8 @@ import {
   HomePage,
   ToListenPlaylist,
   Download,
+  WhatsOnComponent,
+  Video,
 } from '../../src/MixTape'
 
 const Trending = {
@@ -82,6 +84,21 @@ const ToListenPlaylistArray = [
     followersCount: 69000,
   },
 ]
+
+const WhatsOnComponentData = {
+  picture: Musician,
+  type: 'Video',
+  name: 'Grime Up North',
+  text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+  views: '10,000',
+}
+
+const VideoData = {
+  picture: Musician,
+  songName: "I'm Upset",
+  views: '10k',
+  songAuthor: 'Drake',
+}
 storiesOf('MixTape', module)
   .addDecorator(withKnobs)
   .add(
@@ -151,6 +168,26 @@ storiesOf('MixTape', module)
     `)(() => (
       <div style={{ minHeight: 500 }}>
         <Download />
+      </div>
+    )),
+  )
+  .add(
+    'Whats On Component',
+    withInfo(`
+      Whats On Component
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <WhatsOnComponent data={WhatsOnComponentData} />
+      </div>
+    )),
+  )
+  .add(
+    'Video',
+    withInfo(`
+      Video
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <Video data={VideoData} />
       </div>
     )),
   )
