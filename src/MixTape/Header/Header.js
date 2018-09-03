@@ -12,7 +12,7 @@ import BurgerIcon from '../../../assets/svg/MixTape/burger.svg'
 
 const HeaderContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 120px;
   background-color: #ffffff;
   font-size: 16px;
 `
