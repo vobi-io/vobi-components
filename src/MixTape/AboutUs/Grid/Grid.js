@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from "styled-components";
-import DotsIcon from '../../../../assets/svg/MixTape/ellipsis.svg'
+import styled from 'styled-components'
+// import DotsIcon from '../../../../assets/svg/MixTape/ellipsis.svg'
 
 const GridContainer = styled.div`
     width: 1024px;
@@ -45,7 +45,6 @@ const GridItemIcon = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    background:
 `
 
 const Icon = styled.div`
@@ -77,31 +76,31 @@ const GridItemHelper = styled.span`
 `
 
 export default (props) => {
-    const { data } = props
-    return (
-        <GridContainer>
-            <GridTitle>
-                Why Join Mixtape Madness
-            </GridTitle>
-            <GridItems>
-                {
-                    data.map(item =>
-                        <GridItem>
-                            <GridItemIcon>
-                                <Icon src={item.icon} />
-                            </GridItemIcon>
-                            <GridItemTxt>
-                                <GridItemtitle>
-                                    {item.title}
-                                </GridItemtitle>
-                                <GridItemHelper>
-                                    {item.helperTxt}
-                                </GridItemHelper>
-                            </GridItemTxt>
-                        </GridItem>
-                    )
-                }
-            </GridItems>
-        </GridContainer>
-    )
+  const { data } = props
+  return (
+    <GridContainer>
+      <GridTitle>
+        Why Join Mixtape Madness
+      </GridTitle>
+      <GridItems>
+        {
+          data.map(item => (
+            <GridItem>
+              <GridItemIcon>
+                <Icon src={item.icon} />
+              </GridItemIcon>
+              <GridItemTxt>
+                <GridItemtitle>
+                  {item.title}
+                </GridItemtitle>
+                <GridItemHelper>
+                  {item.helperTxt}
+                </GridItemHelper>
+              </GridItemTxt>
+            </GridItem>
+          ))
+        }
+      </GridItems>
+    </GridContainer>
+  )
 }

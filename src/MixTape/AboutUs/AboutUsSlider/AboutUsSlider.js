@@ -6,7 +6,7 @@ const imgUrl = 'https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg
 
 
 const SliderContainer = styled.div`
-  width: 1024px;
+  width: 100%;
   height: 800px;
   box-sizing:border-box;
   display:flex;

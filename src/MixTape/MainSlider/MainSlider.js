@@ -19,15 +19,16 @@ const Img = styled.img`
 `
 
 
-const PrevArrow = ({ onClick }) => (
+const PrevArrow = ({ onClick }) => (// eslint-disable-line
   <Img src={Prev} onClick={onClick} />
 )
 
-const NextArrow = ({ onClick }) => (
+const NextArrow = ({ onClick }) => (// eslint-disable-line
   <Img src={Next} onClick={onClick} />
 )
 
 const Container = styled.div`
+    min-height: 543px;
     .slick-slider
     {
         position: relative;
@@ -358,10 +359,49 @@ const Override = styled.div`
 
     .slick-current {
         justify-content: flex-start !important;
+        >div {
+            width: 100%;
+        }
     }
 `
-const Image = styled.img`
-  height: 540px;
+
+const SliderContent = styled.div`
+  height: 540px
+  background-image: url(${p => p.SliderPhoto});
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+`
+const Header = styled.span`
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+`
+const Span = styled.span`
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+`
+const LatestSingles = styled.button`
+  border: 1px solid #FF9D00;
+  background: transparent;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  padding: 10px 5px;
+  width: 150px;
+  cursor: pointer;
+  margin-top: 30px;
+`
+const FlexDiv = styled.div`
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 `
 const settings = {
   dots: false,
@@ -376,8 +416,18 @@ const MainSlider = () => (
   <Container>
     <Override>
       <Slider {...settings}>
-        <Image src={SliderPhoto} />
-        <Image src={SliderPhotoSecond} />
+        {/* <Image src={SliderPhoto} />
+        <Image src={SliderPhotoSecond} /> */}
+        <SliderContent SliderPhoto={SliderPhoto}>
+          <FlexDiv>
+            <Header>
+              Check Out The Latest Music And News On <br />
+              <Span>Mixtape Madness</Span>
+            </Header>
+            <LatestSingles>View Latest Singles</LatestSingles>
+          </FlexDiv>
+        </SliderContent>
+        <SliderContent SliderPhoto={SliderPhotoSecond} />
       </Slider>
     </Override>
   </Container>

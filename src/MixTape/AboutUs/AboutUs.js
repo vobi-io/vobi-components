@@ -1,29 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import AboutUsSlider from "./AboutUsSlider";
-import Header from "../Header";
-import Grid from './Grid';
+import AboutUsSlider from './AboutUsSlider'
+import Header from '../Header'
+import Grid from './Grid'
 
 import Footer from '../Footer'
 
 const AboutUsContainer = styled.div`
-    width:1024px;
+    width:70%;
     display:flex;
     align-items:center;
     flex-direction:column;
     margin:auto;
 `
 
-export default (props) => {
-    const { data } = props
-    return (
-        <AboutUsContainer>
-            About Us
-            <Header />
-            <AboutUsSlider />
-            <Grid data={data} />
-            <Footer />
-        </AboutUsContainer>
-    )
-}
+export default props => (
+  <AboutUsContainer>
+    About Us
+    <Header />
+    <AboutUsSlider />
+    <Grid data={props.data} />
+    <Footer />
+  </AboutUsContainer>
+)
+

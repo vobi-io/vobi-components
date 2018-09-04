@@ -45,58 +45,58 @@ const ActionLinks = styled.span`
     }
 `
 
-class ActionComponent extends Component{
-    constructor(props){
-        super()
-        this.handeClick = this.handeClick.bind(this)
-        this.setWrapperRef = this.setWrapperRef.bind(this)
-        this.state = {
-            dropDownOpen: false,
-        }
-
-        this.toggle = this.toggle.bind(this)
+class ActionComponent extends Component {
+  constructor(props) {
+    super()
+    this.handeClick = this.handeClick.bind(this)
+    this.setWrapperRef = this.setWrapperRef.bind(this)
+    this.state = {
+      dropDownOpen: false,
     }
 
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handeClick);
-    }
-    
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handeClick);
-    }
-    setWrapperRef(node) {
-        this.wrapperRef = node;
-    }
-    
-    handeClick(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-            if(this.state.dropDownOpen){
-                this.setState({dropDownOpen: false})
-            }
-        }
-    }
+    this.toggle = this.toggle.bind(this)
+  }
 
-    toggle() {
-        this.setState({dropDownOpen: !this.state.dropDownOpen})
-    }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handeClick);
+  }
 
-    render(){
-        return(
-            <div ref={this.setWrapperRef}>
-                <Icon onClick={this.toggle}>
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                </Icon>
-                <Actions open = {this.state.dropDownOpen}>
-                    <ActionLinks>View Details</ActionLinks>
-                    <ActionLinks>Modify Terms</ActionLinks>
-                    <ActionLinks>Reject</ActionLinks>
-                    <ActionLinks>Send Message</ActionLinks>
-                </Actions>
-            </div>
-        )
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handeClick);
+  }
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  handeClick(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      if (this.state.dropDownOpen) {
+        this.setState({ dropDownOpen: false })
+      }
     }
+  }
+
+  toggle() {
+    this.setState({ dropDownOpen: !this.state.dropDownOpen })
+  }
+
+  render() {
+    return (
+      <div ref={this.setWrapperRef}>
+        <Icon onClick={this.toggle}>
+          <Dot />
+          <Dot />
+          <Dot />
+        </Icon>
+        <Actions open={this.state.dropDownOpen}>
+          <ActionLinks>View Details</ActionLinks>
+          <ActionLinks>Modify Terms</ActionLinks>
+          <ActionLinks>Reject</ActionLinks>
+          <ActionLinks>Send Message</ActionLinks>
+        </Actions>
+      </div>
+    )
+  }
 }
 
 

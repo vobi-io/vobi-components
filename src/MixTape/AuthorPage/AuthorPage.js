@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Header from "../Header";
-import ProfileInfo from "./ProfileInfo";
-import ResentPosts from './ResentPosts';
+import Header from '../Header'
+import ProfileInfo from './ProfileInfo'
+import ResentPosts from './ResentPosts'
+import Footer from '../Footer'
 
 const AuthorPageContainer = styled.div`
-    width:1240px;
+    width:70%;
     margin:auto;
     display:flex;
     flex-direction:column;
@@ -22,16 +23,17 @@ const LineSeparator = styled.div`
     background:#e0e0e0;
 `
 
-
-export default (props) => {
-    const { profile, posts } = props.data
-    return (
-        <AuthorPageContainer>
-            <Header />
-            <ProfileInfo data={profile} />
-            <LineSeparator></LineSeparator>
-            <ResentPosts data={posts}>
-            </ResentPosts>
-        </AuthorPageContainer>
-    )
+export default ({ AuthorData, PostsFirstPart, PostsSecondPart }) => {
+  return (
+    <AuthorPageContainer>
+      <Header />
+      <ProfileInfo data={AuthorData} />
+      <LineSeparator />
+      <ResentPosts
+        PostsFirstPart={PostsFirstPart}
+        PostsSecondPart={PostsSecondPart}
+      />
+      <Footer />
+    </AuthorPageContainer>
+  )
 }
