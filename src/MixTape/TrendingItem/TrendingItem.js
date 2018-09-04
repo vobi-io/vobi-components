@@ -7,6 +7,10 @@ import SignalBarsIcon from '../../../assets/svg/MixTape/signal-bars.svg'
 
 const TrendingItemContainer = styled.div`
   width: 375px;
+  @media only screen and (max-width: 1150px) {
+    width: 700px;
+    margin-top: 20px;
+  }
 `
 const PhotoContainer = styled.div`
   width: 100%
@@ -14,6 +18,10 @@ const PhotoContainer = styled.div`
   background: url(${props => props.picture});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  @media only screen and (max-width: 1150px) {
+    height: 300px;
+  }
 `
 const ContentContainer = styled.div`
   background-color: #EEEEEF;

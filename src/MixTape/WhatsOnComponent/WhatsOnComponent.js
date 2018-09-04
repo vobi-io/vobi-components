@@ -10,6 +10,18 @@ import SignalBarsIcon from '../../../assets/svg/MixTape/signal-bars.svg'
 
 const Container = styled.div`
   width: 575px;
+  @media only screen and (max-width: 1190px) {
+    :nth-child(even) {
+      margin-left: 20px;
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    width: 700px;
+    margin-top: 20px;
+    :nth-child(even) {
+      margin-left: 0px;
+    }
+  }
 `
 
 const PhotoContainer = styled.div`
@@ -109,7 +121,7 @@ const WhatsOnComponent = ({ data }) => (
           <FlexDiv jc="space-between" width="100%">
             <FlexDiv>
               <Img src={ViewsIcon} alt="view" height={20} />
-              <Span mt={2} ml={10}>{data.views}</Span>
+              <Span mt={2} ml={10}>{data.views}{' Views'}</Span>
             </FlexDiv>
             <Img src={SignalBarsIcon} alt="bars" height={18} />
           </FlexDiv>

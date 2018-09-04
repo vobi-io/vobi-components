@@ -14,6 +14,10 @@ const Span = styled.span`
 `
 const Form = styled.form`
   display: flex;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `
 const Input = styled.input`
   padding-left: 10px;
@@ -59,6 +63,9 @@ const Button = styled.button`
   letter-spacing: 2px;
   font-size: 20px;
   width: 200px;
+  @media only screen and (max-width: 900px) {
+    margin-top: 10px;
+  }
 `
 const Subscribe = () => (
   <SubscribeContainer>

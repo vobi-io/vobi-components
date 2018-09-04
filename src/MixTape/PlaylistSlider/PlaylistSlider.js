@@ -375,6 +375,16 @@ const settings = {
   slidesToScroll: 2,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1170,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
 }
 
 const PlaylistSlider = ({ data }) => (

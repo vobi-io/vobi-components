@@ -31,6 +31,10 @@ const FlexDiv = styled.div`
   ${p => p.mt && `margin-top: ${p.mt}px`};
   ${p => p.ml && `margin-left: ${p.ml}px`};
   ${p => p.mr && `margin-right: ${p.mr}px`};
+  @media only screen and (max-width: 850px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const TrendingContainer = styled.div`
@@ -38,6 +42,10 @@ const TrendingContainer = styled.div`
   max-width: 1200px;
   margin: 40px auto;
   justify-content: space-between;
+  @media only screen and (max-width: 1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const HaveToListenContainer = styled.div`
   max-width: 1200px;
@@ -61,6 +69,14 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   text-align: center;
   ${p => p.mb && `margin-bottom: ${p.mb}px`};
+`
+const Videos = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const HomePage =
@@ -114,11 +130,11 @@ const HomePage =
           <Span size={30}>Videos</Span>
           <Span size={20}>Mixtape Madness Share Their Top Videos This Week</Span>
         </HeaderContainer>
-        <FlexDiv jc="space-between">
+        <Videos>
           {videoData.map(item => (
             <Video data={item} />
           ))}
-        </FlexDiv>
+        </Videos>
       </VideosContainer>
       <Footer />
     </div>

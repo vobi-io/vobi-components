@@ -16,6 +16,10 @@ const Icon = styled.img`
 
 const Container = styled.div`
   width: 575px;
+  @media only screen and (max-width: 1170px) {
+    width: 700px;
+    margin: auto;
+  }
 `
 const PhotoContainer = styled.div`
   width: 100%
@@ -23,6 +27,7 @@ const PhotoContainer = styled.div`
   background: url(${props => props.picture});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 `
 const ContentContainer = styled.div`

@@ -10,6 +10,10 @@ import DotsIcon from '../../../assets/svg/MixTape/dots.svg'
 
 const Container = styled.div`
   width: 375px;
+  @media only screen and (max-width: 1150px) {
+    width: 700px;
+    margin-top: 20px;
+  }
 `
 
 const PhotoContainer = styled.div`
@@ -18,7 +22,11 @@ const PhotoContainer = styled.div`
   background: url(${props => props.picture});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
+  @media only screen and (max-width: 1150px) {
+    height: 300px;
+  }
 `
 const ContentContainer = styled.div`
   background-color: #EEEEEF;
