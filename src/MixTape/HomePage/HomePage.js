@@ -7,11 +7,11 @@ import Header from '../Header'
 import MainSlider from '../MainSlider'
 import TrendingItem from '../TrendingItem'
 import Footer from '../Footer'
-import ToListenPlaylist from '../ToListenPlaylist'
 import Download from '../Download'
 import WhatsOnComponent from '../WhatsOnComponent'
 import Subscribe from '../Subscribe'
 import Video from '../Video'
+import PlaylistSlider from '../PlaylistSlider'
 
 const Span = styled.span`
   ${p => p.color && `color: ${p.color}`};
@@ -43,12 +43,7 @@ const HaveToListenContainer = styled.div`
   max-width: 1200px;
   margin: 40px auto;
 `
-const HaveToListenHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: 60px;
-`
+
 const WhatsOn = styled.div`
   max-width: 1200px;
   margin: 40px auto;
@@ -61,36 +56,43 @@ const VideosContainer = styled.div`
   margin: 60px auto;
   margin-bottom: 100px;
 `
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  ${p => p.mb && `margin-bottom: ${p.mb}px`};
+`
 
 const HomePage =
   ({
-    trendingData, haveToListenData, whatsOnVideos, whatsOnData, videoData,
+    trendingData, haveToListenData, whatsOnVideos, whatsOnData, videoData, mainSliderData,
   }) => (
     <div>
       <Header />
-      <MainSlider />
+      <MainSlider data={mainSliderData} />
       <TrendingContainer>
         {trendingData.map(item => (
           <TrendingItem data={item} />
         ))}
       </TrendingContainer>
       <HaveToListenContainer>
-        <HaveToListenHeader>
+        <HeaderContainer>
           <Span size={30}>You Have To Listen</Span>
           <Span size={20}>Mixtape Madness Share Their Top Playlists</Span>
-        </HaveToListenHeader>
-        <FlexDiv jc="space-between">
+        </HeaderContainer>
+        {/* <FlexDiv jc="space-between">
           {haveToListenData.map(item => (
             <ToListenPlaylist data={item} />
           ))}
-        </FlexDiv>
+        </FlexDiv> */}
+        <PlaylistSlider data={haveToListenData} />
       </HaveToListenContainer>
       <Download />
       <WhatsOn>
-        <HaveToListenHeader>
+        <HeaderContainer mb={60}>
           <Span size={30}>What's On</Span>
           <Span size={20}>Check Out The Latest Music And News This Week</Span>
-        </HaveToListenHeader>
+        </HeaderContainer>
         <FlexDiv jc="space-between" mb={33}>
           {
             whatsOnVideos.map(item => (
@@ -108,10 +110,10 @@ const HomePage =
         <Subscribe />
       </SubscribeContainer>
       <VideosContainer>
-        <HaveToListenHeader>
+        <HeaderContainer mb={60}>
           <Span size={30}>Videos</Span>
           <Span size={20}>Mixtape Madness Share Their Top Videos This Week</Span>
-        </HaveToListenHeader>
+        </HeaderContainer>
         <FlexDiv jc="space-between">
           {videoData.map(item => (
             <Video data={item} />
@@ -127,6 +129,8 @@ HomePage.propTypes = {
   haveToListenData: PropTypes.array.isRequired,
   whatsOnVideos: PropTypes.array.isRequired,
   whatsOnData: PropTypes.array.isRequired,
+  mainSliderData: PropTypes.array.isRequired,
+  videoData: PropTypes.array.isRequired,
 }
 
 export default HomePage

@@ -8,6 +8,8 @@ import Musician from '../../assets/svg/MixTape/musician1.png'
 import Musician1 from '../../assets/svg/MixTape/2pac.jpg'
 import Musician2 from '../../assets/svg/MixTape/eminem.jpg'
 
+import SliderPhoto from '../../assets/svg/MixTape/Live-Music.jpg'
+import SliderPhotoSecond from '../../assets/svg/MixTape/music.jpg'
 
 import {
   Header,
@@ -26,6 +28,7 @@ import {
   BlogPost,
   BlogPostPage,
   YouTubeVideo,
+  PlaylistSlider,
 } from '../../src/MixTape'
 
 const Trending = {
@@ -85,6 +88,22 @@ const ToListenPlaylistArray = [
     picture: Musician2,
     type: 'Playlists',
     name: 'Grime Essentials',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    tracksCount: 15,
+    followersCount: 69000,
+  },
+  {
+    picture: Musician1,
+    type: 'Playlists',
+    name: 'Grime Up North',
+    text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
+    tracksCount: 15,
+    followersCount: 69000,
+  },
+  {
+    picture: Musician,
+    type: 'Playlists',
+    name: 'Grime Up North',
     text: 'Lorem ipsum dolor sit amet. consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et',
     tracksCount: 15,
     followersCount: 69000,
@@ -394,6 +413,7 @@ const blogPageData = {
     },
   ],
 }
+const mainSliderData = [SliderPhoto, SliderPhotoSecond]
 
 storiesOf('MixTape', module)
   .addDecorator(withKnobs)
@@ -453,7 +473,7 @@ storiesOf('MixTape', module)
       Slider
     `)(() => (
       <div style={{ minHeight: 500 }}>
-        <MainSlider />
+        <MainSlider data={mainSliderData} />
       </div>
     )),
   )
@@ -530,6 +550,7 @@ storiesOf('MixTape', module)
           whatsOnVideos={WhatsOnComponentVideos}
           whatsOnData={WhatsOnComponentDataArray}
           videoData={VideoDataArray}
+          mainSliderData={mainSliderData}
         />
       </div>
     )),
@@ -561,6 +582,16 @@ storiesOf('MixTape', module)
     `)(() => (
       <div style={{ minHeight: 500 }}>
         <BlogPostPage blogPageData={blogPageData} />
+      </div>
+    )),
+  )
+  .add(
+    'Playlist Slider',
+    withInfo(`
+      Playlist Slider
+    `)(() => (
+      <div style={{ minHeight: 500 }}>
+        <PlaylistSlider data={ToListenPlaylistArray} />
       </div>
     )),
   )

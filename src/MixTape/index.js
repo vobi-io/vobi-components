@@ -11,6 +11,7 @@ export { default as WhatsOnComponent } from './WhatsOnComponent'
 export { default as Video } from './Video'
 export { default as BlogPost } from './BlogPost'
 export { default as YouTubeVideo } from './YouTubeVideo'
+export { default as PlaylistSlider } from './PlaylistSlider'
 
 export { default as HomePage } from './HomePage'
 export { default as News } from './News'
