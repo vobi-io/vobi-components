@@ -8,32 +8,64 @@ const SubscribeContainer = styled.div`
   justify-content: space-between;
 `
 const Span = styled.span`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   word-break: break-word;
 `
 const Form = styled.form`
   display: flex;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `
 const Input = styled.input`
-  height: 34px;
-  width: 250px;
   padding-left: 10px;
   border: none;
   background-color: #EEEEEF;
   outline: none;
+  height: 45px;
+  width: 350px;
+  ::-webkit-input-placeholder {
+    color: black;
+    font-size: 17px;
+    letter-spacing: 1.5;
+    font-weight: 100;
+  }
+  ::-moz-placeholder {
+    color: black;
+    font-size: 17px;
+    letter-spacing: 1.5;
+    font-weight: 100;
+  }
+  :-ms-input-placeholder {
+    color: black;
+    font-size: 17px;
+    letter-spacing: 1.5;
+    font-weight: 100;
+  }
+  :-moz-placeholder {
+    color: black;
+    font-size: 17px;
+    letter-spacing: 1.5;
+    font-weight: 100;
+  }
 `
 const Button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
-  height: 36px;
-  width: 150px;
+  height: 47px;
   margin-left: 30px;
   color: white;
   font-weight: 600;
-  letter-spacing: 1.5px;
   background-color: #FF9D00;
   border: none;
+  letter-spacing: 2px;
+  font-size: 20px;
+  width: 200px;
+  @media only screen and (max-width: 900px) {
+    margin-top: 10px;
+  }
 `
 const Subscribe = () => (
   <SubscribeContainer>

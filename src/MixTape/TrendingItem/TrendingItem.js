@@ -7,6 +7,10 @@ import SignalBarsIcon from '../../../assets/svg/MixTape/signal-bars.svg'
 
 const TrendingItemContainer = styled.div`
   width: 375px;
+  @media only screen and (max-width: 1150px) {
+    width: 700px;
+    margin-top: 20px;
+  }
 `
 const PhotoContainer = styled.div`
   width: 100%
@@ -14,6 +18,10 @@ const PhotoContainer = styled.div`
   background: url(${props => props.picture});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  @media only screen and (max-width: 1150px) {
+    height: 300px;
+  }
 `
 const ContentContainer = styled.div`
   background-color: #EEEEEF;
@@ -34,6 +42,7 @@ const Span = styled.span`
   ${p => p.mb && `margin-bottom: ${p.mb}px`};
   ${p => p.mt && `margin-top: ${p.mt}px`};
   ${p => p.ml && `margin-left: ${p.ml}px`};
+  ${p => p.maxHeight && `max-height: ${p.maxHeight}`};
 `
 const Type = styled.span`
   color: #FF9D00;
@@ -44,6 +53,10 @@ const Header = styled.span`
   word-break: break-word;
   margin-bottom: 20px;
   min-height: 48px;
+  ${p => p.height === true && 'height: 130px'};
+  font-weight: bold;
+  color: #000000;
+  text-transform: capitalize;
 `
 const FlexDiv = styled.div`
   display: flex;
@@ -52,20 +65,20 @@ const FlexDiv = styled.div`
 const Img = styled.img`
   ${p => p.height && `height: ${p.height}px`};
 `
-const TrendingItem = ({ data }) => (
+const TrendingItem = ({ data, height }) => (
   <TrendingItemContainer>
     <PhotoContainer picture={data.picture} />
     <ContentContainer>
       <TypeContainer>
         <Span color="black" bold>Trending / <Type>{data.type}</Type></Span>
       </TypeContainer>
-      <Header>{data.header}</Header>
-      <Span color="#666666" lspacing={1.2} mb={20}>{data.text}</Span>
+      <Header height={height}>{data.header}</Header>
+      <Span maxHeight={60} color="#666666" lspacing={1.2} mb={20}>{data.text}</Span>
       <Span color="black" mb={20}>By <Span color="#FF9D00">{data.author}</Span></Span>
       <FlexDiv jc="space-between">
         <FlexDiv>
           <Img src={ViewsIcon} alt="view" height={20} />
-          <Span mt={2} ml={10}>{data.views}</Span>
+          <Span mt={2} ml={10} color="#666666">{data.views}{' Views'}</Span>
         </FlexDiv>
         <Img src={SignalBarsIcon} alt="bars" height={18} />
       </FlexDiv>
@@ -75,6 +88,11 @@ const TrendingItem = ({ data }) => (
 
 TrendingItem.propTypes = {
   data: PropTypes.object.isRequired,
+  height: PropTypes.bool,
+}
+
+TrendingItem.defaultProps = {
+  height: false,
 }
 
 export default TrendingItem

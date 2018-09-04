@@ -2,9 +2,44 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+
 import PlayIcon from '../../../assets/svg/BookingGenius/Play.svg'
-import PlayListIcon from '../../../assets/svg/MixTape/playlist.svg'
-import FollowersIcon from '../../../assets/svg/MixTape/followers.svg'
+import ViewsIcon from '../../../assets/svg/MixTape/eye.svg'
+import SignalBarsIcon from '../../../assets/svg/MixTape/signal-bars.svg'
+
+
+const Container = styled.div`
+  width: 575px;
+  @media only screen and (max-width: 1190px) {
+    :nth-child(even) {
+      margin-left: 20px;
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    width: 700px;
+    margin-top: 20px;
+    :nth-child(even) {
+      margin-left: 0px;
+    }
+  }
+`
+
+const PhotoContainer = styled.div`
+  width: 100%
+  height: 300px;
+  background: url(${props => props.picture});
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+`
+
+const ContentContainer = styled.div`
+  background-color: #EEEEEF;
+  width: calc(100% - 30px);
+  padding: 20px 15px;
+  display: flex;
+  height: 107px;
+`
 
 const Icon = styled.img`
   display: block;
@@ -14,29 +49,6 @@ const Icon = styled.img`
   left: 50%;
 `
 
-const Container = styled.div`
-  width: 575px;
-  @media only screen and (max-width: 1170px) {
-    width: 700px;
-    margin: auto;
-  }
-`
-const PhotoContainer = styled.div`
-  width: 100%
-  height: 300px;
-  background: url(${props => props.picture});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-`
-const ContentContainer = styled.div`
-  background-color: #EEEEEF;
-  width: calc(100% - 30px);
-  padding: 20px 15px;
-  display: flex;
-  height: 107px;
-`
 const LeftSide = styled.div`
   width: calc(40% - 15px);
   display: flex;
@@ -73,21 +85,29 @@ const FlexDiv = styled.div`
   ${p => p.mt && `margin-top: ${p.mt}px`};
   ${p => p.ml && `margin-left: ${p.ml}px`};
   ${p => p.mr && `margin-right: ${p.mr}px`};
+  ${p => p.jc && `justify-content: ${p.jc}`};
+  ${p => p.width && `width: ${p.width}`};
 `
-const LittleIcon = styled.img`
-  ${p => p.height && `height: ${p.height}px`};
-  ${p => p.pointer && 'cursor: pointer'};
-`
+// const LittleIcon = styled.img`
+//   ${p => p.height && `height: ${p.height}px`};
+//   ${p => p.pointer && 'cursor: pointer'};
+// `
 const Span = styled.span`
   color: #666666;
   font-size: 13px;
   margin-left: 10px;
   margin-top: 2px;
 `
-const ToListenPlaylist = ({ data }) => (
+const Img = styled.img`
+  ${p => p.height && `height: ${p.height}px`};
+`
+
+const WhatsOnComponent = ({ data }) => (
   <Container>
     <PhotoContainer picture={data.picture}>
-      <Icon src={PlayIcon} alt="play-icon" />
+      {data.type === 'Video' &&
+        <Icon src={PlayIcon} alt="play-icon" />
+      }
     </PhotoContainer>
     <ContentContainer>
       <LeftSide>
@@ -98,21 +118,21 @@ const ToListenPlaylist = ({ data }) => (
       <RightSide>
         <Text>{data.text}</Text>
         <FlexDiv mt={18}>
-          <FlexDiv mr={20}>
-            <LittleIcon src={PlayListIcon} height={20} pointer />
-            <Span>{data.tracksCount}{' Tracks'}</Span>
-          </FlexDiv>
-          <FlexDiv>
-            <LittleIcon src={FollowersIcon} height={18} />
-            <Span>{data.followersCount}{' Followers'}</Span>
+          <FlexDiv jc="space-between" width="100%">
+            <FlexDiv>
+              <Img src={ViewsIcon} alt="view" height={20} />
+              <Span mt={2} ml={10}>{data.views}{' Views'}</Span>
+            </FlexDiv>
+            <Img src={SignalBarsIcon} alt="bars" height={18} />
           </FlexDiv>
         </FlexDiv>
       </RightSide>
     </ContentContainer>
   </Container>
 )
-ToListenPlaylist.propTypes = {
+
+WhatsOnComponent.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default ToListenPlaylist
+export default WhatsOnComponent

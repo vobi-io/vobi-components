@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-
 import Slider from 'react-slick'
 
+import ToListenPlaylist from '../ToListenPlaylist'
 
 import Prev from '../../../assets/svg/MixTape/prev.svg'
 import Next from '../../../assets/svg/MixTape/next.svg'
@@ -13,17 +13,19 @@ const Img = styled.img`
   display: block;   
   cursor: pointer;
   z-index: 1;
-  margin-top: 210px;
-  height: 150px;
+  height: 30px;
+  position: absolute;
+  margin-top: 20px;
+  ${p => p.right && `right: ${p.right}px`};
 `
 
 
 const PrevArrow = ({ onClick }) => (// eslint-disable-line
-  <Img src={Prev} onClick={onClick} />
+  <Img right={20} src={Prev} onClick={onClick} />
 )
 
 const NextArrow = ({ onClick }) => (// eslint-disable-line
-  <Img src={Next} onClick={onClick} />
+  <Img right="0" src={Next} onClick={onClick} />
 )
 
 const Container = styled.div`
@@ -49,14 +51,13 @@ const Container = styled.div`
 
     .slick-list
     {
-        width: 100%;
-        position: absolute;
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 100px;
 
-        display: block;
-        overflow: hidden;
-
-        margin: 0;
-        padding: 0;
+      display: block;
+      overflow: hidden;
+      padding: 0;
     }
     .slick-list:focus
     {
@@ -342,6 +343,8 @@ const Override = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        margin: auto;
+        max-width: 1200px;
     }
 
     .slick-slide {
@@ -364,79 +367,40 @@ const Override = styled.div`
     }
 `
 
-const SliderContent = styled.div`
-  height: 540px
-  background-image: url(${p => p.SliderPhoto});
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-`
-const Header = styled.span`
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-`
-const Span = styled.span`
-  font-size: 70px;
-  font-weight: bold;
-  color: white;
-`
-const LatestSingles = styled.button`
-  border: 1px solid #FF9D00;
-  background: transparent;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-  outline: none;
-  padding: 10px 5px;
-  width: 150px;
-  cursor: pointer;
-  margin-top: 30px;
-`
-const FlexDiv = styled.div`
-  width: 100%;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-`
+
 const settings = {
   dots: false,
   infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
+  slidesToShow: 2,
+  slidesToScroll: 2,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1170,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
 }
 
-const MainSlider = ({ data }) => (
+const PlaylistSlider = ({ data }) => (
   <Container>
     <Override>
       <Slider {...settings}>
         {data.map(item => (
-          <SliderContent SliderPhoto={item}>
-            <FlexDiv>
-              <Header>
-                Check Out The Latest Music And News On <br />
-                <Span>Mixtape Madness</Span>
-              </Header>
-              <LatestSingles>View Latest Singles</LatestSingles>
-            </FlexDiv>
-          </SliderContent>
+          <ToListenPlaylist data={item} />
         ))}
       </Slider>
     </Override>
   </Container>
 )
 
-MainSlider.propTypes = {
-  data: PropTypes.array,
+PlaylistSlider.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
-MainSlider.defaultProps = {
-  data: [],
-}
-
-export default MainSlider
+export default PlaylistSlider

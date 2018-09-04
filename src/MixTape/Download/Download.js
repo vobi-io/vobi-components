@@ -8,11 +8,11 @@ import GooglePlayIcon from '../../../assets/svg/MixTape/googleplay.png'
 
 const DownloadContainer = styled.div`
   max-width: 1200px;
-  height: 491px;
   margin: 60px auto;
   background-image: url(${PhoneImage});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 `
 const ContentContainer = styled.div`
   padding: 100px 50px;

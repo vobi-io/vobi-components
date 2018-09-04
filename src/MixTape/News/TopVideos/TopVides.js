@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import TopVideo from '../TopVideo'
+import TopVideo from '../../TopVideo'
 
 const TopVideos = styled.div`
   flex:1;
