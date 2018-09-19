@@ -21,4 +21,5 @@ export { default as RangePicker } from './RangePicker'
 export { default as ActionComponent } from './ActionComponent'
 export { default as BetterSelector } from './BetterSelector'
 export { default as Dropdown } from './Dropdown'
+export { default as ImageCropper } from './ImageCropper'
 export { BookingGenius }

@@ -24,5 +24,8 @@
  // 6. Dropdown
  import '../stories/Dropdown/index'
 
- // 7. Booking Genius
+ // 7. Image Cropper
+ import '../stories/ImageCropper/index'
+
+ // 8. Booking Genius
  import '../stories/BookingGenius/index'

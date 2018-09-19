@@ -15,9 +15,9 @@ loaders.push({
 module.exports = {
   entry: {
     index: './src/index.js',
-    BookingGenius: './src/BookingGenius/index.js',
+    // BookingGenius: './src/BookingGenius/index.js',
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'lib'),
