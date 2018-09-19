@@ -81,15 +81,18 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "cropperjs": "^1.4.1",
     "immutable": "^3.8.2",
     "moment": "^2.22.1",
     "rc-time-picker": "^3.3.1",
     "react-big-calendar": "^0.19.1",
+    "react-cropper": "^1.0.1",
     "react-dates": "^16.7.0",
     "react-modal": "^3.4.4",
     "react-select": "^1.2.1",
     "react-slick": "^0.23.1",
     "react-stars": "^2.2.5",
+    "recompose": "^0.30.0",
     "slick-carousel": "^1.8.1"
   }
 }
