@@ -1,12 +1,12 @@
 <h1 style="text-align: center;">
-    <a href="https://github.com/btomashvili/vobi-components">
+    <a href="https://github.com/vobi-io/vobi-components">
         <img src="https://avatars0.githubusercontent.com/u/25040473?s=200&v=4" alt="Vobi.io Components" width="200px">
     </a>
 </h1>
 
 `vobi-components` is a collection of [React](https://facebook.github.io/react/) components developed by Vobi.io team.
 
-#### [Demo](https://btomashvili.github.io/vobi-components) | [Source](https://github.com/btomashvili/vobi-components)
+#### [Demo](https://vobi-io.github.io/vobi-components) | [Source](https://github.com/vobi-io/vobi-components)
 
 ## Setup
 
