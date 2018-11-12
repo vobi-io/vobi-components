@@ -24,3 +24,26 @@ font-size: 13px;
         padding: 20px;
     }
 }
+
+
+.modal-overlay {
+    background-color: rgba(216, 216, 216, 0.7);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 0;
+    width: min-content;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
