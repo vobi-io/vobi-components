@@ -49,6 +49,8 @@ storiesOf('Buttons', module)
             sm={boolean('Sm', false)}
             lg={boolean('Lg', false)}
             outline={boolean('Outline', false)}
+            mt={text('mt', '25')}
+            shadow={boolean('shadow', true)}
           >
             {text('Default', 'Primary')}
           </Button>

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { spaceMixins, shadowMixins } from '../../utils'
 
 const StyledButton = styled.button`
   display: ${props => (props.block ? 'block' : 'inline-block')};
@@ -21,9 +22,9 @@ const StyledButton = styled.button`
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   
   padding: ${(props) => {
-    if (props.sm) return '7px 15px'
-    else if (props.lg) return '9px 20px'
-    return '8px 18px'
+    if (props.sm) return '6px 15px'
+    else if (props.lg) return '8px 24px'
+    return '7px 20px'
   }};
 
   background-color: ${(props) => {
@@ -75,6 +76,9 @@ const StyledButton = styled.button`
 
   transition: all .2s ease-in-out;
 
+  ${spaceMixins}
+  ${shadowMixins}
+
   &:disabled {
     opacity: .65;
   }
@@ -124,13 +128,13 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  primary: false,
+  primary: true,
   secondary: false,
   green: false,
   red: false,
   yellow: false,
   dark: false,
-  solid: false,
+  solid: true,
   block: false,
   disabled: false,
   bold: false,
