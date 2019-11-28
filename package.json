@@ -30,7 +30,7 @@
     "@storybook/addon-notes": "^3.4.3",
     "@storybook/addon-options": "^3.4.3",
     "@storybook/addon-storysource": "^3.4.3",
-    "@storybook/addon-viewport": "^3.4.3",
+    "@storybook/addon-viewport": "^5.2.6",
     "@storybook/react": "^3.4.3",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
